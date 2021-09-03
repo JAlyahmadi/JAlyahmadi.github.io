@@ -33,6 +33,9 @@
 var changelogText = `
 
 
+03/09/2021 11:50
+Fixed uro-reproductive system course content not showing up
+---
 27/08/2021 19:30
 Updated some of the Contact Us email addresses and made a small QoL change (requires clearing your browser cache; hold shift and click reload)
 ---
