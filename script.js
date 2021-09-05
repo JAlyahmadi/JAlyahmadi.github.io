@@ -439,9 +439,14 @@ $(document).ready(function(){
     var selectedSem = $("#timetable-courses-semester option:selected").attr("data-semester");
     $("#timetable-courses-course option").hide();
     $("#timetable-courses-course option[data-semester='" + selectedSem + "']").show();
+    $("#timetable-courses-course").val($("#timetable-courses-course option[data-semester='" + selectedSem + "']:eq(0)").attr("value"));
     $("#timetable-courses-preview").attr("src", $("#timetable-courses-course option[data-semester='" + selectedSem + "']:eq(0)").attr("data-url"));
     defaultCourseSemester = selectedSem;
     updateStorage();
+  });
+  $("#timetable-courses-course").change(function(){
+    var selectedCourse = $("#timetable-courses-course option:selected").attr("data-url");
+    $("#timetable-courses-preview").attr("src", selectedCourse);
   });
 
   // Switch to the default student timetable and show the student timetable of the selected semester
