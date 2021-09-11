@@ -387,9 +387,20 @@ a:hover {
 }
 
 
+.badge.bg-changelog {
+  position: relative;
+  top: -2px;
+}
+
+
 .badge.bg-primary {
   background-color: var(--primary) !important;
   color: var(--dark);
+}
+
+
+.badge.bg-mini {
+  font-size: 12px;
 }
 
 
