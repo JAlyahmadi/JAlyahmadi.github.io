@@ -158,7 +158,7 @@ function readExams(){
     var lineSegments = lines[i].split("|");
     var newDate = lineSegments[2].split("/");
     var newTime = lineSegments[3].split(":");
-    var newDateObj = new Date(parseInt(newDate[2]), parseInt(newDate[1]), parseInt(newDate[0]), parseInt(newTime[0]), parseInt(newTime[1]));
+    var newDateObj = new Date(parseInt(newDate[2]), parseInt(newDate[1]) - 1, parseInt(newDate[0]), parseInt(newTime[0]), parseInt(newTime[1]));
     var newExam = [lineSegments[0], lineSegments[1], newDateObj, lineSegments[4]];
     examTimes.push(newExam);
   }
