@@ -52,6 +52,10 @@ var defaultCourseSemester = storage["defaultCourseSemester"];
 var defaultExamSemester = storage["defaultExamSemester"];
 var defaultStudentSemester = storage["defaultStudentSemester"];
 var lastChangelog = storage["lastChangelog"];
+// Handle an error that has occurred for some people during development
+if(typeof(lastChangelog) !== "string"){
+  lastChangelog = "";
+}
 
 // Other variables
 var semesterValues = {"p1": 1, "p2s1": 2, "p2s2": 3, "p2s3": 4, "p2s4": 5};
