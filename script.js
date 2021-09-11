@@ -40,7 +40,7 @@ if(storage){
     defaultCourseSemester: "p1",
     defaultExamSemester: "p1",
     defaultStudentSemester: "p2s1",
-    lastChangelog: [],
+    lastChangelog: "",
   }
   localStorage["goldenDriveStorage"] = JSON.stringify(storage);
 }
@@ -58,6 +58,7 @@ var semesterValues = {"p1": 1, "p2s1": 2, "p2s2": 3, "p2s3": 4, "p2s4": 5};
 var currentChangelog = "";
 var examTimes = [];
 var changelogNotes = [];
+var lastChangelogNotes = [];
 
 // Update localStorage with the new values of the variables
 function updateStorage(){
@@ -75,6 +76,21 @@ function zero(num, digits){
   num = num.toString();
   while (num.length < digits) num = "0" + num;
   return num;
+}
+
+// This is used to check if an item within changelogNotes exists in old changelogs
+function shallowEqual(object1, object2) {
+  const keys1 = Object.keys(object1);
+  const keys2 = Object.keys(object2);
+  if(keys1.length !== keys2.length){
+    return false;
+  }
+  for(let key of keys1){
+    if (object1[key] !== object2[key]) {
+      return false;
+    }
+  }
+  return true;
 }
 
 // Show the needed navigation buttons in #page-course for the given course
@@ -136,7 +152,7 @@ function updateBookmarks(){
 // Read exams.txt and translate it into a nested array
 // Formula: semester|title|dd/mm/yyyy|hh:mm|notes
 function readExams(){
-  var data = timetableText.replace(/(^[ \t]*\n)/gm, "").replace(/\n$/gm, ""); // Temporary
+  var data = timetableText.replace(/(^[ \t]*\n)/gm, "").replace(/\n$/gm, "");
   var lines = data.split("\n");
   for(var i = 0; i < lines.length; i++){
     var lineSegments = lines[i].split("|");
@@ -185,12 +201,17 @@ function updateExams(){
 //   date
 //   notes (can be multiple lines)
 function readChangelog(){
-  var data = changelogText.replace(/(^[ \t]*\n)/gm, "").replace(/\n$/gm, ""); // Temporary
+  var data = changelogText.replace(/(^[ \t]*\n)/gm, "").replace(/\n$/gm, "");
   var chunks = data.split("\n---\n");
+  var lastChunks = lastChangelog.replace(/(^[ \t]*\n)/gm, "").replace(/\n$/gm, "").split("\n---\n");
   currentChangelog = data;
   for(var i = 0; i < chunks.length; i++){
     var chunkLines = chunks[i].split("\n");
     changelogNotes.push(chunkLines);
+  }
+  for(var i = 0; i < lastChunks.length; i++){
+    var chunkLines = lastChunks[i].split("\n");
+    lastChangelogNotes.push(chunkLines);
   }
 }
 
@@ -204,11 +225,24 @@ function updateChangelog(){
     for(var j = 1; j < changelogNotes[i].length; j++){
       notes += "<li>" + changelogNotes[i][j] + "</li>";
     }
-    var newChangelogEntry =
-    "<div class='changelog-note'>" +
-      "<h6>" + changelogNotes[i][0] + "</h6>" +
-      "<ul>" + notes + "</ul>" +
-    "</div>";
+    notes = notes
+      .replace(/{anki}/g, "<span class='badge bg-mini'>Anki</span>")
+      .replace(/{drive}/g, "<span class='badge bg-mini'>Drive</span>")
+      .replace(/{summary}/g, "<span class='badge bg-mini'>Summary</span>")
+      .replace(/{website}/g, "<span class='badge bg-mini'>Website</span>");
+    if(lastChangelogNotes.some(item => shallowEqual(item, changelogNotes[i]))){
+      var newChangelogEntry =
+        "<div class='changelog-note'>" +
+          "<h6>" + changelogNotes[i][0] + "</h6>" +
+          "<ul>" + notes + "</ul>" +
+        "</div>";
+    } else {
+      var newChangelogEntry =
+        "<div class='changelog-note'>" +
+          "<h6>" + changelogNotes[i][0] + " <span class='badge bg-changelog bg-primary'>New</span></h6>" +
+          "<ul>" + notes + "</ul>" +
+        "</div>";
+    }
     $("#changelog-container").append(newChangelogEntry);
   }
 }
