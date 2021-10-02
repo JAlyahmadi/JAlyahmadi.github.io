@@ -350,12 +350,6 @@ $(document).ready(function(){
     updateBookmarks();
   });
 
-  // Clear localStorage and reload page when #storage-clear is clicked
-  $("#storage-clear").click(function(){
-    delete localStorage["goldenDriveStorage"];
-    location.reload();
-  });
-
   // Copy email to clipboard when .contact-card is clicked
   $(".contact-card").click(function(){
     var email = $(this).find("a").text();
