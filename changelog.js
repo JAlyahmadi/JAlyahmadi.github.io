@@ -34,7 +34,9 @@
 
 
 var changelogText = `
-
+13/10/2021 20:03
+{summary} Added T4 Alimentary system summary
+---
 13/10/2021 00:46
 {anki} Updated Alimentary deck to include L16
 {anki} Fixed tagging issues
