@@ -34,8 +34,14 @@
 
 
 var changelogText = `
-13/10/2021 20:03
-{summary} Added T4 Alimentary system summary
+
+
+14/10/2021 00:05
+{summary} Added C3P1 integrated module 2 summary (hematuria).
+{summary} Added T3 uro-reproductive system summary. Includes a 1 page summary on important notes from Guyton's book and explains the graphs in the slides.
+---
+13/10/2021 20:00
+{summary} Added T4 alimentary system summary.
 ---
 13/10/2021 00:46
 {anki} Updated Alimentary deck to include L16
