@@ -36,6 +36,12 @@
 var changelogText = `
 
 
+
+16/10/2021 00:10
+{summary} Added L17 alimentary system summary.
+{summary} Added T4 clinical nutrition summary.
+{summary} Added SL3 integrated module 2 summary (renal system skills lab). This one has very important notes from the skills lab session to guide you when you are practising for the OSCE with theoretical knowledge for theory questions.
+---
 14/10/2021 00:05
 {summary} Added C3P1 integrated module 2 summary (hematuria).
 {summary} Added T3 uro-reproductive system summary. Includes a 1 page summary on important notes from Guyton's book and explains the graphs in the slides.
