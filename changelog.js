@@ -36,6 +36,11 @@
 var changelogText = `
 
 
+18/10/2021 00:30
+{summary} Added L18 alimentary system summary (virology).
+{summary} Added T4 uro-reproductive system summary (cytology).
+{summary} Updated L2 clinical nutrition to include proteins (if you have already downloaded this summary, please redownloaod it because the old one was missing proteins; was not taught at that time).
+---
 17/10/2021 20:07
 {anki} Updated Alimentary deck to include L18 and L19
 ---
