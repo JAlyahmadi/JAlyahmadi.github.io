@@ -36,7 +36,9 @@
 var changelogText = `
 
 
-
+17/10/2021 20:07
+{anki} Updated Alimentary deck to include L18 and L19
+---
 16/10/2021 00:10
 {summary} Added L17 alimentary system summary.
 {summary} Added T4 clinical nutrition summary.
