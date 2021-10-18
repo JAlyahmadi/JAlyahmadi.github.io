@@ -34,6 +34,7 @@
 
 
 var changelogText = `
+18/10/2021 18:41
 {anki} Updated IM2 Deck including Case 3: Hematuria part 1
 {anki} Updated Uro-reproductive Spotter Deck including P5 (pathology)
 ---
