@@ -36,6 +36,10 @@
 var changelogText = `
 
 
+
+18/10/2021 13:05
+{summary} Update L18 alimentary system summary to include some missing notes and fix a few typos.
+---
 18/10/2021 00:30
 {summary} Added L18 alimentary system summary (virology).
 {summary} Added T4 uro-reproductive system summary (cytology).
