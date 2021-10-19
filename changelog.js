@@ -34,6 +34,10 @@
 
 
 var changelogText = `
+19/10/2021 13:50
+{anki} Updated Alimentary deck to include L19
+{anki} Fixed tagging
+---
 18/10/2021 18:41
 {anki} Updated IM2 Deck including Case 3: Hematuria part 1
 {anki} Updated Uro-reproductive Spotter Deck including P5 (pathology)
