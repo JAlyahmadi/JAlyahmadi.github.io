@@ -34,6 +34,21 @@
 
 
 var changelogText = `
+
+
+
+19/10/2021 17:20
+{summary} Added L19 alimentary system summary (bacteriology).
+{summary} Added L14 uro-reproductive system summary (pharmacology) (how naive of you to assume you had a holiday today).
+{summary} Added T5 uro-reproductive system summary (acid-base tutorial).
+{summary} Added L5 clinical nutrition summary (water and minerals).
+{summary} Added C3P2 integrated module 2 summary (hematuria). This one includes content from the slides on Moodle and notes from the 2017 batch on the first case.
+{summary} Added C3P3 integrated module 2 summary (hematuria). This one also includes the same thing but for case 2, and extra notes to cover objectives that were not covered during the session.
+{summary} Updated L4 clinical nutrition summary to include extra notes on the second half of the lecture (vitamins E and K) that was covered in this week's session.
+{summary} Updated C3P1 integrated module 2 summary (hematuria) to include a small note on what analgesics should be used in renal stones.
+{summary} Updated C2P3 integrated module 2 summary (abdominal pain) to fix a mistake: Artery involved in gastric ulcers in the pyloric region is right gastroepiploic, not right gastric.
+{summary} Updated C2P4 integrated module 2 summary (abdominal pain) to include a few extra notes on objectives that were note covered during the session (second page).
+---
 19/10/2021 13:50
 {anki} Updated Alimentary deck to include L19
 {anki} Fixed tagging
