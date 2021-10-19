@@ -36,7 +36,9 @@
 var changelogText = `
 
 
-
+19/10/2021 19:47
+{anki} Updated Uro-reproductive deck to include L12
+---
 19/10/2021 17:20
 {summary} Added L19 alimentary system summary (bacteriology).
 {summary} Added L14 uro-reproductive system summary (pharmacology) (how naive of you to assume you had a holiday today).
