@@ -34,8 +34,10 @@
 
 
 var changelogText = `
-
-
+20/10/2021 22:08
+{anki} Updated IM2 Deck to include Case 3: Hematuria part 2 & 3.
+{anki} Updated Alimentary Spotter Deck to include P5: Esophageal and gastric pathologies.
+---
 19/10/2021 19:47
 {anki} Updated Uro-reproductive deck to include L12
 ---
