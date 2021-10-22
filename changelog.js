@@ -34,6 +34,17 @@
 
 
 var changelogText = `
+
+
+
+22/10/2021 22:25
+{summary} Added L20 alimentary system summary (bacteriology)
+{summary} Added L13 alimentary system summary (pharmacology)
+{summary} Fixed L19 alimentary system summary (bacteriology) having the explanation for the pathogenesis of EPEC being wrongly placed under ETEC
+{summary} Fixed L5 clinical nutrition summary (minerals): trace elements: Mg -> Mn (Mg is not a trace element according to the chart)
+{summary} Renamed previous L13 alimentary system summary to L14 (development of the midgut, I wrote it before as L13, it's supposed to be L14)
+{summary} Rename previous P5 uro-reproductive system summary to P6 (pathology, I wrote it before as P5, it's supposed to be P6)
+---
 20/10/2021 22:08
 {anki} Updated IM2 Deck to include Case 3: Hematuria part 2 & 3.
 {anki} Updated Alimentary Spotter Deck to include P5: Esophageal and gastric pathologies.
