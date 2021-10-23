@@ -37,6 +37,10 @@ var changelogText = `
 
 
 
+23/10/2021 19:00
+{summary} Added L13 uro-reproductive system summary (immunology). Apparently I forgot to add it? sorry about that.
+{summary} Updated C2P1 integrated module (abdominal pain) to include the two images on referred pain location that Dr. Adhari gave instead of the previous ones (these ones will probably be the ones we will be asked on).
+---
 22/10/2021 22:25
 {summary} Added L20 alimentary system summary (bacteriology)
 {summary} Added L13 alimentary system summary (pharmacology)
