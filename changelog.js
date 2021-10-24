@@ -37,6 +37,10 @@ var changelogText = `
 
 
 
+24/10/2021 23:50
+{summary} Added L6 clinical nutrition summary.
+{summary} Added T6 uro-reproductive system summary (immunology).
+---
 23/10/2021 19:00
 {summary} Added L13 uro-reproductive system summary (immunology). Apparently I forgot to add it? sorry about that.
 {summary} Updated C2P1 integrated module (abdominal pain) to include the two images on referred pain location that Dr. Adhari gave instead of the previous ones (these ones will probably be the ones we will be asked on).
