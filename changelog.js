@@ -35,7 +35,10 @@
 
 var changelogText = `
 
-
+25/10/2021 19:46
+{anki} Updated Alimentary deck to incldue L21
+Please watch Sketchy Micro 2.1 --> 2.7 
+---
 25/10/2021 09:09
 {anki} Updated Alimentary deck to include L13 (Peptic Ulcer Pharmacology)
 ---
