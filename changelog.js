@@ -34,7 +34,9 @@
 
 
 var changelogText = `
-
+25/10/2021 23:49
+{anki} Updated Clinical Nutrition to include Minerals and Folic acid
+---
 25/10/2021 19:46
 {anki} Updated Alimentary deck to incldue L21
 Please watch Sketchy Micro 2.1 --> 2.7 
