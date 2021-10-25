@@ -36,7 +36,9 @@
 var changelogText = `
 
 
-
+25/10/2021 09:09
+{anki} Updated Alimentary deck to include L13 (Peptic Ulcer Pharmacology)
+---
 24/10/2021 23:50
 {summary} Added L6 clinical nutrition summary.
 {summary} Added T6 uro-reproductive system summary (immunology).
