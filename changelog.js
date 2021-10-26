@@ -34,6 +34,9 @@
 
 
 var changelogText = `
+26/10/2021 20:33
+{anki} Updated Uro-reproductive deck to include L13 (Sex hormones structure)
+---
 25/10/2021 23:49
 {anki} Updated Clinical Nutrition to include Minerals and Folic acid
 ---
