@@ -34,6 +34,11 @@
 
 
 var changelogText = `
+27/10/2021 17:00
+{anki} Updated Alimentary deck to include L22 and L23
+Thanks to Mufasa for making L22 cards
+Your help is greatly appreciated :)
+---
 26/10/2021 20:33
 {anki} Updated Uro-reproductive deck to include L13 (Sex hormones structure)
 ---
