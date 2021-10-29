@@ -34,6 +34,11 @@
 
 
 var changelogText = `
+
+
+29/10/2021 10:15
+{summary} Updated C2P3 integrated module 2 summary (abdominal pain) to make the very last point more specific: artery involved is the right gastroepiploic artery (branch of gastroduodenal arter), I accidentally wrote the artery involved is the right gastroduodenal artery.
+---
 27/10/2021 17:00
 {anki} Updated Alimentary deck to include L22 and L23
 Thanks to Mufasa for making L22 cards
