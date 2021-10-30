@@ -36,6 +36,22 @@
 var changelogText = `
 
 
+
+30/10/2021 14:25
+Sorry for the long delay for this week's summaries, took me too long to verify them.
+{website} More files are now cached, this should hopefully make the website load faster (I noticed that it is very slow to load on campus, hopefully this improves it).
+{website} Updated phase 2 semester 3 course and exam timetables.
+{summary} Added L21 alimentary system summary (bacteriology 3).
+{summary} Added L22 alimentary system summary (bacteriology 4).
+{summary} Added L23 alimentary system summary (development of hindgut).
+{summary} Added T7 alimentary system summary (bacteriology tutorial).
+{summary} Added L15 uro-reproductive system summary (reproductive hormones).
+{summary} Added L16 uro-reproductive system summary (pregnancy).
+{summary} Added T8 uro-reproductive system summary (chronic renal failure).
+{summary} Added C3P4 integrated module 2 summary (hematuria, a few extra notes, may not be that important).
+{summary} Fixed the numbering for the uro-reproductive tutorials: urine cytology is T5, acid-base is T6, immunopathology is T7 (numbering used to be incorrect).
+{summary} Silly update: C3P2 and C3P3 integrated module 2 summaries are now purple (red is for uro, not integrated).
+---
 29/10/2021 10:15
 {summary} Updated C2P3 integrated module 2 summary (abdominal pain) to make the very last point more specific: artery involved is the right gastroepiploic artery (branch of gastroduodenal arter), I accidentally wrote the artery involved is the right gastroduodenal artery.
 ---
@@ -218,231 +234,6 @@ The deck contains cadaver pictures, sketches from netter's, X-rays and pictures 
 {anki} Updated Alimentary deck to include tags: BileANDBilirubuin & Hernias
 {anki} Updated Clinical Nutrition deck to include T03
 {anki} Please watch BnB's Hernias module and BnB's Bile and Bilirubin modules to do the cards
----
-30/09/2021 23:37
-{anki} Updated Alimentary deck to include L12
----
-30/09/2021 15:44
-{anki} Updated Uro-reproductive deck to include Lecture 08
-{anki} Updated Alimentary deck to include Lecture 11
----
-29/09/2021 21:00
-{summary} Added T2 uro-reproductive summary (concentration of urine).
-{summary} Fixed T2 alimentary summary (GERD) being in the wrong course (I accidentally put it in uro-reproductive system).
----
-29/09/2021 00:50
-{summary} Added L11 alimentary system summary.
-{summary} Added L8 uro-reproductive system summary.
-{summary} Added T2 alimentary system summary (GERD).
-{summary} Added C2P2 integrated module summary. I wrote a long disclaimer and a call for help in this summary, please read it as I was not able to pick up everything the instructor said.
----
-27/09/2021 21:20
-{summary} Added L10 alimentary system summary.
----
-27/09/2021 19:55
-{anki} Updated Uro-reproductive deck to include L07
-{anki} Fixed Taging on L10 Alimentary deck
----
-27/09/2021 17:27
-{anki} Updated Alimentary deck to include L10
----
-27/09/2021 10:20
-{summary} Added L7 uro-reproductive system summary.
----
-27/09/2021 00:30
-{summary} Added C2P1 integrated module 2 summary. Includes a table and a nice picture of the location of referred visceral pain.
----
-26/09/2021 23:45
-{summary} Added L3 clinical nutrition summary.
-{summary} Added T2 clinical nutrition summary (lacks notes from the session; seemed very low-yield).
----
-26/09/2021 20:21
-{anki} Updated Uro-reproductive to include L06
-They are all under PhysioAdditional tag.
-Suspend all cards and select the ones you want to keep
-If you wish to study the additional physiology please refer to BRS physiology renal chapter (I - VII with some cards from IX)
----
-26/09/2021 19:30
-{anki} Updated Clinical Nutrition to include L03
----
-25/09/2021 14:30
-{summary} Added C1P4 integrated module 2 summary.
-{summary} Added a missing note for the C1P1 integrated module 2 summary on central vs peripheral causes of vomiting.
-{summary} Yesterday, a summary on iRAT reading material for case 2 integrated module 2 by Ahmed Al-Ghaithi was added.
----
-25/09/2021 02:00
-{anki} Added Integrated Module II flashcards for Case 1: Vomiting
----
-25/09/2021 00:06
-{anki} Updated Alimentary System to include L09.
----
-23/09/2021 08:20
-{summary} Added L9 alimentary system summary.
----
-22/09/2021 23:45
-{summary} Updated C1P3 integrated module 2 summary to include a missing note on the plantar test result in children.
-{summary} Updated L6 uro-reproductive system summary to include a missing note on carbonic acid being a result of aerobic respiration of glucose.
----
-22/09/2021 19:15
-{summary} Added P3 uro-reproductive system summary (histology, half a page containing all images fully-labelled).
-{summary} Added P4 alimentary system summary (histology of the female reproductive system).
-{summary} Added C1P3 integrated module 2 summary (includes a summary of cranial nerves and extraocular muscles (required for exams)).
----
-21/09/2021 23:27
-{anki} Updated Alimentary Sytem to include L08
----
-21/09/2021 21:00
-{summary} Added L8 alimentary system summary.
----
-21/09/2021 16:00
-{anki} Updated Uro-reproductive to include Additional Physiology Concepts.
-Those cards include L7 (Acid-Base) Lecture.
-What I recommend is to suspend all cards with this tag and unsuspend the cards you want/need accordingly.
-To study those cards please refer to:
-1. BRS physiology (Costanzo) (I, II, III, IX Renal chapters)
-2. BnB Renal physiology modules 1 & 2
----
-21/09/2021
-{summary} Added L6 uro-reproductive system summary.
----
-20/09/2021 23:15
-{summary} Added L7 alimentary system summary.
-{summary} Added L5 uro-reproductive system summary.
-{summary} Updated L2 clinical nutrition summary to include some missing notes.
----
-20/09/2021 20:13
-{anki} Updated Uro-reproductive deck to include L05
----
-19/09/2021 20:41
-{anki} Updated Clinical Nutrition deck to include L02
----
-19/09/2021 20:25
-{summary} Added L2 Clinical Nutrition summary.
----
-19/09/2021 18:43
-{anki} Updated Alimentary deck to include L07
-{anki} Added Yamamah's deck to the same folder
----
-19/09/2021 07:30
-{summary} P2 Added uro-reproductive system summary (histology). Half a page of all images from the slides fully labelled. Highly recommended for studying.
----
-18/09/2021 23:11
-{anki} Updated Clinical Nutrition deck to include Tutorial 01 cards
----
-18/09/2021 19:10
-{summary} Added an alimentary system summary by Ahmed Al-Ghaithi covering the epithelium lining of all parts of the GIT (found in "Extra Notes")
----
-18/09/2021 18:30
-{summary} Updated all week 2 summaries to include some extra missing notes and correct some mistakes.
----
-18/09/2021 15:17
-{anki} Updated Uro-reproductive system to include additional supplementary cards for L04
----
-18/09/2021 12:54
-{anki} Updated Alimentary deck to include Tutorial 01.
-Note most cards are not NOT mine and they may cover concepts beyond what's expected at this level.
----
-17/09/2021 11:00
-{summary} Added T1 clinical nutrition summary.
-{summary} Added C1P2 integrated module 2 summary.
----
-16/09/2021 20:30
-{summary} Added L6 alimentary system summary. I will add the rest of Thursday's summaries tomorrow hopefully.
-{summary} Renamed and moved the alimentary system histology summary from P1 to P3 (it's technically the third practical).
----
-15/09/2021 19:12
-{anki} Updated Alimentary deck to include L6
----
-15/09/2021 15:00
-{anki} Updated Uro-reproductive deck to include L4
----
-15/09/2021 09:30
-{summary} Added P1 alimentary summary (histology). Has all the images labelled. Highly recommended you use this summary.
----
-15/09/2021 00:05
-{summary} Added L5 alimentary system summary.
-{summary} Added L4 uro-reproductive system summary.
-{summary} Added C1P1 integrated module 2 summary.
-{summary} Added T1 alimentary system summary (will be updated once slides are released).
-To clear up confusion:
-I will only cover 1. Literally everything, even tutorials and practicals, unlike some people ;)
-- Jihad
----
-14/09/2021 18:54
-{anki} Updated Alimentary deck to include L5
-To clear up confusion:
-I will only cover 1. The alimentary system 2. The uroreproductive system 3. Clinical Nutrition
-Other courses MAY BE covered by other colleagues 
-- Husain
----
-13/09/2021 20:40
-{summary} Added L3 uro-reproductive system summary.
-{summary} Added T1 uro-reproductive system summary.
-{summary} Added L4 alimentary system summary.
----
-13/09/2021 17:38
-{anki} Updated Uro-reproductive deck to include L3
----
-12/09/2021 18:55
-{website} {drive} Added a quick redirect url: <a href="https://drive.golden-drive.net/">https://drive.golden-drive.net/</a> now redirects to the Google Drive folder.
----
-12/09/2021 18:44
-{anki} Updated Alimentary deck to include L4
----
-12/09/2021 17:45
-{summary} Added L1 clinical nutrition summary.
-{summary} Added P1 uro-reprodutive system summary (1 page with all unique histology images fully labelled).
-{website} Added molecular, integrated module 2 and clinical nutrition course timetables.
-{website} Updated exam timetables.
----
-12/09/2021 15:52
-{anki} Updated Clinical Nutrition deck to include L1A (Rest of the lecture will be covered in the coming weeks)
----
-11/09/2021 16:50
-{website} Fixed a problem that occured for some people who accessed the website this morning during development (they became unable to navigate).
----
-11/09/2021 12:15
-{website} New changelogs will now show up with a "New" badge for convenience (at first all changelog notes will have that, next refresh will reset them).
-{website} Added custom badges to changelogs to indicate the type of changelog edit (anki, drive, summary, website).
-{website} Added course timetables for RIP, SFR, hospital, uro-reproductive, and alimentary system.
-{website} Updated exam timetables for RIP, SFR, hospital, growth, and uro-reproductive system (dates are not confirmed).
-{summary} Updated L1, L2 and L3 alimentary system summaries to fix a few mistakes and add some missing notes.
-{drive} Added molecular biology flashcards folder/page.
----
-10/09/2021 15:11
-{anki} Updated Alimentary deck to include L3
----
-10/09/2021 12:12
-{anki} Updated Alimentary deck to incldue L1 and L2
----
-09/09/2021 21:00
-{summary} Added L1, L2 and L3 alimentary system summaries. Highly recommended that you use them as the slides are way too disorganised.
-{summary} Fixed a mistake in L2 uro-reproductive system summary: *Accessory sex glands* produce most of semen; not "bulbourethral glands".
-{summary} Updated L1 and L2 uro-reproductive system summaries to fix the highlighting.
----
-07/09/2021 11:40
-{summary} Added L2 uro-reproductive system summary with new fancy highlights.
-{summary} Updated L1 uro-reproductive system summary to include the new highlights.
----
-07/09/2021 11:08
-{anki} Uro-reproductive deck now includes L2.
----
-06/09/2021 10:30
-{summary} Added L1 uro-reproductive system summary. From now on, summaries will be exported at a higher resolution.
-{anki} Uro-reproductive system flashcards deck now includes L1.
-{website} Fixed SFR flashcards page mistakenly directing to the notes page (now it's showing the right page).
----
-05/09/2021 22:00
-{website} Added course timetable for "Phase 2 Semester 3 All Courses". Please wait until all course timetables are given so that we can add them to the website.
----
-05/09/2021 12:30
-{website} Fixed semester 3 student timetable.
-{website} Renamed "Recommendations" to "Study Tips".
----
-05/09/2021 10:20
-{website} Linked a new book (Clinically Oriented Anatomy).
-{website} Added the course timetable for "Phase 2 Semester 1 All Courses" and for Growth and Development.
-{website} Added exam times for Growth and Development. Please wait until other exam times are announced so that we can add them to the website.
 
 
 
