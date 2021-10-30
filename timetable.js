@@ -35,10 +35,8 @@ p2s1|Hospital SPSS Practical|28/11/2021|12:00|50 minutes
 p2s1|SFR OSPE|13/12/2021|13:00|3 hours, 13% weightage
 p2s1|Growth Final|27/12/2021|00:00|Time not confirmed
 
-p2s3|Uro-reproductive ICA1|12/10/2021|09:00|No extra information
-p2s3|Alimentary ICA1|17/10/2021|08:00|No extra information
-p2s3|Clinical Nutrition ICA|28/10/2021|00:00|Time not specified
-p2s3|Integrated II ICA|01/11/2021|00:00|Time not specified
+p2s3|Integrated II ICA|01/11/2021|09:00|No extra information
+p2s3|Clinical Nutrition ICA|04/10/2021|09:00|No extra information
 p2s3|Uro-reproductive ICA2|14/11/2021|09:00|1 hour
 p2s3|Alimentary ICA2|21/11/2021|09:00|1 hour
 p2s3|Uro-reproductive Spotter|05/12/2021|10:00|No extra information
