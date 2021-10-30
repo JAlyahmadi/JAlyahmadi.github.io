@@ -36,7 +36,9 @@
 var changelogText = `
 
 
-
+31/10/2021 00:00
+{summary} Added T5 clinical nutrition summary (folic acid deficiency). This concludes all summaries for the content of the ICA.
+---
 30/10/2021 14:25
 Sorry for the long delay for this week's summaries, took me too long to verify them.
 {website} More files are now cached, this should hopefully make the website load faster (I noticed that it is very slow to load on campus, hopefully this improves it).
