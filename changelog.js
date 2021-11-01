@@ -36,6 +36,11 @@
 var changelogText = `
 
 
+
+01/11/2021 20:10
+{summary} Added L25 alimentary system summary (pharmacology).
+{summary} Added L17 uro-reproductive system summary (pharmacology).
+---
 31/10/2021 00:00
 {summary} Added T5 clinical nutrition summary (folic acid deficiency). This concludes all summaries for the content of the ICA.
 ---
