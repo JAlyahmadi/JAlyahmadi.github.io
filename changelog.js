@@ -36,7 +36,9 @@
 var changelogText = `
 
 
-
+05/11/2021 17:06
+{anki} Updated Uro-reproductive deck to include L14 and L15
+---
 02/11/2021 23:55
 {summary} Added L5.5 clinical nutrition summary (trace minerals). It's the same as the one on moodle, but done in my own summary-like style, and compressed to 2 pages.
 {anki} Alimentary system spotter deck now includes practical 6.
