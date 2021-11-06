@@ -36,7 +36,9 @@
 var changelogText = `
 
 
-
+06/11/2021 18:09
+{anki} Updated Alimentary deck to include L25
+---
 06/11/2021 16:50
 {summary} Added L15 alimentary system summary (parasitology).
 {summary} Added L24 alimentary system summary (physiology).
