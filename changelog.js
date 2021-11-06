@@ -35,6 +35,25 @@
 
 var changelogText = `
 
+
+
+06/11/2021 16:50
+{summary} Added L15 alimentary system summary (parasitology).
+{summary} Added L24 alimentary system summary (physiology).
+{summary} Added L25 alimentary system summary (pathology).
+{summary} Added L27 alimentary system summary (diverticular diseases). 1 page summary that includes both the slides content and the mandatory reading material.
+{summary} Added T9 alimentary system summary (IBS).
+{summary} Added P2 alimentary system summary (gross anatomy 2 practical). So far does not include x-rays, but I might add it in the future if I find time for it.
+{summary} Added P7 alimentary system summary (bacteriology practical).
+{summary} Added L18 uro-reproductive system summary (pharmacology).
+{summary} Added T9 uro-reproductive system summary (acute renal failure).
+{summary} Added T10 uro-reproductive system summary (anatomy). I think it includes 99% of what the doctor said during the tutorial. I did not include all images, so go through the images in the slides if you want to.
+{summary} Added L7 clinical nutrition summary (nutrition during pregnancy).
+{summary} Updated L3 clinical nutrition summary to include a missing note on DEXA not reliable for really obese people.
+{summary} Updated L5 clinical nutrition summary to include missing notes on the role of magnesium, and the water chlorination thing.
+{summary} Relabelled the alimentary system summary on treatment of diarrhea and constipation from L25 to L26.
+{summary} Relabelled the clinical nutrition summary on life cycle nutrition from L6 to L8.
+---
 05/11/2021 22:40
 {anki} Updated Alimenatry deck to include L24
 ---
