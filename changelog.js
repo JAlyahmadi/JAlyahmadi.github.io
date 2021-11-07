@@ -34,8 +34,11 @@
 
 
 var changelogText = `
-
-
+07/11/2021 8:54
+{anki} Updated Uro-reproductive Spotter Deck to include P5: Gross Anatomy 2
+{anki} Updated IM2 Deck to include Case 4: Faliure To Thrive
+{anki} Added OSCE deck for IM2 includes SL3
+---
 06/11/2021 18:09
 {anki} Updated Alimentary deck to include L25
 ---
