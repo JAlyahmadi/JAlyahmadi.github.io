@@ -36,7 +36,9 @@
 var changelogText = `
 
 
-
+07/11/2021 22:48
+{anki} Updated Uro-reproductive deck to include T10 Anatomy
+---
 07/11/2021 22:05
 {summary} Added C4P1 integrated module 2 summary (FTT).
 {summary} Added C4P2 integrated module 2 summary (FTT).
