@@ -34,6 +34,11 @@
 
 
 var changelogText = `
+
+
+07/11/2021 19:35
+{anki} Updated Uro-reproductive deck to include L16
+---
 07/11/2021 8:54
 {anki} Updated Uro-reproductive Spotter Deck to include P5: Gross Anatomy 2
 {anki} Updated IM2 Deck to include Case 4: Faliure To Thrive
