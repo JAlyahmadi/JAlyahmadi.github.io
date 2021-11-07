@@ -36,6 +36,12 @@
 var changelogText = `
 
 
+
+07/11/2021 22:05
+{summary} Added C4P1 integrated module 2 summary (FTT).
+{summary} Added C4P2 integrated module 2 summary (FTT).
+{summary} Updated T10 uro-reproductive system summary to fix a typo: prostate "anal zone" -> "inner zone".
+---
 07/11/2021 19:35
 {anki} Updated Uro-reproductive deck to include L16
 ---
