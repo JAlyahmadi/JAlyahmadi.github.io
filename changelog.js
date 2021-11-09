@@ -37,6 +37,10 @@ var changelogText = `
 
 
 
+10/11/2021 00:05
+{summary} Added L20 uro-reproductive system summary (pathology).
+{summary} Added T11 uro-reproductive system summary (physiology).
+---
 08/11/2021 22:55
 {summary} Added L19 uro-reproductive system summary (physiology).
 {summary} Added L28 alementary system summary (immunology). I highly recommend you use this summary. It has 100% of the slides content, and (I think) 100% of the things the doctor said in the recording (which is a lot).
