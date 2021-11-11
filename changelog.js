@@ -35,7 +35,10 @@
 
 var changelogText = `
 
-
+11/11/2021 12:09
+{anki} Updated Uro-reproductive deck to include L16-18
+{anki} Updated Alimentary deck to include L27 and L28
+---
 10/11/2021 23:30
 {summary} Added L29 alimentary system summary (pathology).
 ---
