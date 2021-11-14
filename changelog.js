@@ -42,6 +42,7 @@ var changelogText = `
 {summary} Added L8 clinical nutrition summary.
 {summary} Added L10 clinical nutrition summary.
 {summary} Added C5P1 integrated module 2 summary (common diseases of pregnancy).
+{summary} Updated L7 clinical nutrition summary to include a few extra notes from the recording.
 {summary} Fixed the numbering and titles of two clinical nutrition summaries.
 ---
 14/11/2021 13:39
