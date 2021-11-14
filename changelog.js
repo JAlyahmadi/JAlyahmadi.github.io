@@ -34,6 +34,16 @@
 
 
 var changelogText = `
+
+
+
+14/11/2021 23:15
+{summary} Added L30 alimentary system summary (pathology).
+{summary} Added L8 clinical nutrition summary.
+{summary} Added L10 clinical nutrition summary.
+{summary} Added C5P1 integrated module 2 summary (common diseases of pregnancy).
+{summary} Fixed the numbering and titles of two clinical nutrition summaries.
+---
 14/11/2021 13:39
 {anki} Updated Alimentary deck to include L29 (Thanks to Golden Drive CEO for his contribution)
 ---
