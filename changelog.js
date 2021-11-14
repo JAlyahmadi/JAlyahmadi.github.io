@@ -34,7 +34,9 @@
 
 
 var changelogText = `
-
+14/11/2021 13:39
+{anki} Updated Alimentary deck to include L29 (Thanks to Golden Drive CEO for his contribution)
+---
 11/11/2021 12:09
 {anki} Updated Uro-reproductive deck to include L16-18
 {anki} Updated Alimentary deck to include L27 and L28
