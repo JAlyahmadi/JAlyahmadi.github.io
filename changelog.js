@@ -36,7 +36,9 @@
 var changelogText = `
 
 
-
+15/11/2021 19:32
+{anki} Updated Uro-reproductive deck to include L19 (Breast Pathology Lecture)
+---
 14/11/2021 23:15
 {summary} Added L30 alimentary system summary (pathology).
 {summary} Added L8 clinical nutrition summary.
