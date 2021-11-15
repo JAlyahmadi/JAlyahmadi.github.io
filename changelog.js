@@ -36,6 +36,12 @@
 var changelogText = `
 
 
+
+15/11/2021 23:15
+{summary} Added L31 alimentary system summary (pathology).
+{summary} Added L21 uro-reproductive system summary (pathology).
+{summary} Added C5P2 integrated module 2 summary (common diseases of pregnancy).
+---
 15/11/2021 19:32
 {anki} Updated Uro-reproductive deck to include L19 (Breast Pathology Lecture)
 ---
