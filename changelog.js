@@ -36,7 +36,9 @@
 var changelogText = `
 
 
-
+16/11/2021 21:42
+{anki} Updated Alimentary deck to include L31 and L32
+---
 15/11/2021 23:15
 {summary} Added L31 alimentary system summary (pathology).
 {summary} Added L21 uro-reproductive system summary (pathology).
