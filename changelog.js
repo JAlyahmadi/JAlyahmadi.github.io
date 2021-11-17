@@ -34,6 +34,17 @@
 
 
 var changelogText = `
+
+
+
+17/11/2021 19:00
+{summary} Added L32 alimentary system summary (embryology).
+{summary} Added T3 alimentary system summary (gastroparesis).
+{summary} Added T8 alimentary system summary (non-infectious diarrhea and constipation).
+{summary} Added L22 uro-reproductive system summary (pathology).
+{summary} Added T13 uro-reproductive system summary (reproductive hormones).
+{summary} Added C5P3 integrated module 2 summary (common diseases of pregnancy).
+---
 17/11/2021 7:16
 {anki} Updated Integrated Module 2 Deck to include Case 5: Preeclampsia & GDM.
 ---
