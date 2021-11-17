@@ -34,8 +34,9 @@
 
 
 var changelogText = `
-
-
+17/11/2021 7:16
+{anki} Updated Integrated Module 2 Deck to include Case 5: Preeclampsia & GDM.
+---
 16/11/2021 21:42
 {anki} Updated Alimentary deck to include L31 and L32
 ---
