@@ -34,9 +34,9 @@
 
 
 var changelogText = `
-
-
-
+18/11/2021 22:49
+{anki} Updated Alimentary Spotter Deck to include P7: Parasites & P8: Colonic lesions
+---
 17/11/2021 19:00
 {summary} Added L32 alimentary system summary (embryology).
 {summary} Added T3 alimentary system summary (gastroparesis).
