@@ -34,6 +34,9 @@
 
 
 var changelogText = `
+20/11/2021 00:01
+{anki} Updated Integrated Module Deck to include missing information for Case 5: Common Diseases of Pregnancy.
+---
 18/11/2021 22:49
 {anki} Updated Alimentary Spotter Deck to include P7: Parasites & P8: Colonic lesions
 ---
