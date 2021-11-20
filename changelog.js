@@ -34,6 +34,9 @@
 
 
 var changelogText = `
+20/11/2021 19:14
+{anki} Updated Uro-reproductive Spotter Deck to include P7: Diseases of Female Genital Tract.
+---
 20/11/2021 00:01
 {anki} Updated Integrated Module 2 Deck to include missing information for Case 5: Common Diseases of Pregnancy.
 ---
