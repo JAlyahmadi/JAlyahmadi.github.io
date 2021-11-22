@@ -34,6 +34,12 @@
 
 
 var changelogText = `
+22/11/2021 13:00
+{anki} Updated Alimentary deck to include L33
+{anki} Updated Uro-reproductive deck to include L19 and L20 (ONLY ANKING CARDS)
+I may or may not make cards for those two lectures since most is actually covered by Anking cards
+Please Watch Pathoma to do the cards with ease
+---
 20/11/2021 19:14
 {anki} Updated Uro-reproductive Spotter Deck to include P7: Diseases of Female Genital Tract.
 ---
