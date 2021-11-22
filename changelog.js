@@ -34,6 +34,9 @@
 
 
 var changelogText = `
+22/11/2021 19:46
+{anki} Updated Uro-reproductive deck to include L21
+---
 22/11/2021 13:00
 {anki} Updated Alimentary deck to include L33
 {anki} Updated Uro-reproductive deck to include L19 and L20 (ONLY ANKING CARDS)
