@@ -34,6 +34,9 @@
 
 
 var changelogText = `
+23/11/2021 20:13
+{anki} Updated Alimentary deck to include L34
+---
 23/11/2021 19:51
 {anki} Updated Uro-reproductive Spotter Deck to include P8: Breast & Placenta Pathology.
 ---
