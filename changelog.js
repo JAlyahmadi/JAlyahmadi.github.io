@@ -34,6 +34,9 @@
 
 
 var changelogText = `
+23/11/2021 19:51
+{anki} Updated Uro-reproductive Spotter Deck to include P8: Breast & Placenta Pathology.
+---
 22/11/2021 19:46
 {anki} Updated Uro-reproductive deck to include L21
 ---
