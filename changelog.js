@@ -34,6 +34,21 @@
 
 
 var changelogText = `
+
+
+
+24/11/2021 23:10
+{summary} Added L33 alimentary system summary (physiology).
+{summary} Added L34 alimentary system summary (physiology).
+{summary} Added L35 alimentary system summary (physiology).
+{summary} Added P6 alimentary system summary (parasites).
+{summary} Added P8 alimentary system summary (pathology).
+{summary} Added T11 alimentary system summary (GI bleeding).
+{summary} Added L10 uro-reproductive system summary (pharmacology; renal handling of drugs).
+{summary} Added L24 uro-reproductive system summary (microbiology).
+{summary} Added L10 clinical nutrition summary (enteral feeding).
+{website} Added a new section under research project for examples of student presentations by previous batches.
+---
 23/11/2021 20:13
 {anki} Updated Alimentary deck to include L34
 ---
