@@ -138,7 +138,7 @@ var folderIDs = {
       ["X-rays", "13OFLOdwDTtoTh__dycbwJxSRhlCpJ8IJ"]
     ],
     notes: "1-Mps0wDVmMuYgpVbz3FNMx-rpK1dLIKK",
-    flashcards: "1-Mps0wDVmMuYgpVbz3FNMx-rpK1dLIKK",
+    flashcards: "10zT3G2EVtU8U3ZQSEDQNWImG-8Gm_F7j",
     qbank: [
       ["ICA 1", "1Itlwa8r1l-L0P58ri0PZbkvElYSQ-G-L"],
       ["ICA 2", "1-udqUQSYBkm8zHN8BDFJEX45Ot6kBTvj"],
@@ -180,6 +180,7 @@ var folderIDs = {
     ],
     practicals: "1HvXu49b03xwM8VgIPMW4HeY1IUgbsWSG",
     notes: "1QqJvTISJ5GmWgHnMaWr-6hit6MYcKitL",
+    flashcards: "1INLp_6q1fdAg49YSZfVP7D8HcaQIGN43",
     qbank: [
       ["Tutorial Quizzes", "1BYuCC6f8J5rX97LJoSmT6T5gcHE6iBwd"],
       ["ICA 1", "1LNx3VFmOcXol_fqf_SBSdmAZG8rEF1e-"],
@@ -375,9 +376,41 @@ var folderIDs = {
 
   alimentary: {
     lectures: "1X6x5mIg1xeV3uhg-6w_37iKgHSrWOYcf",
-    tutorials: "12OPFYlxWl9P-z5sby7GunLhpXGT20O4-",
-    practicals: "14Mv51itVNxCBLwYK-BAYSdtsPiCX-xUV",
-    notes: "1D8aK7LcUPxyu2kvpCLjLpBa59WTjA_cg",
+    tutorials: [
+      ["Tutorial 1", "1A3N7QNRkIX5DC04Kb2HIUAeqrKkdG1bv"],
+      ["Tutorial 2", "1elUL6id-_7_8FLdU9_MIXIJgLaQlcz_L"],
+      ["Tutorial 3", "1FXtpXHWTodUlr2Gw-dSB4Tk-Ctqb5uRh"],
+      ["Tutorial 4", "1oWI1eN_K-1ATadB_LgSlGRx0BWXhIz6X"],
+      ["Tutorial 5", "1Hpfizi673ze_oy4rq7FH19aa05v3DXfn"],
+      ["Tutorial 6", "1Iz55g_HTK6PDzTplB5iLAV3a7Lh6RLDN"],
+      ["Tutorial 7", "15DhSIKZ0jJjiFTw4x1N3fu8cGtlqO2JZ"],
+      ["Tutorial 8", "1zZH7nLC4O5poERvi301TDISL5gu3vnjU"],
+      ["Tutorial 9", "1UQI6XCK0vPlgFT5B_rHJEq8WzwY1gD5K"],
+      ["Tutorial 10", "1UzGEWbuGMNXtPpK70COutyWF1yru91s5"],
+      ["Tutorial 11", "1xsACAnrPJBfW9FXy_0zNKpR6F4lF33sl"],
+      ["Tutorial 12", "1b7tC0jVePbZBfdIUOOxKUnTPTSy2gLYQ"],
+      ["Tutorial 13", "1lTE-qGFYr7uU1Ak34mM5X0fEBwj65Fvt"],
+      ["Tutorial 14", "1I5BAW-zjmZmge_8-cU7Uw4mMfJnrYJWU"],
+      ["Tutorial 15", "1qOfEtpj-duKNf8cX5Tv2jn0VgyNMuniV"],
+      ["Tutorial 16", "1dTvELgzmrJZp-SrxjxbxXuecP4IIssRU"]
+    ],
+    practicals: [
+      ["Practical 1", "1dvkViAWkLQ7eavekH0qaNBim2lMMQ1jh"],
+      ["Practical 2", "1lx0izY8DeKgEgrBVSZbSNxxqC5d5m0np"],
+      ["Practical 3", "1uh9bIzbqzeaRwBYO3K9Kw-x-SFvrwvn-"],
+      ["Practical 4", "1gqvrhhMIEC_eIElnSaRc-akQxonPD6JE"],
+      ["Practical 5", "1L_UpJFJcArrKTYpy7-aFE5IYA8wh15CQ"],
+      ["Practical 6", "1JvncW3NU-e5fgDVTfqTCgOJtOYAbtMA2"],
+      ["Practical 7", "1anCoHTX9uNn80RQC9oH_C-pm-UtducLs"],
+      ["Practical 8", "1GyTXevz43b1OqZS8knHO_lBxPMtiFpg2"],
+      ["Practical 9", "1MOW9uSaibdCeLq124EPThtJOm826EulB"]
+    ],
+    notes: [
+      ["Bayan's Summaries", "19fWsvdVc3U2bcb6Nay_IcmyNoGngEZTa"],
+      ["Handwritten Notes", "1jPeGoYBPlMp1jcu3ZBX2TqxwES1useks"],
+      ["Jihad's Summaries", "1dKb92JDMiz_jR7VQQ0kPlhGoTtyQLM05"],
+      ["Extra Notes", "1r_H0K7M_xFQdkFPFxFr-J9zgPSLfOBaK"]
+    ],
     flashcards: "1Pggb_LSvqjZF7dAKzEtJ1WT9sWVBGLP_",
     qbank: [
       ["ICA 1", "14VihRnf43WZoOOuHc9jnZRqs6M6_5zeA"],
@@ -389,9 +422,38 @@ var folderIDs = {
   },
   uroreproductive: {
     lectures: "1k27RnnNbDkBb_M3Gg5VL-V4jY2jEBVe6",
-    tutorials: "1Vhg0uvTlQUL9nMi8tAtMIDuAhChuUY--",
-    practicals: "1BA6GEeyb1o9TGtsXmMXG630BlqjC7pWB",
-    notes: "14tFoenrKduRU_ZA3b5rT5sHKyLINxbkF",
+    tutorials: [
+      ["Tutorial 1", "1mSoVUUmzvo5xaHCBpgMkzdKTFGRXo9wK"],
+      ["Tutorial 2", "1g2wNWeUP3tjjWD-ghSZrlrHtWmKGiyCJ"],
+      ["Tutorial 3", "12eLu6PclMj1liO5IMiTnASKCr09nQeBp"],
+      ["Tutorial 4", "1Fi1ua9X87TWC_OmKNGPpnTkRK_KCVUu-"],
+      ["Tutorial 5", "1wDBRdbPWLSdwxZ8F9pPD8HZ22sqwS6nJ"],
+      ["Tutorial 6", "1LCT9x9OwvSrpsKnkgfanea-eiDIIxpXA"],
+      ["Tutorial 7", "1oRJ8KAaAdxWHWbcJrngBBZfaqWWDng76"],
+      ["Tutorial 8", "1j1BugAoP1L3xXOiEkDoPaOFZuUmAb7tQ"],
+      ["Tutorial 9", "1T_9bC-A3yIK0jUttYOEGYovbrIlzBNzl"],
+      ["Tutorial 10", "13VN4yoSGF8VurU6BRRB6TrXSV44Oh5LR"],
+      ["Tutorial 11", "1k2lFbxdfqbBGXhg_GNJxhDNtQcem-SyW"],
+      ["Tutorial 12", "1krypzhJcQHpxQlnwMFY_bAd8UzbINWFu"],
+      ["Tutorial 13", "1ZgtA3iygOZzD44urcpidoxmuRUVrNu9S"],
+      ["Tutorial 14", "1g75DUwKfaLki1fFmJ4V2U6JMPvNpv51b"]
+    ],
+    practicals: [
+      ["Practical 1", "1EMEY7ylg_9RWnT9dsTuuZVSKJgHmO_ri"],
+      ["Practical 2", "19eiBJO_RB768X6IlVhUJNpgi4wUFpqlR"],
+      ["Practical 3", "1ZxI5NMeWpN24rkBxjJv-wD5LHUT4Pev7"],
+      ["Practical 4", "1qwxOXmKz-v11apJDpXcUnc3ZYvk4s7BM"],
+      ["Practical 5", "1a2SFBKFPnWLOnhAcGhMeEcZ2Ak5aXf8E"],
+      ["Practical 6", "1lYqZMYyEM7BgBplyoomavGyF33p0Ahej"],
+      ["Practical 7", "12XV_KSblXb5SzwmJKHHGqxaAcfdktGCM"],
+      ["Practical 8", "172e9ontOkcv1q2s2hRsToWXEEsJjHQUK"],
+      ["Practical 9", "1OqEQ168VTLqkwuLjtS1OVjxnyJH-Ulnu"]
+    ],
+    notes: [
+      ["Bayan's Summaries", "1NtxVFYK3SctUhUDpy13l_Vis03Vuz7u6"],
+      ["Jihad's Summaries", "1BCr-_KXl71n-f959YmAsOSPlsf7BykaZ"],
+      ["Extra Notes", "1A7u7wW-RsspEIbUsMCQsA-JXsLC0YNA9"]
+    ],
     flashcards: "1_CK40DShEoazzVId36frxOr8z9Sp48tm",
     qbank: [
       ["ICA 1", "1m5Gujxp_kJvIuRTnG65gy-vRGyrNVVMO"],
@@ -402,10 +464,15 @@ var folderIDs = {
     ]
   },
   integrated2: {
-    lectures: "1Nrn3CfUghJ9oKx9VCIiOhwRy45gUfksK",
-    cases: "1mY9ZG-LFYV8LAICT1PLSZ-AbjlD3pR4d",
+    cases: [
+      ["Case 1: Vomiting", "161nEtILNmCPTRxfOn_h9niGb73gdP3Gr"],
+      ["Case 2: Abdominal Pain", "1nqW2UVcZUv-jJprbKRJQSj7vHNx7gbB5"],
+      ["Case 3: Hematuria", "1E9qZ-MSoxtyTk6es75vTYZfBx4rU_lzB"],
+      ["Case 4: Failure to Thrive", "1VTOXqN5NiEKP4E2mkNgdTaqqlTLE67pj"],
+      ["Case 5: Common Diseases of Pregnancy", "1PycmWG3nq_3tyublYlmAad3Q7pN1XhRg"],
+      ["Case 6: Weight Loss", "15zwMeTR7ZgtKbu3ZJGK7-shlV1Wj0Ewl"]
+    ],
     skillslab: "1NzfoDcGEP23ZO0JR1y-kAeBtrdCZnP_E",
-    notes: "1Yf9i14UCrvIwU6lGxn07lI7NGDq1PnCJ",
     flashcards: "1-Z4hexmytO_JibA-wBHyKefxz-ANgbwt",
     qbank: [
       ["Quizzes", "1PvjwNIMUWdbTRvRNJTCy_ythSxx7XEof"],
@@ -417,7 +484,27 @@ var folderIDs = {
   },
   nutrition: {
     lectures: "1cXB_5KVK_P-rMAaBSPewZcwDGjNlVW-c",
-    notes: "1BK-TchCjKNnZCt4k63xEEBrRcoF0TBUJ",
+    tutorials: [
+      ["Tutorial 1", "1UhGi4g4i3UM04Ft2yi2pkqTVsOn_tYeP"],
+      ["Tutorial 2", "1fbY1bTJqEemF3ToslSWevt6XJIIkv4aF"],
+      ["Tutorial 3", "1E13NZz9OSKtOTqi5Ka4j6A4jZYkmnqz3"],
+      ["Tutorial 4", "1RkiAmjaLJUG2JxNg-w2jgJ56oOc9tV-9"],
+      ["Tutorial 5", "1S7WJKdj9DauU1u64GjIYVHdOteMVPilE"],
+      ["Tutorial 6", "1XrfAEofnE52GDPJx-hzKp8Rhga5A-5UB"],
+      ["Tutorial 7", "1KZ6gL9XqfRaeEGAlnNiBNxaalhj7BzGz"],
+      ["Tutorial 8", "1Cow8x3fP_V0qgtrI0tB50XzEJoarcTCa"],
+      ["Tutorial 9", "1ySeVYnUH9GQcEpzYn4W8CUrSt8Mizaw_"],
+      ["Tutorial 10", "1sp8BjO6pmoiiDTOx4uGZuDUDAdv7IK9j"],
+      ["Tutorial 11", "1rcDmi2fB8TThrRyHElgbbvYVafRvuTvp"],
+      ["Tutorial 12", "1oFtegF08gTgaSoEoONuXXKswQM_6pG1O"],
+      ["Tutorial 13", "1ZPUYCprAQUgm5nzrLgG3lUCGHKe-gtXr"]
+    ],
+    notes: [
+      ["Bayan's Summaries", "10FSHWaiHgXzbmWNasyda8JfuXBGrfNh1"],
+      ["Jihad's Summaries", "1lm7swAW1Omu5-USpNgrjjx6YQ0rAJzuI"],
+      ["Extra Notes", "19EspxwLd0y9Iz2ug9wwrtpFYQAarIY9e"]
+    ],
+    flashcards: "1n-YhpCTU5tipHrK3ZZyvYXAa85g7w8pk",
     qbank: [
       ["ICA", "1RoZUxlWI0vrUiW-NokzIVCB_1mo5oDCo"],
       ["Final", "1qbNmWuBQH-uoavhx1b1hF9bd1O7iiN7d"],
