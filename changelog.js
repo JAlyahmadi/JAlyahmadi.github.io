@@ -36,7 +36,9 @@
 var changelogText = `
 
 
-
+29/11/2021 00:10
+{summary} Updated L24 uro-reproductive summary to fix a typo: Samples should be stored in the refrigerator at 4C, not 40C.
+---
 28/11/2021 19:35
 With this, all uro-reproductive practical summaries are up to date for the spotter except P9, which still hasn't been covered yet by the course.
 {summary} Added L26 alimentary system summary (physiology).
