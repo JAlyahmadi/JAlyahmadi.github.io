@@ -37,6 +37,17 @@ var changelogText = `
 
 
 
+28/11/2021 19:35
+With this, all uro-reproductive practical summaries are up to date for the spotter except P9, which still hasn't been covered yet by the course.
+{summary} Added L26 alimentary system summary (physiology).
+{summary} Added T13 alimentary system summary (jaundice).
+{summary} Added P5 uro-reproductive system summary (gross anatomy 2).
+{summary} Added P8 uro-reproductive system summary (pathology).
+{summary} Added T12 uro-reproductive system summary (infertility).
+{summary} Updated P4 uro-reproductive summary to include a note recommending watching a clip of the video recording that is not covered by the summary (please read).
+{summary} Updated P3 uro-reproductive summary to include all mandatory slide images from the histology program required for the spotter (please re-download the summary if you already have it).
+{summary} Updated L24 uro-reproductive summary (microbiology) to include a few missing notes.
+---
 24/11/2021 23:10
 {summary} Added L33 alimentary system summary (physiology).
 {summary} Added L34 alimentary system summary (physiology).
