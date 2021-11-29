@@ -36,7 +36,9 @@
 var changelogText = `
 
 
-
+30/11/2021 02:09
+{anki} Updated Uro-reproductive deck to include L23
+---
 29/11/2021 23:20
 {summary} Added P7 uro-reproductive system summary (diseases of the female genital tract). Sorry I totally forgot to do this one, now all summaries are ready except for P9 (will cover it once we take the practical).
 ---
