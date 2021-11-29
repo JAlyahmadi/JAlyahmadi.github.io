@@ -35,7 +35,9 @@
 
 var changelogText = `
 
-
+29/11/2021 11:21
+{anki} Updated Alimentary deck to include L36
+---
 29/11/2021 00:10
 {summary} Updated L24 uro-reproductive summary to fix a typo: Samples should be stored in the refrigerator at 4C, not 40C.
 ---
