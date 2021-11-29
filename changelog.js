@@ -34,7 +34,9 @@
 
 
 var changelogText = `
-
+29/11/2021 17:00
+{anki} Updated the Uro-reproductive Spotter Deck to include the final practical P9: Bacterial infections of Uro-Genital Tract.
+---
 29/11/2021 11:21
 {anki} Updated Alimentary deck to include L36
 ---
