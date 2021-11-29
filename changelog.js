@@ -34,6 +34,12 @@
 
 
 var changelogText = `
+
+
+
+29/11/2021 23:20
+{summary} Added P7 uro-reproductive system summary (diseases of the female genital tract). Sorry I totally forgot to do this one, now all summaries are ready except for P9 (will cover it once we take the practical).
+---
 29/11/2021 17:00
 {anki} Updated the Uro-reproductive Spotter Deck to include the final practical P9: Bacterial infections of Uro-Genital Tract.
 ---
