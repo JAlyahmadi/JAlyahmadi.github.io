@@ -35,6 +35,9 @@
 
 var changelogText = `
 
+30/11/2021 23:45
+{anki} Updated Uroreproductive deck to include L24
+---
 30/11/2021 19:19
 {anki} Updated Alimentary deck to include L37
 ---
