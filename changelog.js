@@ -34,6 +34,9 @@
 
 
 var changelogText = `
+01/12/2021 22:18
+{anki} Updated Alimentary deck to include L39
+---
 01/12/2021 19:55
 {anki} Updated Alimentary deck to include L38
 ---
