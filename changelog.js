@@ -34,6 +34,9 @@
 
 
 var changelogText = `
+01/12/2021 22:49
+{anki} Updated Integrated Module 2 Deck to include Case 6: Weight Loss (Content from the ppt, will add more soon).
+---
 01/12/2021 22:18
 {anki} Updated Alimentary deck to include L39
 ---
