@@ -34,6 +34,17 @@
 
 
 var changelogText = `
+
+
+
+02/12/2021 13:50
+{summary} Added L37 alimentary system summary (virology).
+{summary} Added L38 alimentary system summary (pathology).
+{summary} Added L39 alimentary system summary (pathology).
+{summary} Added L25 uro-reproductive system summary (microbiology).
+{summary} Added L26 uro-reproductive system summary (microbiology).
+{summary} Added P9 uro-reproductive system summary (microbiology). With this, all summaries for all uro practicals are ready. I wish you good luck in the spotter.
+---
 01/12/2021 22:49
 {anki} Updated Integrated Module 2 Deck to include Case 6: Weight Loss (Content from the ppt, will add more soon).
 ---
