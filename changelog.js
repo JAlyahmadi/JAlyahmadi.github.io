@@ -37,6 +37,9 @@ var changelogText = `
 
 
 
+02/12/2021 19:50
+{summary} Updated P7 uro-reproductive summary to fix a small mistake: Station 6A Q3: Serous type, not mucinous type (but please check).
+---
 02/12/2021 13:50
 {summary} Added L37 alimentary system summary (virology).
 {summary} Added L38 alimentary system summary (pathology).
