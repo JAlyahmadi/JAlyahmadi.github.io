@@ -37,6 +37,10 @@ var changelogText = `
 
 
 
+02/12/2021 20:30
+{summary} Updated P6 uro-reproductive summary: Station 1: The abnormality is not on the left side. Lower pole of the kidney is actually the right side.
+{summary} Updated P8 uro-reproductive summary: Station 3: Atypical features are seen in the left image, not the right image.
+---
 02/12/2021 19:50
 {summary} Updated P7 uro-reproductive summary: Added a disclaimer for station 6A (there is a difference between the slides and the doctor's explanation, please verify).
 ---
