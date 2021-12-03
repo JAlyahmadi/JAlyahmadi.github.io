@@ -37,6 +37,9 @@ var changelogText = `
 
 
 
+03/12/2021 14:30
+{summary} Updated P9 uro-reproductive system summary: Case 4: Salmonella is mannitol+ and proteus is mannitol- (I wrote it the other way around). Also made a clarification note under case 8: The tutor did say that IgM FTA-ABS is the best test, even though ELISA is more sensitive.
+---
 02/12/2021 20:30
 {summary} Updated P6 uro-reproductive summary: Station 1: The abnormality is not on the left side. Lower pole of the kidney is actually the right side.
 {summary} Updated P8 uro-reproductive summary: Station 3: Atypical features are seen in the left image, not the right image.
