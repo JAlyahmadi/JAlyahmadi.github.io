@@ -37,6 +37,10 @@ var changelogText = `
 
 
 
+03/12/2021 14:50
+{summary} Updated P9 uro-reproductive system summary: Case 8: The screening tests are RPR and VDRL while the confirmatory tests are TPHA and probably also FTA-ABS. What I wrote before is that RPR is for screening and VDRL is for confirmation.
+Sorry for the repeated mistakes, I don't double-check my summaries when I write them. If you find anything else, please let me know so that I update the summaries.
+---
 03/12/2021 14:30
 {summary} Updated P9 uro-reproductive system summary: Case 4: Salmonella is mannitol+ and proteus is mannitol- (I wrote it the other way around). Also made a clarification note under case 8: The tutor did say that IgM FTA-ABS is the best test, even though ELISA is more sensitive.
 ---
