@@ -37,6 +37,9 @@ var changelogText = `
 
 
 
+03/12/2021 18:35
+{summary} Uploaded T10 alimentary system summary (immunology).
+---
 03/12/2021 14:50
 {summary} Updated P9 uro-reproductive system summary: Case 8: The screening tests are RPR and VDRL while the confirmatory tests are TPHA and probably also FTA-ABS. What I wrote before is that RPR is for screening and VDRL is for confirmation.
 Sorry for the repeated mistakes, I don't double-check my summaries when I write them. If you find anything else, please let me know so that I update the summaries.
