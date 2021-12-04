@@ -37,6 +37,10 @@ var changelogText = `
 
 
 
+04/12/2021 15:15
+{summary} Updated P3 uro-reproductive summary to fix a typo: FRS#19: I accidentally swapped between stratum compactum and stratum spongiosum.
+{summary} Updated P4 uro-reproductive summary to add a disclaimer: Although the tutor was referring to paranephric fat when explaining kidney ptosis, it should actually be perinephric fat depletion that causes that.
+---
 03/12/2021 18:35
 {summary} Uploaded T10 alimentary system summary (immunology).
 ---
