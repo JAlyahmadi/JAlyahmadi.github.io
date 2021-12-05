@@ -35,7 +35,9 @@
 
 var changelogText = `
 
-
+06/12/2021
+{anki} Updated Uro-reproductive system to include L25
+---
 05/12/2021 22:56
 {anki} Updated Alimentary system to include L40
 ---
