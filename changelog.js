@@ -34,6 +34,16 @@
 
 
 var changelogText = `
+
+
+06/12/2021 23:10
+{summary} Added SL1 integrated module 2 summary (abdominal pain skills lab summary).
+{summary} Added SL2 integrated module 2 summary (renal system skills lab summary). Slight modifications to the first section of the summary.
+{summary} Added SL3 integrated module 2 summary (failure to thrive skills lab summary).
+{summary} Added SL4 integrated module 2 summary (cardiovascular examination skills lab summary).
+Note: The skills lab summaries are based on the handouts given, but with a lot of detailed explanations and more relevant things that were taught to us during the sessions, so I recommend you study from those summaries instead of the handouts.
+The only exception is the failure to thrive summary; the only thing required from us is being able to plot into the graph, everything else is irrelevant according to the coordinator, but please confirm.
+---
 06/12/2021
 {anki} Updated Alimentary deck to include L41
 ---
