@@ -34,7 +34,9 @@
 
 
 var changelogText = `
-
+06/12/2021
+{anki} Updated Alimentary deck to include L41
+---
 06/12/2021
 {anki} Updated Uro-reproductive system to include L25
 ---
