@@ -36,6 +36,18 @@
 var changelogText = `
 
 
+
+08/12/2021 14:10
+{summary} Added P9 alimentary system summary (pathology of the liver). This wraps up all the alimentary system practical summaries.
+{summary} Updated P1 alimentary system summary (gross anatomy 1) to fix 2 mistakes: 3rd row rightmost image: common bile duct -> common hepatic duct. 4th row leftmost image: Fixed the labelling for internal vs external anal sphincter.
+{summary} Updated P5 alimentary system summary (lesions of the esophagus and stomach) to fix a mistake: station 5 question 1 should be based on gross appearance (polypoid, fungating, ulcerating, diffuse), not types of gastric carcinomas
+{summary} Added L40 alimentary system summary (physiology).
+{summary} Added L41 alimentary system summary (pharmacology).
+{summary} Added L42 alimentary system summary (pathology).
+{summary} Added L27 uro-reproductive system summary (virology).
+{summary} Added L28 uro-reproductive system summary (parasitology).
+This wraps up all alimentary system and uro-reproductive lecture summaries. I will try to finish the tutorials once I have the time. Good luck.
+---
 06/12/2021 23:10
 {summary} Added SL1 integrated module 2 summary (abdominal pain skills lab summary).
 {summary} Added SL2 integrated module 2 summary (renal system skills lab summary). Slight modifications to the first section of the summary.
