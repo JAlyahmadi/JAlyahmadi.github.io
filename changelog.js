@@ -34,9 +34,9 @@
 
 
 var changelogText = `
-
-
-
+08/12/2021 15:36
+{anki} Updated Alimentary Spotter Deck to include the final practical P9: Pathology of Lesions of the liver.
+---
 08/12/2021 14:10
 {summary} Added P9 alimentary system summary (pathology of the liver). This wraps up all the alimentary system practical summaries.
 {summary} Updated P1 alimentary system summary (gross anatomy 1) to fix 2 mistakes: 3rd row rightmost image: common bile duct -> common hepatic duct. 4th row leftmost image: Fixed the labelling for internal vs external anal sphincter.
