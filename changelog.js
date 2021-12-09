@@ -34,7 +34,7 @@
 
 
 var changelogText = `
-09/12/2021
+09/12/2021 22:55
 {anki} Updated Alimentary deck to include L42 which is the final lecture of this course
 {anki} Please Watch Pathoma's Exocrine Pancreas + Gallbladder pathology to do the cards
 {anki} Best of luck to you all in your finals :)
