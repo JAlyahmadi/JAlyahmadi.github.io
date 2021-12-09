@@ -34,6 +34,12 @@
 
 
 var changelogText = `
+09/12/2021
+{anki} Updated Alimentary deck to include L42 which is the final lecture of this course
+{anki} Please Watch Pathoma's Exocrine Pancreas + Gallbladder pathology to do the cards
+{anki} Best of luck to you all in your finals :)
+Husain
+---
 08/12/2021 15:36
 {anki} Updated Alimentary Spotter Deck to include the final practical P9: Pathology of Lesions of the liver.
 ---
