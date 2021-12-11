@@ -34,6 +34,12 @@
 
 
 var changelogText = `
+11/09/2021 17:50
+{anki} Updated Uro-reproductive deck to include L26 which is the final lecture of this course
+{anki} Please Watch Sketchy's HIV, HPV and HSV videos to do the cards
+{anki} Best of luck to you all in your finals :)
+Husain
+---
 09/12/2021 22:55
 {anki} Updated Alimentary deck to include L42 which is the final lecture of this course
 {anki} Please Watch Pathoma's Exocrine Pancreas + Gallbladder pathology to do the cards
