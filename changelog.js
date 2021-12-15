@@ -45,6 +45,8 @@ var changelogText = `
 {summary} Added C5P4 integrated module 2 summary (common diseases of pregnancy). This is an extra summary that attempts to cover the missing objectives of this case.
 {summary} Added C6P1 integrated module 2 summary (weight loss). This covers the slides for both sessions we had of this case.
 {summary} Added C6P2 integrated module 2 summary (weight loss). This is an extra summary that attempts to cover the missing objectives of this case.
+{summary} Updated C5P3 integrated module 2 summary (common diseases of pregnancy) just to fix the colour scheme (red -> purple, useless style update).
+{summary} Fixed uro-reproductive infertility tutorial summary being wrongly numbered (T12 -> T14).
 This concludes all uro tutorials, all integrated summaries (including all extra summaries for all missing objectives), but not all alimentary tutorials (T15 was not uploaded on Moodle, will work on it once it's uploaded). I will start working on clinical nutrition summaries now.
 ---
 15/12/2021 14:41
