@@ -34,6 +34,13 @@
 
 
 var changelogText = `
+15/12/2021 14:41
+{anki} Updated Integrated Module 2 Deck to include extra notes for the final exam as mentioned by Dr. Athari: 
+Antiemetic drugs
+Analgesics MoA and AEs
+UTI Antibiotics
+I did not include colon and intestinal pathology, you'll have to revise that from Alimentary System.
+---
 11/09/2021 17:50
 {anki} Updated Uro-reproductive deck to include L26 which is the final lecture of this course
 {anki} Please Watch Sketchy's HIV, HPV and HSV videos to do the cards
