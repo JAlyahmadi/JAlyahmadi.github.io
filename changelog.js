@@ -34,6 +34,19 @@
 
 
 var changelogText = `
+
+
+15/12/2021 20:00
+{summary} Added T14 alimentary system summary (hepatitis).
+{summary} Added T15 uro-reproductive system summary (miscarriages).
+{summary} Added T16 uro-reproductive system summary (bacteriology).
+{summary} Added T17 uro-reproductive system summary (male reproductive system). Note that we did not have this session, so I answered the questions on my own, so they are very prone to being wrong. Let me know if you have better answers so that I could add them.
+{summary} Added C4P3 integrated module 2 summary (failure to thrive). This is an extra summary that attempts to cover the missing objectives of this case.
+{summary} Added C5P4 integrated module 2 summary (common diseases of pregnancy). This is an extra summary that attempts to cover the missing objectives of this case.
+{summary} Added C6P1 integrated module 2 summary (weight loss). This covers the slides for both sessions we had of this case.
+{summary} Added C6P2 integrated module 2 summary (weight loss). This is an extra summary that attempts to cover the missing objectives of this case.
+This concludes all uro tutorials, all integrated summaries (including all extra summaries for all missing objectives), but not all alimentary tutorials (T15 was not uploaded on Moodle, will work on it once it's uploaded). I will start working on clinical nutrition summaries now.
+---
 15/12/2021 14:41
 {anki} Updated Integrated Module 2 Deck to include extra notes for the final exam as mentioned by Dr. Athari: 
 Antiemetic drugs
