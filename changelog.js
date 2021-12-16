@@ -36,6 +36,17 @@
 var changelogText = `
 
 
+
+17/12/2021 00:45
+{summary} Updated T4 clinical nutrition summary to add answers to case 2 from Moodle.
+{summary} Added T5 clinical nutrition summary (carbohydrate exchange).
+{summary} Added T7 clinical nutrition summary (micronutrient deficiency in children).
+{summary} Added T9 clinical nutrition summary (food allergy).
+{summary} Added T13 clinical nutrition summary (vitamin A deficiency).
+{summary} Fixed labelling of the folic acid deficiency clinical nutrition tutorial (T5->T8).
+This only leaves ~3 summary to be worked on: secondary malnutrition, parenteral nutrition and cancer nutrition. I will try to get them done as soon as I can.
+I also forgot to do T12 GI, and there is T15 GI that was uploaded today on Moodle, and T4 uro that was uploaded recently on Moodle. Will try my best to do them as soon as I can. I apologise for any delays, please don't rely on me.
+---
 15/12/2021 20:00
 {summary} Added T14 alimentary system summary (hepatitis).
 {summary} Added T15 uro-reproductive system summary (miscarriages).
