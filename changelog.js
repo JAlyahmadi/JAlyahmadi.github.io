@@ -44,6 +44,7 @@ var changelogText = `
 {summary} Added T14 clinical nutrition summary (nutrition and cancer).
 {summary} Fixed labelling of T12 summary (Gluten intolerancee lecture, used to be labelled as a lecture).
 I think this concludes all clinical nutrition summaries. Sorry that this took too long. I wish you the best of luck.
+Also, massive thanks to Abdulrahman Al-Hadhrami and Saif Al-Rashdi for helping me out with the last few summaries during these stressful final exams period.
 ---
 17/12/2021 00:45
 {summary} Updated T4 clinical nutrition summary to add answers to case 2 from Moodle.
