@@ -500,7 +500,8 @@ var folderIDs = {
       ["Tutorial 10", "1sp8BjO6pmoiiDTOx4uGZuDUDAdv7IK9j"],
       ["Tutorial 11", "1rcDmi2fB8TThrRyHElgbbvYVafRvuTvp"],
       ["Tutorial 12", "1oFtegF08gTgaSoEoONuXXKswQM_6pG1O"],
-      ["Tutorial 13", "1ZPUYCprAQUgm5nzrLgG3lUCGHKe-gtXr"]
+      ["Tutorial 13", "1ZPUYCprAQUgm5nzrLgG3lUCGHKe-gtXr"],
+      ["Tutorial 14", "12Yx44Brq6p-L-0kGUrhZEUdS6gD_h9tf"]
     ],
     notes: [
       ["Bayan's Summaries", "10FSHWaiHgXzbmWNasyda8JfuXBGrfNh1"],
