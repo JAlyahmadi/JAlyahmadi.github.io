@@ -37,6 +37,9 @@ var changelogText = `
 
 
 
+22/12/2021 13:30
+{website} The folder for clinical nutrition T14 is now visible. It was hidden before, didn't realise it, sorry about that. The summary is also there.
+---
 21/12/2021 20:00
 {summary} Added L9 clinical nutrition summary (secondary malnutrition).
 {summary} Added T10 clinical nutrition summary (GI diseases affecting nutrition).
