@@ -391,8 +391,7 @@ var folderIDs = {
       ["Tutorial 12", "1b7tC0jVePbZBfdIUOOxKUnTPTSy2gLYQ"],
       ["Tutorial 13", "1lTE-qGFYr7uU1Ak34mM5X0fEBwj65Fvt"],
       ["Tutorial 14", "1I5BAW-zjmZmge_8-cU7Uw4mMfJnrYJWU"],
-      ["Tutorial 15", "1qOfEtpj-duKNf8cX5Tv2jn0VgyNMuniV"],
-      ["Tutorial 16", "1dTvELgzmrJZp-SrxjxbxXuecP4IIssRU"]
+      ["Tutorial 15", "1qOfEtpj-duKNf8cX5Tv2jn0VgyNMuniV"]
     ],
     practicals: [
       ["Practical 1", "1dvkViAWkLQ7eavekH0qaNBim2lMMQ1jh"],
