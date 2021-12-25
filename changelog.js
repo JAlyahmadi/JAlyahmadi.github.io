@@ -37,6 +37,17 @@ var changelogText = `
 
 
 
+25/12/2021 11:40
+{summary} Added T12 alimentary system summary (interpretation of LFTs).
+{summary} Added T15 alimentary system summary (acute cholecystitis and pancreatitis).
+{summary} Updated C5P3 integrated module 2 summary (common diseases of pregnancy) to fix a wrong note on the anterior abdominal wall layers that will be cut in CS.
+{summary} *Added T4 uro-reproductive system summary (genitourinary anomalies).
+{summary} *Added an extra summary for T7 uro-reproductive system (immunology) with more notes by Salha.
+{summary} *Added the slides with notes and case answers for T17 uro-reproductive system (male reproductive system) by Salha.
+{summary} *Updated T17 uro-reproductive system summary (male reproductive system) to include more notes and better answers to some of the questions (credits to Salha and Raghad).
+With this, I think all summaries for alimentary are fully ready (except acute abdominal pain of course, I won't make a summary (yet?) for that useless tutorial, just read it as a newspaper). Good luck in the final :)
+* Please note that those changes regarding uro-reproductive system no longer concern us as we are already done with the uro final. I apologise for being too late for such changes, I was just too busy to do them (I accidentally messed up my uro study schedule). The point of those changes now is for the sake of completion of the drive and for the benefit of future batches who will take the course after us.
+---
 22/12/2021 13:30
 {website} The folder for clinical nutrition T14 is now visible. It was hidden before, didn't realise it, sorry about that. The summary is also there.
 ---
