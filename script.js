@@ -104,7 +104,7 @@ var defaultExamSemester = storage["defaultExamSemester"];
 var defaultStudentSemester = storage["defaultStudentSemester"];
 var lastAnnouncement = storage["lastAnnouncement"];
 var lastChangelog = storage["lastChangelog"];
-var theme = storage["theme"];
+var theme = storage["theme"] || "golden";
 // Handle an error that has occurred for some people during development
 if(typeof(lastChangelog) !== "string"){
   lastChangelog = "";
