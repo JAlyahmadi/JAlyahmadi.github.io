@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="golden">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,13 +35,15 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@100;400&display=swap" rel="stylesheet">
 
     <!-- JavaScripts -->
+    <script>var startLoadTime = (new Date()).getTime();</script>
+    <script>document.querySelector("html").setAttribute("data-theme", JSON.parse(localStorage["goldenDriveStorage"])["theme"]);</script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
+    <script src="motd.js"></script>
     <script>
       [
-        // "https://phietulcim8i5ogfywdiqq-on.drv.tw/www.golden-drive.net/changelog.js?v=" + Math.random(),
-        // "https://phietulcim8i5ogfywdiqq-on.drv.tw/www.golden-drive.net/timetable.js?v=" + Math.random(),
-        // "https://phietulcim8i5ogfywdiqq-on.drv.tw/www.golden-drive.net/folderID.js?v=" + Math.random(),
+        "announcements.js",
         "changelog.js",
         "timetable.js",
         "folderID.js",
@@ -56,6 +58,20 @@
   </head>
 
   <body id="body-index">
+
+    <!-- Loading Animation Overlay and MoTD -->
+    <div id="loader-overlay">
+      <div id="loader-content">
+        <img src="loader.svg">
+        <span id="loader-motd"></span>
+        <script>
+          var motdRng = new Math.seedrandom(~~((new Date) / 86400000));
+          var motdMessage = motdPool[Math.floor(motdRng() * motdPool.length)];
+          $("#loader-motd").html("<b>MOTD:</b> " + motdMessage);
+        </script>
+      </div>
+    </div>
+
     <!-- Navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-collapsed" id="navbar">
       <div class="container-fluid">
@@ -77,11 +93,30 @@
             <li class="nav-item">
               <a class="nav-link" href="https://drive.google.com/drive/folders/1QyR6jsYoBEsCkND5n61dh52bre8UFBk2?usp=sharing"><i class="bi bi-folder2" rel="nofollow"></i> Google Drive<a>
             </li>
-            <li class="nav-item" data-bs-toggle="modal" data-bs-target="#modal-recommendations">
-              <a class="nav-link"><i class="bi bi-hand-thumbs-up"></i> Study Tips</a>
-            </li>
             <li class="nav-item" data-bs-toggle="modal" data-bs-target="#modal-contact">
               <a class="nav-link"><i class="bi bi-envelope"></i> Contact Us</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="bi bi-palette"></i> Theme</a>
+              <div class="dropdown-menu" id="theme-changer">
+                <a class="dropdown-item theme-change" data-theme-change="golden"><i class="bi bi-circle-fill"></i> Golden</a>
+                <a class="dropdown-item theme-change" data-theme-change="orange"><i class="bi bi-circle-fill"></i> Orange</a>
+                <a class="dropdown-item theme-change" data-theme-change="red"><i class="bi bi-circle-fill"></i> Red</a>
+                <a class="dropdown-item theme-change" data-theme-change="magenta"><i class="bi bi-circle-fill"></i> Magenta</a>
+                <a class="dropdown-item theme-change" data-theme-change="pink"><i class="bi bi-circle-fill"></i> Pink</a>
+                <a class="dropdown-item theme-change" data-theme-change="purple"><i class="bi bi-circle-fill"></i> Purple</a>
+                <a class="dropdown-item theme-change" data-theme-change="blue"><i class="bi bi-circle-fill"></i> Blue</a>
+                <a class="dropdown-item theme-change" data-theme-change="cyan"><i class="bi bi-circle-fill"></i> Cyan</a>
+                <a class="dropdown-item theme-change" data-theme-change="green"><i class="bi bi-circle-fill"></i> Green</a>
+                <a class="dropdown-item theme-change" data-theme-change="lime"><i class="bi bi-circle-fill"></i> Lime</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item theme-change" data-theme-change="white"><i class="bi bi-circle-fill"></i> White</a>
+                <a class="dropdown-item theme-change" data-theme-change="grey"><i class="bi bi-circle-fill"></i> Grey</a>
+                <a class="dropdown-item theme-change" data-theme-change="slategrey"><i class="bi bi-circle-fill"></i> Slate Grey</a>
+                <a class="dropdown-item theme-change" data-theme-change="brown"><i class="bi bi-circle-fill"></i> Brown</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="https://youtu.be/dQw4w9WgXcQ" rel="nofollow"><i class="bi bi-sun-fill"></i> Light mode</a>
+              </div>
             </li>
             <li class="nav-item" data-bs-toggle="modal" data-bs-target="#modal-about">
               <a class="nav-link"><i class="bi bi-exclamation-circle"></i> About</a>
@@ -94,7 +129,7 @@
     <!-- Main body of the website -->
     <main class="container">
       <div id="top" class="hidden">
-        <div id="title">Golden <span>Drive</span></div>
+        <div id="title" class="page-changer" data-go="page-main"><span>Golden <b>Drive</b></span></div>
       </div>
 
       <!-- Current page being displayed -->
@@ -119,15 +154,15 @@
             </div>
           </div>
           <div class="col-md-3 col-sm-6">
-            <div class="bigbtn page-changer" data-go="page-books">
-              <img src="icons/books.svg" alt="Icon" class="bigbtn-icon">
-              <h6 class="bigbtn-name">Books</h6>
+            <div class="bigbtn page-changer" data-go="page-resources">
+              <img src="icons/resources.svg" alt="Icon" class="bigbtn-icon">
+              <h6 class="bigbtn-name">Resources</h6>
             </div>
           </div>
           <div class="col-md-3 col-sm-6">
-            <div class="bigbtn page-changer" data-go="page-video">
-              <img src="icons/videolibrary.svg" alt="Icon" class="bigbtn-icon">
-              <h6 class="bigbtn-name">Video Library</h6>
+            <div class="bigbtn page-changer" data-go="page-guides">
+              <img src="icons/guides.svg" alt="Icon" class="bigbtn-icon">
+              <h6 class="bigbtn-name">Tips & Study Guides</h6>
             </div>
           </div>
           <div class="col-md-3 col-sm-6">
@@ -140,6 +175,7 @@
             <div class="bigbtn" id="changelog" data-bs-toggle="modal" data-bs-target="#modal-changelog">
               <img src="icons/changelog.svg" alt="Icon" class="bigbtn-icon">
               <h6 class="bigbtn-name">Changelog</h6>
+              <span id="changelog-badge" class="badge hidden"></span>
             </div>
           </div>
         </div>
@@ -208,8 +244,77 @@
           </div>
           <div class="col-md-3 col-sm-6">
             <div class="bigbtn page-changer" data-go="page-course" data-forward="true" data-course="preinternship">
-              <img src="icons/trophy5.svg" alt="Icon" class="bigbtn-icon">
+              <img src="icons/trophy4.svg" alt="Icon" class="bigbtn-icon">
               <h6 class="bigbtn-name">Pre-internship</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Resources -->
+      <div id="page-resources" class="page hidden">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="bigbtn page-changer page-back" data-go="page-main">
+              <h6 class="bigbtn-name">Back</h6>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="bigbtn page-changer" data-go="page-books" id="bigbtn-books">
+              <img src="icons/books.svg" alt="Icon" class="bigbtn-icon">
+              <h6 class="bigbtn-name">Books</h6>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="bigbtn page-changer" data-go="page-video">
+              <img src="icons/videolibrary.svg" alt="Icon" class="bigbtn-icon">
+              <h6 class="bigbtn-name">Video Library</h6>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <a href="https://drive.google.com/file/d/1tbpu9fNfFnfJEvlcDb3TqxnfwxjzMbLl/view?usp=sharing" rel="nofollow">
+              <div class="bigbtn">
+                <img src="icons/histology.svg" alt="Icon" class="bigbtn-icon">
+                <h6 class="bigbtn-name">Histology Program</h6>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <a href="https://drive.google.com/drive/folders/11bi1KbeETkaKYfkQ6F_8xJdz-7f4lv2R?usp=sharing" rel="nofollow">
+              <div class="bigbtn">
+                <img src="icons/radiology.svg" alt="Icon" class="bigbtn-icon">
+                <h6 class="bigbtn-name">Radiology Images</h6>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <a href="https://drive.google.com/drive/u/1/folders/1Vhm3O454fwMrbRa_RdIoXCsyNVvCOtty" rel="nofollow">
+              <div class="bigbtn">
+                <img src="icons/bacteriology.svg" alt="Icon" class="bigbtn-icon">
+                <h6 class="bigbtn-name">Bacteriology Biochemicals</h6>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <a href="https://drive.google.com/drive/u/1/folders/18125Jk1IJh9-wkShu49KnAzslX1y2Y-O" rel="nofollow">
+              <div class="bigbtn">
+                <img src="icons/virology.svg" alt="Icon" class="bigbtn-icon">
+                <h6 class="bigbtn-name">Virology Virus Properties</h6>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <a href="https://drive.google.com/drive/u/1/folders/1l6usNNq_UjoOISg8KZzUPVPzge45ov1f" rel="nofollow">
+              <div class="bigbtn">
+                <img src="icons/spss.svg" alt="Icon" class="bigbtn-icon">
+                <h6 class="bigbtn-name">IBM SPSS Statistics v25</h6>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="bigbtn" data-bs-toggle="modal" data-bs-target="#modal-otherdrives">
+              <img src="icons/otherdrives.svg" alt="Icon" class="bigbtn-icon">
+              <h6 class="bigbtn-name">Other Batch Drives</h6>
             </div>
           </div>
         </div>
@@ -219,13 +324,13 @@
       <div id="page-video" class="page hidden">
         <div class="row">
           <div class="col-md-12">
-            <div class="bigbtn page-changer page-back" data-go="page-main">
+            <div class="bigbtn page-changer page-back" data-go="page-resources">
               <h6 class="bigbtn-name">Back</h6>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 col-sm-6">
             <a href="https://mega.nz/folder/vVwwERbZ#moQ_r3LhT6uYng8kgA9kKQ" rel="nofollow">
-              <div class="bigbtn" data-bs-toggle="modal" data-bs-target="#modal-content">
+              <div class="bigbtn">
                 <img src="icons/boards.svg" alt="Icon" class="bigbtn-icon">
                 <h6 class="bigbtn-name">Boards and Beyond</h6>
               </div>
@@ -233,7 +338,7 @@
           </div>
           <div class="col-lg-3 col-md-4 col-sm-6">
             <a href="https://mega.nz/folder/LaxVkKQL#aEyR7cRE0qcUQiEg-nrQYw" rel="nofollow">
-              <div class="bigbtn" data-bs-toggle="modal" data-bs-target="#modal-content">
+              <div class="bigbtn">
                 <img src="icons/lecturio.svg" alt="Icon" class="bigbtn-icon">
                 <h6 class="bigbtn-name">Lecturio</h6>
               </div>
@@ -241,7 +346,7 @@
           </div>
           <div class="col-lg-3 col-md-4 col-sm-6">
             <a href="https://www.youtube.com/c/NinjaNerdScience/featured" rel="nofollow">
-              <div class="bigbtn" data-bs-toggle="modal" data-bs-target="#modal-content">
+              <div class="bigbtn">
                 <img src="icons/ninjanerd.svg" alt="Icon" class="bigbtn-icon">
                 <h6 class="bigbtn-name">Ninja Nerd</h6>
               </div>
@@ -249,7 +354,7 @@
           </div>
           <div class="col-lg-3 col-md-4 col-sm-6">
             <a href="https://mega.nz/folder/coZQmRgK#dFol15Cwe8zx_jiyzCda1g" rel="nofollow">
-              <div class="bigbtn" data-bs-toggle="modal" data-bs-target="#modal-content">
+              <div class="bigbtn">
                 <img src="icons/osmosis.svg" alt="Icon" class="bigbtn-icon">
                 <h6 class="bigbtn-name">Osmosis</h6>
               </div>
@@ -257,15 +362,23 @@
           </div>
           <div class="col-lg-3 col-md-4 col-sm-6">
             <a href="https://mega.nz/folder/3OJEzDBS#Xp0HdxkA0SfLzDETacVJtA" rel="nofollow">
-              <div class="bigbtn" data-bs-toggle="modal" data-bs-target="#modal-content">
+              <div class="bigbtn">
                 <img src="icons/pathoma.svg" alt="Icon" class="bigbtn-icon">
                 <h6 class="bigbtn-name">Pathoma</h6>
               </div>
             </a>
           </div>
           <div class="col-lg-3 col-md-4 col-sm-6">
+            <a href="https://mega.nz/folder/2l40jQBD#9mk1l-iCOMklRzDOzi6MMA" rel="nofollow">
+              <div class="bigbtn">
+                <img src="icons/picmonic.svg" alt="Icon" class="bigbtn-icon">
+                <h6 class="bigbtn-name">Picmonic</h6>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
             <a href="https://youtube.com/playlist?list=PLD7882068A01C370F" rel="nofollow">
-              <div class="bigbtn" data-bs-toggle="modal" data-bs-target="#modal-content">
+              <div class="bigbtn">
                 <img src="icons/shotgun.svg" alt="Icon" class="bigbtn-icon">
                 <h6 class="bigbtn-name">Shotgun Histology</h6>
               </div>
@@ -273,7 +386,7 @@
           </div>
           <div class="col-lg-3 col-md-4 col-sm-6">
             <a href="https://mega.nz/folder/R4NEDT5D#dFZg0Av2cZcqwJuju9ToiQ" rel="nofollow">
-              <div class="bigbtn" data-bs-toggle="modal" data-bs-target="#modal-content">
+              <div class="bigbtn">
                 <img src="icons/sketchy.svg" alt="Icon" class="bigbtn-icon">
                 <h6 class="bigbtn-name">Sketchy</h6>
               </div>
@@ -281,7 +394,7 @@
           </div>
           <div class="col-lg-3 col-md-4 col-sm-6">
             <a href="https://www.youtube.com/c/TheNotedAnatomist/featured" rel="nofollow">
-              <div class="bigbtn" data-bs-toggle="modal" data-bs-target="#modal-content">
+              <div class="bigbtn">
                 <img src="icons/thenotedanatomist.svg" alt="Icon" class="bigbtn-icon">
                 <h6 class="bigbtn-name">The Noted Anatomist</h6>
               </div>
@@ -302,6 +415,18 @@
             <div class="bigbtn page-changer" data-go="page-course" data-forward="true" data-course="chemistry">
               <img src="icons/chemistry.svg" alt="Icon" class="bigbtn-icon">
               <h6 class="bigbtn-name">Chemistry for Medicine</h6>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="bigbtn page-changer" data-go="page-course" data-forward="true" data-course="english">
+              <img src="icons/english.svg" alt="Icon" class="bigbtn-icon">
+              <h6 class="bigbtn-name">English for Medicine</h6>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="bigbtn page-changer" data-go="page-course" data-forward="true" data-course="informatics1">
+              <img src="icons/informatics.svg" alt="Icon" class="bigbtn-icon">
+              <h6 class="bigbtn-name">Informatics 1</h6>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 col-sm-6">
@@ -612,1018 +737,781 @@
       <div id="page-books" class="page hidden">
         <div class="row">
           <div class="col-md-12">
-            <div class="bigbtn page-changer page-back" data-go="page-main">
+            <div class="bigbtn page-changer page-back" data-go="page-resources">
               <h6 class="bigbtn-name">Back</h6>
             </div>
           </div>
         </div>
-        <div class="book-separator">
+        <div class="section-separator">
           <h5>Phase 1</h5>
           <hr>
         </div>
         <div class="row">
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/q1hb8vkk32h74dy/diFiore%27s%20Atlas%20of%20Histology%20with%20Functional%20Correlations.pdf?dl=0" rel="nofollow"><img src="thumbnails/difiore.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/6adh2888ndj7huc/General%2C%20Organic%2C%20and%20Biochemistry.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/chemistry.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/n7lqc4aqoy7g6vw/Lippincott%20Illustrated%20Reviews%C2%A0Biochemistry.pdf?dl=0" rel="nofollow"><img src="thumbnails/biochemistry.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/v4yskiiz6v5ouzq/Taber%27s%20Cyclopedic%20Medical%20Dictionary.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/tabers.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/q84xbi9y2vjqbdm/Lippincott%20Illustrated%20Reviews%20Pharmacology.pdf?dl=0" rel="nofollow"><img src="thumbnails/pharmacology.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/q1hb8vkk32h74dy/diFiore%27s%20Atlas%20of%20Histology%20with%20Functional%20Correlations.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/difiore.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/xv9g4xhr6si2bk5/Snell%27s%20Clinical%20Anatomy.pdf?dl=0" rel="nofollow"><img src="thumbnails/snell.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/n7lqc4aqoy7g6vw/Lippincott%20Illustrated%20Reviews%C2%A0Biochemistry.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/biochemistry.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/ddehl67rqnedkh6/Tortora%20Principles%20of%20Anatomy%20and%20Physiology.pdf?dl=0" rel="nofollow"><img src="thumbnails/toratora.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/q84xbi9y2vjqbdm/Lippincott%20Illustrated%20Reviews%20Pharmacology.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/pharmacology.jpg" alt="Thumbnail" class="book-cover"></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+            <div class="book">
+              <a href="https://www.dropbox.com/s/xv9g4xhr6si2bk5/Snell%27s%20Clinical%20Anatomy.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/snell.jpg" alt="Thumbnail" class="book-cover"></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+            <div class="book">
+              <a href="https://www.dropbox.com/s/ddehl67rqnedkh6/Tortora%20Principles%20of%20Anatomy%20and%20Physiology.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/toratora.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
         </div>
-        <div class="book-separator">
+        <div class="section-separator">
           <h5>Phase 2</h5>
           <hr>
         </div>
         <div class="row">
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/n86riyvrmecd3xp/Greenwood%20Medical%20Microbiology.pdf?dl=0" rel="nofollow"><img src="thumbnails/greenwood.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/n86riyvrmecd3xp/Greenwood%20Medical%20Microbiology.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/greenwood.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/se76n955w7emtj7/Guyton%20and%20Hall%20Textbook%20of%20Medical%20Physiology.pdf?dl=0" rel="nofollow"><img src="thumbnails/guyton.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/se76n955w7emtj7/Guyton%20and%20Hall%20Textbook%20of%20Medical%20Physiology.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/guyton.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/22ayjgxieonfwbg/Introduction%20to%20Genetics.pdf?dl=0" rel="nofollow"><img src="thumbnails/genetics.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/22ayjgxieonfwbg/Introduction%20to%20Genetics.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/genetics.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/p4uplvhep3u0b1r/Langman%27s%20Medical%20Embryology.pdf?dl=0" rel="nofollow"><img src="thumbnails/langman.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/p4uplvhep3u0b1r/Langman%27s%20Medical%20Embryology.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/langman.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/pbpw1k8mcnze9wz/Medical%20Microbiology%20and%20Infection%20at%20a%20Glance.pdf?dl=0" rel="nofollow"><img src="thumbnails/microbiology.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/pbpw1k8mcnze9wz/Medical%20Microbiology%20and%20Infection%20at%20a%20Glance.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/microbiology.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://drive.google.com/file/d/1NY7hBgxvR_uzlx_JSeqCowJPdGXDWIgj/view?usp=sharing" rel="nofollow"><img src="thumbnails/spss.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://drive.google.com/file/d/1NY7hBgxvR_uzlx_JSeqCowJPdGXDWIgj/view?usp=sharing" rel="nofollow"><img data-src="thumbnails/spss.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://drive.google.com/file/d/1qAK7cI_PyeUOlLoxaG-_ppgpLK4f9jkB/view?usp=sharing" rel="nofollow"><img src="thumbnails/informatics.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://drive.google.com/file/d/1qAK7cI_PyeUOlLoxaG-_ppgpLK4f9jkB/view?usp=sharing" rel="nofollow"><img data-src="thumbnails/informatics.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/iztkz7bzw49debi/Hoffbrand%27s%20Essential%20Haematology.pdf?dl=0" rel="nofollow"><img src="thumbnails/hoffbrand.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/iztkz7bzw49debi/Hoffbrand%27s%20Essential%20Haematology.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/hoffbrand.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/etac41toerwm7qg/Case%20Studies%20in%20Immunology.pdf?dl=0" rel="nofollow"><img src="thumbnails/immunology.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/0eqk527u3r5ueoo/Immunology%20A%20Short%20Course.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/immunology.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/fg90v0n0kf497zi/Macleod%E2%80%99s%20Clinical%20Examination.pdf?dl=0" rel="nofollow"><img src="thumbnails/macleod.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/fg90v0n0kf497zi/Macleod%E2%80%99s%20Clinical%20Examination.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/macleod.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/dje4t6zve7y3oai/Robbins%20Basic%20Pathology.pdf?dl=0" rel="nofollow"><img src="thumbnails/robbins.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/dje4t6zve7y3oai/Robbins%20Basic%20Pathology.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/robbins.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/qqg0092ymram3yq/Understanding%20Normal%20and%20Clinical%20Nutrition.pdf?dl=0" rel="nofollow"><img src="thumbnails/nutrition.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/qqg0092ymram3yq/Understanding%20Normal%20and%20Clinical%20Nutrition.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/nutrition.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/8dhmobg1dker93q/Designing%20Clinical%20Research.pdf?dl=0" rel="nofollow"><img src="thumbnails/designing.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/8dhmobg1dker93q/Designing%20Clinical%20Research.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/designing.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/w27yp5qaoe2ikyx/Neuroanatomy.pdf?dl=0" rel="nofollow"><img src="thumbnails/neuroanatomy.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/w27yp5qaoe2ikyx/Neuroanatomy.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/neuroanatomy.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
         </div>
-        <div class="book-separator">
+        <div class="section-separator">
           <h5>Recommended Supplementary Books</h5>
           <hr>
         </div>
         <div class="row">
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/3f6v9tts5f4gi7u/BRS%20Gross%20Anatomy.pdf?dl=0" rel="nofollow"><img src="thumbnails/brsanatomy.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/3f6v9tts5f4gi7u/BRS%20Gross%20Anatomy.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/brsanatomy.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/uw6t6fhleo9iupx/BRS%20Physiology.pdf?dl=0" rel="nofollow"><img src="thumbnails/brsphysiology.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/uw6t6fhleo9iupx/BRS%20Physiology.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/brsphysiology.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/etac41toerwm7qg/Case%20Studies%20in%20Immunology.pdf?dl=0" rel="nofollow"><img src="thumbnails/caseimmunology.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/etac41toerwm7qg/Case%20Studies%20in%20Immunology.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/caseimmunology.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/qqf2pmxih1dovb9/Clinically%20Oriented%20Anatomy.pdf?dl=0" rel="nofollow"><img src="thumbnails/clinicalanatomy.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/qqf2pmxih1dovb9/Clinically%20Oriented%20Anatomy.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/clinicalanatomy.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/uq0xazjo60d4jmp/Lippincotts%20QA%20Microbiology%20and%20Immunology.pdf?dl=0" rel="nofollow"><img src="thumbnails/qamicroimmuno.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/uq0xazjo60d4jmp/Lippincotts%20QA%20Microbiology%20and%20Immunology.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/qamicroimmuno.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/dfw4vyhx56d01zx/Lippincotts%20QA%20Pathology.pdf?dl=0" rel="nofollow"><img src="thumbnails/qapathology.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/dfw4vyhx56d01zx/Lippincotts%20QA%20Pathology.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/qapathology.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/24cka0lmqbcq5s8/Lippincotts%20QA%20Pharmacology.pdf?dl=0" rel="nofollow"><img src="thumbnails/qapharmacology.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/24cka0lmqbcq5s8/Lippincotts%20QA%20Pharmacology.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/qapharmacology.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/qlbf6t7vyvoxk19/Netter%27s%20Atlas%20of%20Human%20Anatomy.pdf?dl=0" rel="nofollow"><img src="thumbnails/netter.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/qlbf6t7vyvoxk19/Netter%27s%20Atlas%20of%20Human%20Anatomy.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/netter.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/jbk4nrig97slkyn/Pathoma.pdf?dl=0" rel="nofollow"><img src="thumbnails/pathoma.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/jbk4nrig97slkyn/Pathoma.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/pathoma.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/1pju28k9a45l6ef/Review%20of%20Medical%20Microbiology%20and%20Immunology.pdf?dl=0" rel="nofollow"><img src="thumbnails/reviewmicroimmuno.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/1pju28k9a45l6ef/Review%20of%20Medical%20Microbiology%20and%20Immunology.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/reviewmicroimmuno.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/xa1tc7br9qvnxbw/Roitt%E2%80%99s%20Essential%20Immunology.pdf?dl=0" rel="nofollow"><img src="thumbnails/roitt.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/6nm6ovo7nxzb7zx/Robbins%20Review%20of%20Pathology.pdf?dl=0"><img data-src="thumbnails/robbinspathology.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/e8m90e7j87qxcy6/Sherwood%20Human%20Physiology.pdf?dl=0" rel="nofollow"><img src="thumbnails/sherwood.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/xa1tc7br9qvnxbw/Roitt%E2%80%99s%20Essential%20Immunology.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/roitt.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/5mw4kpeghbnppzy/Sketchy.pdf?dl=0" rel="nofollow"><img src="thumbnails/sketchy.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/e8m90e7j87qxcy6/Sherwood%20Human%20Physiology.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/sherwood.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/j7r01hvvibclp5z/USMLE%20First%20Aid.pdf?dl=0" rel="nofollow"><img src="thumbnails/firstaid.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/5mw4kpeghbnppzy/Sketchy.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/sketchy.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/gvvy4yu2whbzm80/USMLE%20Immunology%20and%20Microbiology.pdf?dl=0" rel="nofollow"><img src="thumbnails/usmleimmunomicro.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/j7r01hvvibclp5z/USMLE%20First%20Aid.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/firstaid.jpg" alt="Thumbnail" class="book-cover"></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+            <div class="book">
+              <a href="https://www.dropbox.com/s/gvvy4yu2whbzm80/USMLE%20Immunology%20and%20Microbiology.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/usmleimmunomicro.jpg" alt="Thumbnail" class="book-cover"></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+            <div class="book">
+              <a href="https://www.dropbox.com/s/9pywigczzq6sagg/Zumdahl%20Chemistry.pdf?dl=0"><img data-src="thumbnails/zumdahl.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
         </div>
-        <div class="book-separator">
+        <div class="section-separator">
           <h5>Extra Books</h5>
           <hr>
         </div>
         <div class="row">
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/e1259zlzitlnphd/Biostatistics.pdf?dl=0" rel="nofollow"><img src="thumbnails/biostatistics.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/e1259zlzitlnphd/Biostatistics.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/biostatistics.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/512r3r7wc50q73l/BRS%20Embryology.pdf?dl=0" rel="nofollow"><img src="thumbnails/brsembryology.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/512r3r7wc50q73l/BRS%20Embryology.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/brsembryology.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/qyfj1bueuvk1x4h/Color%20Atlas%20of%20Anatomy.pdf?dl=0" rel="nofollow"><img src="thumbnails/coloranatomy.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/qyfj1bueuvk1x4h/Color%20Atlas%20of%20Anatomy.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/coloranatomy.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/oaqd5sni5zw0zt9/Concepts%20of%20Genetics.pdf?dl=0" rel="nofollow"><img src="thumbnails/conceptsgenetics.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/oaqd5sni5zw0zt9/Concepts%20of%20Genetics.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/conceptsgenetics.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/qvaafp2dax81fmi/Embryology%20at%20a%20Glance.pdf?dl=0" rel="nofollow"><img src="thumbnails/embryologyglance.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/qvaafp2dax81fmi/Embryology%20at%20a%20Glance.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/embryologyglance.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/ai5y9etbogkmtvt/Harper%E2%80%99s%20Illustrated%20Biochemistry.pdf?dl=0" rel="nofollow"><img src="thumbnails/harper.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/ai5y9etbogkmtvt/Harper%E2%80%99s%20Illustrated%20Biochemistry.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/harper.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/d40ozca48cmef8m/Katzung%20Basic%20and%20Clinical%20Pharmacology.pdf?dl=0" rel="nofollow"><img src="thumbnails/katzung.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/d40ozca48cmef8m/Katzung%20Basic%20and%20Clinical%20Pharmacology.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/katzung.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/ytgvujnwmnhstca/Lubert%20Stryer%20Biochemistry.pdf?dl=0" rel="nofollow"><img src="thumbnails/lubert.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/ytgvujnwmnhstca/Lubert%20Stryer%20Biochemistry.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/lubert.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/4sze0z0enb4sqc6/Netters%20Cardiology.pdf?dl=0" rel="nofollow"><img src="thumbnails/nettercardiology.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/4sze0z0enb4sqc6/Netters%20Cardiology.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/nettercardiology.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/x6q0jihtl3h2cb3/Physiology%20at%20a%20Glance.pdf?dl=0" rel="nofollow"><img src="thumbnails/physiologyglance.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/x6q0jihtl3h2cb3/Physiology%20at%20a%20Glance.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/physiologyglance.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/w07d8oh38fzbbn3/The%20Cardiovascular%20System%20at%20a%20Glance.pdf?dl=0" rel="nofollow"><img src="thumbnails/cvsglance.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/w07d8oh38fzbbn3/The%20Cardiovascular%20System%20at%20a%20Glance.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/cvsglance.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/pj0j31dgxe5z33s/The%20Developing%20Human%20Embryology.pdf?dl=0" rel="nofollow"><img src="thumbnails/developinghuman.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/pj0j31dgxe5z33s/The%20Developing%20Human%20Embryology.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/developinghuman.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/vlqovqy2jh7u8q2/The%20Gastrointestinal%20System.pdf?dl=0" rel="nofollow"><img src="thumbnails/thegastrointestinalsystem.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/vlqovqy2jh7u8q2/The%20Gastrointestinal%20System.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/thegastrointestinalsystem.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://www.dropbox.com/s/vzc5ab43sexyuof/The%20Only%20EKG%20Book%20You%27ll%20Ever%20Need.pdf?dl=0" rel="nofollow"><img src="thumbnails/ekg.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/vzc5ab43sexyuof/The%20Only%20EKG%20Book%20You%27ll%20Ever%20Need.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/ekg.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Modal for the file explorer -->
-      <div class="modal fade" id="modal-explorer" tabindex="-1" aria-labelledby="modal-explorer-label" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-fullscreen-sm-down modal-filled">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modal-explorer-label">Files</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <!-- Guides page -->
+      <div id="page-guides" class="page hidden">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="bigbtn page-changer page-back" data-go="page-main">
+              <h6 class="bigbtn-name">Back</h6>
             </div>
-            <div class="modal-body">
-              <iframe src="empty.html" id="explorer-iframe" class="modal-content-preview"></iframe>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-sm-6 col-12 guide-container">
+            <div class="guide" data-bs-toggle="modal" data-bs-target="#modal-guides" data-guide="https://drive.google.com/file/d/1AfKfcNl2bdywYP3Dz17w16teMqBCzGrJ/preview">
+              <h4 class="guide-title">Best Study Method</h3>
+              <span class="guide-subtitle">Read about the ideal study method we found to be the best from our cumulative experience and observations.</span>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-12 guide-container">
+            <div class="guide" data-bs-toggle="modal" data-bs-target="#modal-guides" data-guide="https://drive.google.com/file/d/13skFN-HVYm8aqzfN8zUd_0eudBCHrOhl/preview">
+              <h4 class="guide-title">Anki Guide</h3>
+              <span class="guide-subtitle">A brief guide on how to use Anki, recommended Anki settings, and how to get started with the pre-made decks on the website.</span>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-12 guide-container">
+            <div class="guide" data-bs-toggle="modal" data-bs-target="#modal-guides" data-guide="https://drive.google.com/file/d/1EnC3AlyeC96XXIzC6up-cpe4lpdXPSbK/preview">
+              <h4 class="guide-title">Extracurricular Resources</h3>
+              <span class="guide-subtitle">There are a lot of extracurricular medical resources, but here are the ones we recommend the most from our experience.</span>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-12 guide-container">
+            <div class="guide" data-bs-toggle="modal" data-bs-target="#modal-guides" data-guide="https://drive.google.com/file/d/1qu_4LTDf8ZCd3kbhq_3njwtCLCGHGo0a/preview">
+              <h4 class="guide-title">Research Module</h3>
+              <span class="guide-subtitle">Read about the research module and tips from our experience on how to approach it, including essays, research proposals and all other research work.</span>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-12 guide-container">
+            <div class="guide" data-bs-toggle="modal" data-bs-target="#modal-guides" data-guide="https://drive.google.com/file/d/1F80voyZm11Z1wJ575nq-4G3LZf4hgigO/preview">
+              <h4 class="guide-title">Board Exams</h3>
+              <span class="guide-subtitle">Read about board exams like the USMLE, and how to prepare for them from the experience of our college students who are taking them.</span>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-12 guide-container">
+            <div class="guide" data-bs-toggle="modal" data-bs-target="#modal-guides" data-guide="https://drive.google.com/file/d/1DPFQURAfQAHaAOs-4Z_aCztjixCRfq0n/preview">
+              <h4 class="guide-title">General Life Tips</h3>
+              <span class="guide-subtitle">Read about some general life tips concerning mental wellbeing and physical health in the context of medical school.</span>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-12 guide-container">
+            <div class="guide" data-bs-toggle="modal" data-bs-target="#modal-guides" data-guide="https://drive.google.com/file/d/18ooAh87CpMghLkAbf35am0BjW5T36U8s/preview">
+              <h4 class="guide-title">Phase 1</h3>
+              <span class="guide-subtitle">Read an overview and tips for phase 1.</span>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-12 guide-container">
+            <div class="guide" data-bs-toggle="modal" data-bs-target="#modal-guides" data-guide="https://drive.google.com/file/d/1la4OGVP1FYjbaq54PUGcrPdAHGWjtDoS/preview">
+              <h4 class="guide-title">Phase 2</h3>
+              <span class="guide-subtitle">Read an overview and tips for phase 2.</span>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-12 guide-container">
+            <div class="guide" data-bs-toggle="modal" data-bs-target="#modal-guides" data-guide="https://drive.google.com/file/d/1bVjxofF_CIcoqQPBdYx-HgJNVn7BIB82/preview">
+              <h4 class="guide-title">Phase 3</h3>
+              <span class="guide-subtitle">Read an overview and tips for phase 3.</span>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- Modal for the about section -->
-      <div class="modal fade" id="modal-about" tabindex="-1" aria-labelledby="modal-about-label" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-fullscreen-sm-down modal-filled">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modal-about-label">About</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body modal-body-styled">
-              <h2>Golden Drive</h2>
-              <p>A very inclusive archive of useful resources for medical students of Sultan Qaboos University hosted on Google Drive. The drive was founded by Abdulrahman Al-Hadhrami from the 2018 batch. Resources scattered across multiple drives were collected and combined into one single drive. Resources include lectures, tutorial solutions, practical notes, lecture summaries, Anki flashcards, past papers and extra questions, book and video libraries, and more.</p>
-              <h2>The Website</h2>
-              <p>This website is a fancy browser for the content of the Golden Drive on Google Drive. It was developed by Jihad Al-Yahamadi from the 2018 batch. Whatever files get uploaded, changed, or deleted from the drive, this website will update its content accordingly, as both are directly connected.</p>
-              <h2>Disclaimer</h2>
-              <p>The majority of the content in this drive were made by other students and is just being organised here. The content may be incorrect or outdated. If you would like to report anything incorrect, please contact any of us and submit your report for us to see.</p>
-              <h2>Attribution</h2>
-              <p>Most of the icons used on this website were taken from <a href="https://flaticon.com/" rel="nofollow">Flaticon</a>.</p>
-              <h2>DMCA Notice</h2>
-              <p>Please note that we do not own copyrights to any of the books or videos shown on this website. All books (with a few exceptions) and videos shown are not hosted on our website or Google Drive, and they are for educational purposes only. Said content is merely being linked.</p>
-              <p>© 2021 Golden Drive All Rights Reserved</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="modal-footer-btn" id="storage-clear" onclick="delete localStorage['goldenDriveStorage'];location.reload();"><i class="bi bi-sd-card"></i> Clear Local Storage (Bookmarks)</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Modal for the contact us section -->
-      <div class="modal fade" id="modal-contact" tabindex="-1" aria-labelledby="modal-contact-label" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-fullscreen-sm-down modal-filled">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modal-contact-label">Contact Us</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body modal-body-styled">
-              <h2>Contact Us</h2>
-              <p>If there is a problem or a mistake you want to report, please contact any of us. It is recommmended to contact the person who is in charge of the thing you want to report (e.g., if it is about a summary, contact the author of the summary). If there is a problem with the website, contact Jihad Al-Yahmadi, as he is currently the only website developer.</p>
-              <div class="contact-card">
-                <h5><span class="contact-name">Abdulrahman Al-Hadhrami:</span> <a href="mailto: admin@golden-drive.net" rel="nofollow">admin@golden-drive.net</a></h5>
-                <span class="contact-info">
-                  <span class="badge bg-primary">Golden Drive CEO</span>
-                  <span class="badge">Drive Editor</span>
-                  <span class="badge">2018 Batch</span>
-                </span>
-              </div>
-              <div class="contact-card">
-                <h5><span class="contact-name">Jihad Al-Yahmadi:</span> <a href="mailto: alyahmadi@golden-drive.net" rel="nofollow">alyahmadi@golden-drive.net</a></h5>
-                <span class="contact-info">
-                  <span class="badge bg-primary">Website Developer</span>
-                  <span class="badge bg-primary">Summaries Author</span>
-                  <span class="badge">Drive Editor</span>
-                  <span class="badge">2018 Batch</span>
-                </span>
-              </div>
-              <div class="contact-card">
-                <h5><span class="contact-name">Husain Al-Aswami:</span> <a href="mailto: husain@golden-drive.net" rel="nofollow">husain@golden-drive.net</a></h5>
-                <span class="contact-info">
-                  <span class="badge bg-primary">Flashcards Author</span>
-                  <span class="badge">Drive Editor</span>
-                  <span class="badge">2018 Batch</span>
-                </span>
-              </div>
-              <div class="contact-card">
-                <h5><span class="contact-name">Mohammed Al-Farsi:</span> <a href="mailto: md@golden-drive.net" rel="nofollow">md@golden-drive.net</a></h5>
-                <span class="contact-info">
-                  <span class="badge bg-primary">Summaries Author</span>
-                  <span class="badge">Drive Editor</span>
-                  <span class="badge">2019 Batch</span>
-                </span>
-              </div>
-              <div class="contact-card">
-                <h5><span class="contact-name">Bayan Al-Harrasi:</span> <a href="mailto: happyhappyhappy123186@gmail.com" rel="nofollow">happyhappyhappy123186@gmail.com</a></h5>
-                <span class="contact-info">
-                  <span class="badge bg-primary">Summaries Author</span>
-                  <span class="badge">Drive Editor</span>
-                  <span class="badge">2018 Batch</span>
-                </span>
-              </div>
-              <div class="contact-card">
-                <h5><span class="contact-name">Abdullah Al-Lawati:</span> <a href="mailto: abdlawati1@golden-drive.net" rel="nofollow">abdlawati1@golden-drive.net</a></h5>
-                <span class="contact-info">
-                  <span class="badge">Drive Editor</span>
-                  <span class="badge">2018 Batch</span>
-                </span>
-              </div>
-              <div class="contact-card">
-                <h5><span class="contact-name">Abdullah Al-Sawafi:</span> <a href="mailto: abdullah@golden-drive.net" rel="nofollow">abdullah@golden-drive.net</a></h5>
-                <span class="contact-info">
-                  <span class="badge">Drive Editor</span>
-                  <span class="badge">2019 Batch</span>
-                </span>
-              </div>
-              <div class="contact-card">
-                <h5><span class="contact-name">Meetham Al-Lawati:</span> <a href="mailto: meetham@golden-drive.net" rel="nofollow">meetham@golden-drive.net</a></h5>
-                <span class="contact-info">
-                  <span class="badge">Drive Editor</span>
-                  <span class="badge">2018 Batch</span>
-                </span>
-              </div>
-              <div class="contact-card">
-                <h5><span class="contact-name">Mutaz Al-Hashmi:</span> <a href="mailto: mkhalid@golden-drive.net" rel="nofollow">mkhalid@golden-drive.net</a></h5>
-                <span class="contact-info">
-                  <span class="badge">Drive Editor</span>
-                  <span class="badge">2019 Batch</span>
-                </span>
-              </div>
-              <div class="contact-card">
-                <h5><span class="contact-name">Osama Al-Lawati:</span> <a href="mailto: u_sama2000@gmail.com" rel="nofollow">u_sama2000@gmail.com</a></h5>
-                <span class="contact-info">
-                  <span class="badge">Drive Editor</span>
-                  <span class="badge">2019 Batch</span>
-                </span>
-              </div>
-              <div class="contact-card">
-                <h5><span class="contact-name">Yamamah Jubori:</span> <a href="mailto: yamamahmahmood@hotmail.com" rel="nofollow">yamamahmahmood@hotmail.com</a></h5>
-                <span class="contact-info">
-                  <span class="badge">Drive Editor</span>
-                  <span class="badge">2018 Batch</span>
-                </span>
-              </div>
-              <textarea id="copy-text"></textarea>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Modal for the recommendations section -->
-      <div class="modal fade" id="modal-recommendations" tabindex="-1" aria-labelledby="modal-recommendations-label" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-fullscreen-sm-down modal-filled">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modal-recommendations-label">Study Tips</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <h4 class="recommendation-title">Phase 1</h4>
-              <div class="accordion accordion-flush" id="recommendations-accordion">
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-phase1">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-c-phase1" aria-expanded="false" aria-controls="flush-c-phase1">Phase 1 in General</button>
-                  </h2>
-                  <div id="flush-c-phase1" class="accordion-collapse collapse" aria-labelledby="flush-phase1" data-bs-parent="#recommendations-accordion">
-                    <div class="accordion-body">
-                      <ul>
-                        <li>This will be the easiest phase you will take. You will take introductory courses in medicine and you will take 3 university requirements and 3 university electives.</li>
-                        <li>Do not sleep on the electives and university requirements. Although they do not count towards the focused GPA, they count towards your cumulative GPA.</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-chemistry">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-c-chemistry" aria-expanded="false" aria-controls="flush-c-chemistry">Chemistry for Medicine</button>
-                  </h2>
-                  <div id="flush-c-chemistry" class="accordion-collapse collapse" aria-labelledby="flush-chemistry" data-bs-parent="#recommendations-accordion">
-                    <div class="accordion-body">
-                      <ul>
-                        <li>The notes you write from Dr. Faizah's explanation are the most important. Make sure to write everything important she says.</li>
-                        <li>Whenever you feel that you got an unfair mark in an exam or test, be sure to discuss it with your instructor as they tend to make a lot of mistakes while marking. From our experiences, we found that they messed up in the marking of multiple questions on an ICA, and this happened many times on quizzes too.</li>
-                        <li>Never hesitate to ask any question to Dr. Faizah.</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-english">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-c-english" aria-expanded="false" aria-controls="flush-c-english">English for Medicine</button>
-                  </h2>
-                  <div id="flush-c-english" class="accordion-collapse collapse" aria-labelledby="flush-english" data-bs-parent="#recommendations-accordion">
-                    <div class="accordion-body">
-                      <ul>
-                        <li>Focus on the medical terminology quizzes, as they probably require the most of your effort in this course, and they are the easiest to guarantee a full mark in.</li>
-                        <li>Make sure to do the medical terminology practice quizzes on Moodle many times. A huge amount of those questions do come in the real quizzes.</li>
-                        <li>It is recommended to make flashcards using Anki to help you memorise the medical terminology better.</li>
-                        <li>Do not procrastinate on the presentations; start as early as possible.</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-informatics1">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-c-informatics1" aria-expanded="false" aria-controls="flush-c-informatics1">Medical Informatics 1</button>
-                  </h2>
-                  <div id="flush-c-informatics1" class="accordion-collapse collapse" aria-labelledby="flush-informatics1" data-bs-parent="#recommendations-accordion">
-                    <div class="accordion-body">
-                      <ul>
-                        <li>Make sure you practise using the softwares and practical concepts taught. The practicals contribute the most towards your final grade.</li>
-                        <li>When given assignments, make sure you follow the instructions given well so that you do not lose unnecessary marks on silly mistakes. This happened a lot in our batch.</li>
-                        <li>If you suspect that there are multiple correct answers to a question, report it to Dr. Ken and explain to him why multiple answers are correct. He will likely solve the problem and correct everyone's grades if your reasoning is sound. This also happened a couple of times in our batch.</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-anatomy">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-c-anatomy" aria-expanded="false" aria-controls="flush-c-anatomy">Introduction to Anatomy</button>
-                  </h2>
-                  <div id="flush-c-anatomy" class="accordion-collapse collapse" aria-labelledby="flush-anatomy" data-bs-parent="#recommendations-accordion">
-                    <div class="accordion-body">
-                      <ul>
-                        <li>Resources: <a href="https://drive.google.com/file/d/1He09Fvfr85SLFCUT8zQmACedwZT32QvD/view?usp=sharing" rel="nofollow">Histology Resources</a>, <a href="https://drive.google.com/file/d/14LYoTUIKfy2u5Ge85YwmfxPI8r2MLAgf/view?usp=sharing" rel="nofollow">Gross Anatomy Resources</a></li>
-                        <li>It is highly recommended that you use Anki to help you memorise better as this course is heavily dependent on memorisation. You can use Husain Al-Aswami's deck in the drive.</li>
-                        <li>Take notes from Dr. Hussein Abdullatif's lectures; he tends to say stuff that comes in the exams but is not in the lectures.</li>
-                        <li>Dr. Rao focuses a lot on blood/lymphatic/nerve supply in his exam questions, so be sure to memorise them well.</li>
-                        <li>Come up with as many mnemonics as you can to help you memorise.</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-physiology">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-c-physiology" aria-expanded="false" aria-controls="flush-c-physiology">Introduction to Physiology</button>
-                  </h2>
-                  <div id="flush-c-physiology" class="accordion-collapse collapse" aria-labelledby="flush-physiology" data-bs-parent="#recommendations-accordion">
-                    <div class="accordion-body">
-                      <ul>
-                        <li>Resources: <a href="https://drive.google.com/file/d/19LKddDtc_idBuvk_4hW0vm_j_2hkxD9b/view?usp=sharing" rel="nofollow">Physiology Resources</a></li>
-                        <li>Be sure to understand the immune system very well because in the final exam they tend to get annoying questions from that system.</li>
-                        <li>Take notes from Dr. Hussain Saker's lectures; he tends to say stuff that comes in the exams but is not in the lectures.</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-enzymology">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-c-enzymology" aria-expanded="false" aria-controls="flush-c-enzymology">Enzymology & Metabolism</button>
-                  </h2>
-                  <div id="flush-c-enzymology" class="accordion-collapse collapse" aria-labelledby="flush-enzymology" data-bs-parent="#recommendations-accordion">
-                    <div class="accordion-body">
-                      <ul>
-                        <li>Resources: <a href="https://drive.google.com/file/d/19Q4S4hpyzljUdidqk46_IiHtNGM_kj2s/view?usp=sharing" rel="nofollow">Enzymology Resources</a></li>
-                        <li>The book given is more detailed than what is required for you to learn. You do not have to know a lot of those things, so if you come across something obscure, leave it until the time of the tutorial, then ask the instructor about it.</li>
-                        <li>When studying metabolic pathways, only focus on the rate-limiting steps, the enzymes involved in those steps, and what inhibits/stimulates them. The other steps are less important.</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-cellular">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-c-cellular" aria-expanded="false" aria-controls="flush-c-cellular">Cellular Communications & Pharmacology</button>
-                  </h2>
-                  <div id="flush-c-cellular" class="accordion-collapse collapse" aria-labelledby="flush-cellular" data-bs-parent="#recommendations-accordion">
-                    <div class="accordion-body">
-                      <ul>
-                        <li>Resources: <a href="https://drive.google.com/file/d/1hRMdqWphD2xX1ryYFFAcKZ4J_twq3Br2/view?usp=sharing" rel="nofollow">Cell Physiology Resources</a>, <a href="https://drive.google.com/file/d/1fhrGCs-E9QpB32C_iPJZTNNjvmKjzBGb/view?usp=sharing" rel="nofollow">Pharmacology Resources</a></li>
-                        <li>Study very well for the quizzes because they carry more weight than they should (10 total questions for 10% of your grade).</li>
-                        <li>Make sure you understand definitions well in pharmacology because they tend to make very tricky questions in the exams.</li>
-                        <li>It is highly recommended to use Anki to memorise the third block in pharmacology as it involves a lot of memorisation.</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <h4 class="recommendation-title">Phase 2 Semester 1</h4>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-phase2sem1">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-c-phase2sem1" aria-expanded="false" aria-controls="flush-c-phase2sem1">Phase 2 Semester 1 in General</button>
-                  </h2>
-                  <div id="flush-c-phase2sem1" class="accordion-collapse collapse" aria-labelledby="flush-phase2sem1" data-bs-parent="#recommendations-accordion">
-                    <div class="accordion-body">
-                      <ul>
-                        <li>Guide me project: <a href="https://drive.google.com/file/d/1a2PjTwRHWE4R_6nJLHpP6yG3qhw4SU8b/view?usp=sharing" rel="nofollow">Phase 2 Semester 1</a></li>
-                        <li>This is either the most or the second most difficult semester in your preclinical studies. This is due to time constraints and your transition to 18 credits a semester.</li>
-                        <li>Starting from this semester, there will be way more focus on tutorials and practicals than in phase 1. Many of us did not give them much attention because we were used to them being less important in phase 1. Do not make the same mistake.</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-rip">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-c-rip" aria-expanded="false" aria-controls="flush-c-rip">Response to Infection & Pathobiology</button>
-                  </h2>
-                  <div id="flush-c-rip" class="accordion-collapse collapse" aria-labelledby="flush-rip" data-bs-parent="#recommendations-accordion">
-                    <div class="accordion-body">
-                      <ul>
-                        <li>Guide me project: <a href="https://drive.google.com/file/d/1-P_cTKTyQ3AAA6PS3RZ5AASop1vMwHtz/view?usp=sharing" rel="nofollow">Response to Infection and Pathobiology</a></li>
-                        <li>Always use SketchyMicro when possible. Almost all microbes are covered.</li>
-                        <li>Using Anki is highly recommended for this course. Use the available pre-made Anki decks for microbiology. Husain Al-Aswami's Anki deck covers all sections of microbiology, make sure to use it. You can also use the Anking deck to do cards based on Sketchy.</li>
-                        <li>Make sure to be familiar with the distinguishing lab tests for each microbe and to understand what the test is. This is very important in bacteriology.</li>
-                        <li>Your virology lectures will be most arguably the worst lectures you will encounter this semester. You can opt to stick with the slides and brute memorize its content. You can go the extra mile and watch the relevant Sketchy videos.</li>
-                        <li>For immunology, make sure to watch Pathoma's videos on inflammation (Chapter 2). You can use Kaplan's Lecture Notes on immunology to make sure you have the whole picture of immunology especially when it comes to the types of immune responses.</li>
-                        <li>Most pathology lectures are straightforward. However, you can complement them with Pathoma's videos on the relevant topics (Chapter 1).</li>
-                        <li>Make sure to be familiar with all practical materials (mostly pictures). You can do yourself a great favour by trying to understand the general pathophysiology of the given cases.</li>
-                        <li>Pharmacology is arguably one of the toughest parts of RIP due to the large amount of content you need to go through. Make sure to make mnemonics, surprisingly, the best ones are the inappropriate ones. You can opt to complement your lectures with Sketchy Pharm videos.</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-sfr">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-c-sfr" aria-expanded="false" aria-controls="flush-c-sfr">Structure-Function Relationship</button>
-                  </h2>
-                  <div id="flush-c-sfr" class="accordion-collapse collapse" aria-labelledby="flush-sfr" data-bs-parent="#recommendations-accordion">
-                    <div class="accordion-body">
-                      <li>Guide me project: <a href="https://drive.google.com/file/d/1E4sXvel_Dw3dREQTEIUEniB620Mt6aDF/view?usp=sharing" rel="nofollow">Structure-Function Relationship</a></li>
-                      <li>Use Anki to help you memorise. This course is heavily dependent on memorisation.</li>
-                      <li>The anatomy lectures are just like your general anatomy from phase 1. This course pays more attention to blood and nerve supply of each region. The upper and lower limbs are not covered.</li>
-                      <li>The physiology lectures are also similar to your introduction to physiology from phase 1. They cover more details.</li>
-                      <li>For surface anatomy, make sure you memorise the levels/landmarks well (e.g., the vertebral level/rib at which a structure is located); those are very important.</li>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-hospital">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-c-hospital" aria-expanded="false" aria-controls="flush-c-hospital">Hospital & Community Attachment</button>
-                  </h2>
-                  <div id="flush-c-hospital" class="accordion-collapse collapse" aria-labelledby="flush-hospital" data-bs-parent="#recommendations-accordion">
-                    <div class="accordion-body">
-                      <ul>
-                        <li>Guide me project: <a href="https://drive.google.com/file/d/14-jj2pJgPoORqc9yxr484GqFltSUb0zq/view?usp=sharing" rel="nofollow">Hospital & Community Attachment</a></li>
-                        <li>Use the already available summaries to help you study the content.</li>
-                        <li>For biostatistics, try to practice as often as possible. Do not just look at the questions, do them yourself.</li>
-                        <li>For SPSS, just go through all of Dr. Rizvi's lectures and the accompanying questions/exercises.</li>
-                        <li>Start working on the essay immediately by gathering references and giving yourself deadlines to complete each section of the essay. You have a few weeks from the start of the semester before you become busy with in-course assessments, so use those to do as much work as you can.</li>
-                        <li>Ask your friends to check your essay for mistakes and get their insights on it.</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-molecular">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-c-molecular" aria-expanded="false" aria-controls="flush-c-molecular">Molecular Biology and Genetics</button>
-                  </h2>
-                  <div id="flush-c-molecular" class="accordion-collapse collapse" aria-labelledby="flush-molecular" data-bs-parent="#recommendations-accordion">
-                    <div class="accordion-body">
-                      <li>Guide me project: <a href="https://drive.google.com/file/d/1J6OM9avoLmitE88TsY-xC7SihtPZGBHR/view?usp=sharing" rel="nofollow">Molecular Biology and Genetics</a></li>
-                      <li>AK lectures is a great resource for molecular biology and general neoplasia. Shomu's biology YouTube channel is very handy especially in the last few lectures where you are required to apply your knowledge on practical questions.</li>
-                      <li>Way too many final exam questions came from the very last few practicals and accompanying lectures, so focus on them.</li>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-growth">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-c-growth" aria-expanded="false" aria-controls="flush-c-growth">Growth and Development</button>
-                  </h2>
-                  <div id="flush-c-growth" class="accordion-collapse collapse" aria-labelledby="flush-growth" data-bs-parent="#recommendations-accordion">
-                    <div class="accordion-body">
-                      <ul>
-                        <li>Guide me project: <a href="https://drive.google.com/file/d/1I-4Sj-i0bvfsyJ9o435lAALhOmtT5GBh/view?usp=sharing" rel="nofollow">Growth & Development</a>.</li>
-                        <li>This course is very easy to neglect, so try to avoid cramming lectures the night before the exam. You might want to do 2 lectures once every couple of weeks to avoid falling behind. Most students survive this course by studying only on the weekend before the exam</li>
-                        <li>Osmosis is a great external resource for understanding embryology.</li>
-                        <li>Take notes from Dr. Hussein Abdullatif's lectures; he tends to say stuff that comes in the exams but is not in the lectures.</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <h4 class="recommendation-title">Phase 2 Semester 2</h4>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-phase2sem2">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-c-phase2sem2" aria-expanded="false" aria-controls="flush-c-phase2sem2">Phase 2 Semester 2 in General</button>
-                  </h2>
-                  <div id="flush-c-phase2sem2" class="accordion-collapse collapse" aria-labelledby="flush-phase2sem2" data-bs-parent="#recommendations-accordion">
-                    <div class="accordion-body">
-                      <ul>
-                        <li>Guide me project: <a href="https://drive.google.com/file/d/1xzOd_-Eke6zx5x47OuOc8flMLraJ4bzJ/view?usp=sharing" rel="nofollow">Phase 2 Semester 2</a></li>
-                        <li>This semester is less intense compared to the first semester in phase 2.</li>
-                        <li>There is even more focus towards tutorials/practicals in this semester compared to last semester.</li>
-                        <li>You will be having more pharmacology lectures than in semester 1, but they are slightly easier to study and memorise.</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-cvs">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-c-cvs" aria-expanded="false" aria-controls="flush-c-cvs">Cardiovascular System</button>
-                  </h2>
-                  <div id="flush-c-cvs" class="accordion-collapse collapse" aria-labelledby="flush-cvs" data-bs-parent="#recommendations-accordion">
-                    <div class="accordion-body">
-                      <ul>
-                        <li>Guide me project: <a href="https://drive.google.com/file/d/1Y3QyAWLSVfSHFFKD598HuBNHFIlA6gYI/view?usp=sharing" rel="nofollow">Cardiovascular System</a></li>
-                        <li>Use Anki whenever possible, especially for pharmacology. Sketchy Pharm is really recommended for studying the pharmacology lectures.</li>
-                        <li>Even if the instructors tell you that you do not have to memorise ECGs, it is still better to study them, as they will help you in exams.</li>
-                        <li>Although you will not take many microbiology lectures, a lot of exam questions came from them.</li>
-                        <li>When studying diseases, you do not need to memorise every single symptom as that is a waste of time. Just get the general idea of the symptoms. Usually in exams they give you a case and you are required to figure out what the condition is, so make sure you are able to do that.</li>
-                        <li>Osmosis is a good external source for pathology reviews.</li>
-                        <li>Boards and Beyond is probably the best external resource for the cardiovascular system in general.</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-his">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-c-his" aria-expanded="false" aria-controls="flush-c-his">Haematopoietic and Immune Systems</button>
-                  </h2>
-                  <div id="flush-c-his" class="accordion-collapse collapse" aria-labelledby="flush-his" data-bs-parent="#recommendations-accordion">
-                    <div class="accordion-body">
-                      <ul>
-                        <li>Guide me project: <a href="https://drive.google.com/file/d/11b2FJtR6OMPMyE6e6e3vxKxf_SbSvncg/view?usp=sharing" rel="nofollow">Haematopoietic and Immune Systems</a></li>
-                        <li>This course specifically relies way too much of SAQs, so practise them well.</li>
-                        <li>Unfortunately, relying solely on lectures will not get you far. You have to rely on external resources to score well.</li>
-                        <li>Suggested external resources to rely on: Review of Medical Microbiology and Immunology, Roitt's Essential Immunology, and Kaplan's book on immunology and microbiology.</li>
-                        <li>Pathoma is a highly recommend resource for hematology; everything is well-covered there.</li>
-                        <li>:)</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-integrated1">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-c-integrated1" aria-expanded="false" aria-controls="flush-c-integrated1">Integrated Module 1</button>
-                  </h2>
-                  <div id="flush-c-integrated1" class="accordion-collapse collapse" aria-labelledby="flush-integrated1" data-bs-parent="#recommendations-accordion">
-                    <div class="accordion-body">
-                      <ul>
-                        <li>Guide me project: <a href="https://drive.google.com/file/d/1fjtUSvqi7nY6ynfOetL4elh-P1h8HBHI/view?usp=sharing" rel="nofollow">Integrated Module 1</a></li>
-                        <li>Almost everything in this course has or will be covered this semester in other courses, so do not worry too much about them.</li>
-                        <li>Osmosis is a very good resource for this course.</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-respiratory">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-c-respiratory" aria-expanded="false" aria-controls="flush-c-respiratory">Respiratory System</button>
-                  </h2>
-                  <div id="flush-c-respiratory" class="accordion-collapse collapse" aria-labelledby="flush-respiratory" data-bs-parent="#recommendations-accordion">
-                    <div class="accordion-body">
-                      <ul>
-                        <li>Guide me project: <a href="https://drive.google.com/file/d/17g5AaBTlZNP_E1OQczvJ64QfFxJAOsGc/view?usp=sharing" rel="nofollow">Respiratory System</a></li>
-                        <li>Use Anki whenever possible, especially for pharmacology. Sketchy Pharm is really recommended for studying the pharmacology lectures.</li>
-                        <li>Pathoma is a very good resource for pathology.</li>
-                        <li>Osmosis is a good external source for pathology reviews.</li>
-                        <li></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-informatics2">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-c-informatics2" aria-expanded="false" aria-controls="flush-c-informatics2">Medical Informatics 2</button>
-                  </h2>
-                  <div id="flush-c-informatics2" class="accordion-collapse collapse" aria-labelledby="flush-informatics2" data-bs-parent="#recommendations-accordion">
-                    <div class="accordion-body">
-                      <ul>
-                        <li>Guide me project: <a href="https://drive.google.com/file/d/18M2NO-vX8UD7VGT1ocmaQmtgIWm7QD54/view?usp=sharing" rel="nofollow">Medical Informatics 2</a></li>
-                        <li>Frequently Asked Questions: <a href="https://drive.google.com/file/d/10L2uPC9auwDWKh5WojXQszuq6xxJHwYB/view?usp=sharing" rel="nofollow">Medical Informatics 2 FAQ</a></li>
-                        <li>When choosing the presentation topic, try to pick one that is presented in the earlier weeks so that you can get it done before you become busy with in-course assessments.</li>
-                        <li>For the book, you only need to study the parts of the book Dr. Ken referred to in his lectures.</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-research">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-c-research" aria-expanded="false" aria-controls="flush-c-research">Research Methodology</button>
-                  </h2>
-                  <div id="flush-c-research" class="accordion-collapse collapse" aria-labelledby="flush-research" data-bs-parent="#recommendations-accordion">
-                    <div class="accordion-body">
-                      <ul>
-                        <li>Guide me project: <a href="https://drive.google.com/file/d/1RZd3pWQBo4E11mgPG3CkRFAUnivB2okg/view?usp=sharing" rel="nofollow">Research Methodology</a></li>
-                        <li>Most of the lectures are the same as the ones you took in Hospital and Community Attachment.</li>
-                        <li>When choosing a research topic, look up the supervisor and check whether they have published many studies. This will give you a rough idea of whether your supervisor has experience in research. Also ask your colleagues about the supervisor.</li>
-                        <li>Try your best to aim for a publication. This is useful for you in the future.</li>
-                        <li>Be in good terms with your supervisor; in later semesters, your supervisor will also evaluate your performance, which will be part of the grading.</li>
-                        <li>Look up past research proposals by other students to get a general idea of what you should be doing.</li>
-                        <li>Ask your friends to check your research proposal for mistakes and get their insights on it.</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <h4 class="recommendation-title">Phase 2 Semester 3</h4>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-phase2sem3">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-c-phase2sem3" aria-expanded="false" aria-controls="flush-c-phase2sem3">Phase 2 Semester 3 in General</button>
-                  </h2>
-                  <div id="flush-c-phase2sem3" class="accordion-collapse collapse" aria-labelledby="flush-phase2sem3" data-bs-parent="#recommendations-accordion">
-                    <div class="accordion-body">
-                      <ul>
-                        <li>Guide me project: <a href="https://drive.google.com/file/d/1iOg5hkgjrLBBfPnKQk2IcDBt5Q0sjUq9/view?usp=sharing" rel="nofollow">Phase 2 Semester 3</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-alimentary">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-c-alimentary" aria-expanded="false" aria-controls="flush-c-alimentary">Alimentary System</button>
-                  </h2>
-                  <div id="flush-c-alimentary" class="accordion-collapse collapse" aria-labelledby="flush-alimentary" data-bs-parent="#recommendations-accordion">
-                    <div class="accordion-body">
-                      <ul>
-                        <li>Guide me project: <a href="https://drive.google.com/file/d/1UCYcG-chALFWrLpkjm19iz-_ZGYFD051/view?usp=sharing" rel="nofollow">Alimentary System</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-uroreproductive">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-c-uroreproductive" aria-expanded="false" aria-controls="flush-c-uroreproductive">Uro-reproductive System</button>
-                  </h2>
-                  <div id="flush-c-uroreproductive" class="accordion-collapse collapse" aria-labelledby="flush-uroreproductive" data-bs-parent="#recommendations-accordion">
-                    <div class="accordion-body">
-                      <ul>
-                        <li>Guide me project: <a href="https://drive.google.com/file/d/1OYDu1MPRCsj9jSeSkKt0p-QI9VfUdHaD/view?usp=sharing" rel="nofollow">Uro-reproductive System</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-integrated2">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-c-integrated2" aria-expanded="false" aria-controls="flush-c-integrated2">Integrated Module 2</button>
-                  </h2>
-                  <div id="flush-c-integrated2" class="accordion-collapse collapse" aria-labelledby="flush-integrated2" data-bs-parent="#recommendations-accordion">
-                    <div class="accordion-body">
-                      <ul>
-                        <li>Guide me project: <a href="https://drive.google.com/file/d/1ib2Bczuo5HTGdy4taZhUkGCuGKl2nZb8/view?usp=sharing" rel="nofollow">Integrated Module 2</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-nutrition">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-c-nutrition" aria-expanded="false" aria-controls="flush-c-nutrition">Clinical Nutrition</button>
-                  </h2>
-                  <div id="flush-c-nutrition" class="accordion-collapse collapse" aria-labelledby="flush-nutrition" data-bs-parent="#recommendations-accordion">
-                    <div class="accordion-body">
-                      <ul>
-                        <li>Guide me project: <a href="https://drive.google.com/file/d/1ylSA9a2jm_DdCgPG0oFaZjxtvhn_umAH/view?usp=sharing" rel="nofollow">Clinical Nutrition</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-project1">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-c-project1" aria-expanded="false" aria-controls="flush-c-project1">Student Project 1</button>
-                  </h2>
-                  <div id="flush-c-project1" class="accordion-collapse collapse" aria-labelledby="flush-project1" data-bs-parent="#recommendations-accordion">
-                    <div class="accordion-body">
-                      <ul>
-                        <li>Guide me project: <a href="https://drive.google.com/file/d/1us_cA7VAarBwDKuu5V6J990oQQf8BWuh/view?usp=sharing" rel="nofollow"> Student Project 1</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <h4 class="recommendation-title">Phase 2 Semester 4</h4>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-phase2semester4">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-c-phase2semester4" aria-expanded="false" aria-controls="flush-c-phase2semester4">Phase 2 Semester 4 in General</button>
-                  </h2>
-                  <div id="flush-c-phase2semester4" class="accordion-collapse collapse" aria-labelledby="flush-phase2semester4" data-bs-parent="#recommendations-accordion">
-                    <div class="accordion-body">
-                      <ul>
-                        <li>Guide me project: <a href="https://drive.google.com/file/d/1fgwhLV5YsbqZSK7jrRkg0O4Q_x3qh3Nz/view?usp=sharing" rel="nofollow">Phase 2 Semester 4</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-hns">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-c-hns" aria-expanded="false" aria-controls="flush-c-hns">Human Nervous System</button>
-                  </h2>
-                  <div id="flush-c-hns" class="accordion-collapse collapse" aria-labelledby="flush-hns" data-bs-parent="#recommendations-accordion">
-                    <div class="accordion-body">
-                      <ul>
-                        <li>Guide me project: <a href="https://drive.google.com/file/d/1LIyLWCtuXttRul2N5Vc9kAN9C0LmT5OM/view?usp=sharing" rel="nofollow">Human Nervous System System</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-endocrine">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-c-endocrine" aria-expanded="false" aria-controls="flush-c-endocrine">Endocrine System</button>
-                  </h2>
-                  <div id="flush-c-endocrine" class="accordion-collapse collapse" aria-labelledby="flush-endocrine" data-bs-parent="#recommendations-accordion">
-                    <div class="accordion-body">
-                      <ul>
-                        <li>Guide me project: <a href="https://drive.google.com/file/d/1CPVNU8zS6G_8iYTMMiLZIj6PI2NNjfKh/view?usp=sharing" rel="nofollow">Endocrine System</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-integrated3">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-c-integrated3" aria-expanded="false" aria-controls="flush-c-integrated3">Integrated Module 3</button>
-                  </h2>
-                  <div id="flush-c-integrated3" class="accordion-collapse collapse" aria-labelledby="flush-integrated3" data-bs-parent="#recommendations-accordion">
-                    <div class="accordion-body">
-                      <ul>
-                        <li>Guide me project: <a href="https://drive.google.com/file/d/1sfi0p96FRjGRtASw4nN7vzfZzhyXDBOr/view?usp=sharing" rel="nofollow">Integrated Module 3</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-locomotor">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-c-locomotor" aria-expanded="false" aria-controls="flush-c-locomotor">Locomotor System</button>
-                  </h2>
-                  <div id="flush-c-locomotor" class="accordion-collapse collapse" aria-labelledby="flush-locomotor" data-bs-parent="#recommendations-accordion">
-                    <div class="accordion-body">
-                      <ul>
-                        <li>Guide me project: <a href="https://drive.google.com/file/d/1pBhKAjHNwpZ6-pQpyAd9UCT6bOYTSW4E/view?usp=sharing" rel="nofollow">Locomotor System</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-project2">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-c-project2" aria-expanded="false" aria-controls="flush-c-project2">Student Project 2</button>
-                  </h2>
-                  <div id="flush-c-project2" class="accordion-collapse collapse" aria-labelledby="flush-project2" data-bs-parent="#recommendations-accordion">
-                    <div class="accordion-body">
-                      <ul>
-                        <li>Guide me project: <a href="https://drive.google.com/file/d/1nJOVj-nstB7WYY7HiljFo1nBiQdYzXLm/view?usp=sharing" rel="nofollow">Student Project 2</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Modal for the timetable section -->
-      <div class="modal fade" id="modal-timetable" tabindex="-1" aria-labelledby="modal-timetable-label" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-fullscreen-sm-down modal-filled">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modal-timetable-label">Timetable</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <div id="timetable-selector">
-                <div class="row">
-                  <div class="col-4 timetable-item timetable-active" data-switch="timetable-exam">Exam Timetable</div>
-                  <div class="col-4 timetable-item" data-switch="timetable-courses">Courses Timetable</div>
-                  <div class="col-4 timetable-item" data-switch="timetable-student">Student Timetable</div>
-                </div>
-              </div>
-              <div id="timetable-exam" class="timetable-page">
-                <div class="form-group">
-                  <select class="form-select" id="timetable-exam-semester">
-                    <option value="1" data-semester="p1">Phase 1</option>
-                    <option value="2" data-semester="p2s1">Phase 2 Semester 1</option>
-                    <!-- <option value="3" data-semester="p2s2">Phase 2 Semester 2</option> -->
-                    <option value="4" data-semester="p2s3">Phase 2 Semester 3</option>
-                    <!-- <option value="5" data-semester="p2s4">Phase 2 Semester 4</option> -->
-                  </select>
-                </div>
-              </div>
-              <div id="timetable-courses" class="timetable-page hidden">
-                <div class="form-group">
-                  <div class="row">
-                    <div class="col-6">
-                      <select class="form-select" id="timetable-courses-semester">
-                        <option value="1" data-semester="p1">Phase 1</option>
-                        <option value="2" data-semester="p2s1">Phase 2 Semester 1</option>
-                        <!-- <option value="3" data-semester="p2s2">Phase 2 Semester 2</option> -->
-                        <option value="4" data-semester="p2s3">Phase 2 Semester 3</option>
-                        <!-- <option value="5" data-semester="p2s4">Phase 2 Semester 4</option> -->
-                      </select>
-                    </div>
-                    <div class="col-6">
-                      <select class="form-select" id="timetable-courses-course">
-                        <option value="1" data-semester="p1" data-url="https://drive.google.com/file/d/1D5f1cUfpQkcLmDLURWMa8Maf9XB8E8AJ/preview">All Courses</option>
-                        <option value="2" data-semester="p1" data-url="https://drive.google.com/file/d/1D5f1cUfpQkcLmDLURWMa8Maf9XB8E8AJ/preview">Chemistry for Medicine</option>
-                        <option value="3" data-semester="p1" data-url="https://drive.google.com/file/d/1D5f1cUfpQkcLmDLURWMa8Maf9XB8E8AJ/preview">English for Medicine</option>
-                        <option value="4" data-semester="p1" data-url="https://drive.google.com/file/d/1D5f1cUfpQkcLmDLURWMa8Maf9XB8E8AJ/preview">Medical Informatics 1</option>
-                        <option value="5" data-semester="p1" data-url="https://drive.google.com/file/d/1D5f1cUfpQkcLmDLURWMa8Maf9XB8E8AJ/preview">Introduction to Anatomy</option>
-                        <option value="6" data-semester="p1" data-url="https://drive.google.com/file/d/1D5f1cUfpQkcLmDLURWMa8Maf9XB8E8AJ/preview">Introduction to Physiology</option>
-                        <option value="7" data-semester="p1" data-url="https://drive.google.com/file/d/1D5f1cUfpQkcLmDLURWMa8Maf9XB8E8AJ/preview">Enzymology and Metabolism</option>
-                        <option value="8" data-semester="p1" data-url="https://drive.google.com/file/d/1D5f1cUfpQkcLmDLURWMa8Maf9XB8E8AJ/preview">Cellular Communication</option>
-                        <option value="9" data-semester="p2s1" data-url="https://docs.google.com/file/d/1kX5_nGI1m-gQuiSX9IurtmzaivT3ROjm/preview">All Courses</option>
-                        <option value="10" data-semester="p2s1" data-url="https://drive.google.com/file/d/1YW8efXXW-ws0o0B8lRgH5mxdkBJfa8rV/preview">Response to Infection and Pathobiology</option>
-                        <option value="11" data-semester="p2s1" data-url="https://drive.google.com/file/d/1ewo5mhgJeA8Zb8NoH308OtZAetIU5f7R/preview">Structure-Function Relationship</option>
-                        <option value="12" data-semester="p2s1" data-url="https://drive.google.com/file/d/1uuEGKSdPTchIUS2SPGmKyfrvGPbC1FXw/preview">Hospital and Community Attachment</option>
-                        <option value="13" data-semester="p2s1" data-url="https://docs.google.com/file/d/1F6hqAwTjMd4gTcH7xvZTObWjKOn5ntcr/preview">Molecular Biology</option>
-                        <option value="14" data-semester="p2s1" data-url="https://drive.google.com/file/d/1xtmygF5D9hi1lA3F-mFqG2BXQAsOoq-V/preview">Growth and Development</option>
-                        <option value="15" data-semester="p2s2" data-url="">All Courses</option>
-                        <option value="16" data-semester="p2s2" data-url="">Cardiovascular System</option>
-                        <option value="17" data-semester="p2s2" data-url="">Haematopoietic and Immune Systems</option>
-                        <option value="18" data-semester="p2s2" data-url="">Integrated Module 1</option>
-                        <option value="19" data-semester="p2s2" data-url="">Respiratory System</option>
-                        <option value="20" data-semester="p2s2" data-url="">Medical Informatics 2</option>
-                        <option value="21" data-semester="p2s2" data-url="">Research Methodology</option>
-                        <option value="22" data-semester="p2s3" data-url="https://drive.google.com/file/d/1Q5SIqPlHJOVzEZwh5VYVjnYCRrwTifCN/preview">All Courses</option>
-                        <option value="23" data-semester="p2s3" data-url="https://drive.google.com/file/d/1C7Y39b6r2r0xEZRCmPsPInctesTcwIYS/preview">Alimentary System</option>
-                        <option value="24" data-semester="p2s3" data-url="https://drive.google.com/file/d/17yH2vw1uL3EC9qxb2ktUr7M7r2CvItOL/preview">Uro-reproductive System</option>
-                        <option value="25" data-semester="p2s3" data-url="https://drive.google.com/file/d/1Uu6EqMBb-f0NBLBaCgyDSzqhU1040yje/preview">Integrated Module 2</option>
-                        <option value="26" data-semester="p2s3" data-url="https://drive.google.com/file/d/1agkxDlvQm7asH9qbso211esLxlRUVIwX/preview">Clinical Nutrition</option>
-                        <option value="27" data-semester="p2s3" data-url="https://drive.google.com/file/d/1D5f1cUfpQkcLmDLURWMa8Maf9XB8E8AJ/preview">Student Project 1</option>
-                        <option value="28" data-semester="p2s4" data-url="">All Courses</option>
-                        <option value="29" data-semester="p2s4" data-url="">Human Nervous System</option>
-                        <option value="30" data-semester="p2s4" data-url="">Endocrine System</option>
-                        <option value="31" data-semester="p2s4" data-url="">Integrated Module 3</option>
-                        <option value="32" data-semester="p2s4" data-url="">Locomotor System</option>
-                        <option value="33" data-semester="p2s4" data-url="">Student Project 2</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <embed src="" id="timetable-courses-preview" class="modal-content-preview">
-              </div>
-              <div id="timetable-student" class="timetable-page hidden">
-                <div class="form-group">
-                  <select class="form-select" id="timetable-student-semester">
-                    <option value="2" data-semester="p2s1" data-url="https://drive.google.com/uc?id=1-JqF1xbVPaSVWtM6hPZtqkwDSxE_lxZT">Phase 2 Semester 1</option>
-                    <!-- <option value="3" data-semester="p2s2" data-url="">Phase 2 Semester 2</option> -->
-                    <option value="4" data-semester="p2s3" data-url="https://drive.google.com/uc?id=1PVoSRjnF-it5FfsCw1Aa49qpiyUjaJx5">Phase 2 Semester 3</option>
-                    <!-- <option value="5" data-semester="p2s4" data-url="">Phase 2 Semester 4</option> -->
-                  </select>
-                </div>
-                <img src="" id="timetable-student-preview" class="modal-content-preview">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Modal for the changelog -->
-      <div class="modal fade" id="modal-changelog" tabindex="-1" aria-labelledby="modal-changelog-label" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-fullscreen-sm-down modal-filled">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modal-changelog-label">Changelog</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body modal-body-styled">
-              <h2>Changelog</h2>
-              <p>The update logs will show up here for any documented changes to the website or the drive. Whenever there is a new change, the Changelog tile on the website will be highlighted until clicked. New changes are shown first.</p>
-              <div id="changelog-container"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="copy-message" class="hidden">Email copied to clipboard</div>
     </main>
+
+    <!-- Modal for announcements -->
+    <div class="modal fade" id="modal-announcements" tabindex="-1" aria-labelledby="modal-announcements-label" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered modal-fullscreen-sm-down">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-announcements-label">Announcements</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body modal-body-styled" id="announcements-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn modal-footer-btn" id="modal-announcements-close" data-bs-dismiss="modal">Do not show this again</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for the file explorer -->
+    <div class="modal fade" id="modal-explorer" tabindex="-1" aria-labelledby="modal-explorer-label" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-fullscreen-sm-down modal-filled">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-explorer-label">Files</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <iframe src="empty.html" id="explorer-iframe" class="modal-content-preview"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for the about section -->
+    <div class="modal fade" id="modal-about" tabindex="-1" aria-labelledby="modal-about-label" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-fullscreen-sm-down modal-filled">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-about-label">About</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body modal-body-styled">
+            <h2>Golden Drive</h2>
+            <p>A very inclusive archive of useful resources for medical students of Sultan Qaboos University hosted on Google Drive. The drive was founded by Abdulrahman Al-Hadhrami from the 2018 batch. Resources scattered across multiple drives were collected and combined into one single drive. Resources include lectures, tutorial solutions, practical notes, lecture summaries, Anki flashcards, past papers and extra questions, book and video libraries, and more.</p>
+            <h2>The Website</h2>
+            <p>This website is a fancy browser for the content of the Golden Drive on Google Drive. It was developed by Jihad Al-Yahamadi from the 2018 batch. Whatever files get uploaded, changed, or deleted from the drive, this website will update its content accordingly, as both are directly connected.</p>
+            <h2>Disclaimer</h2>
+            <p>The majority of the content in this drive were made by other students and is just being organised here. The content may be incorrect or outdated. If you would like to report anything incorrect, please contact any of us and submit your report for us to see.</p>
+            <h2>Attribution</h2>
+            <p>Most of the icons used on this website were taken from <a href="https://flaticon.com/" rel="nofollow">Flaticon</a>.</p>
+            <h2>DMCA Notice</h2>
+            <p>Please note that we do not own copyrights to any of the books or videos shown on this website. All books (with a few exceptions) and videos shown are not hosted on our website or Google Drive, and they are for educational purposes only. Said content is merely being linked.</p>
+            <p>© 2021 Golden Drive All Rights Reserved</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="modal-footer-btn" id="storage-clear" onclick="delete localStorage['goldenDriveStorage'];location.reload();"><i class="bi bi-sd-card"></i> Clear Local Storage (Bookmarks)</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for the contact us section -->
+    <div class="modal fade" id="modal-contact" tabindex="-1" aria-labelledby="modal-contact-label" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-fullscreen-sm-down modal-filled">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-contact-label">Contact Us</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body modal-body-styled">
+            <h2>Contact Us</h2>
+            <p>If there is a problem or a mistake you want to report, please contact any of us. It is recommmended to contact the person who is in charge of the thing you want to report (e.g., if it is about a summary, contact the author of the summary). If there is a problem with the website, contact Jihad Al-Yahmadi, as he is currently the only website developer.</p>
+            <div class="section-separator">
+              <h5>Administrators</h5>
+              <hr>
+            </div>
+            <div class="contact-card">
+              <h5><span class="contact-name">Abdulrahman Al-Hadhrami:</span> <a href="mailto: g12abood@gmail.com" rel="nofollow">g12abood@gmail.com</a></h5>
+              <span class="contact-info">
+                <span class="badge bg-primary">Golden Drive CEO</span>
+                <span class="badge">Drive Editor</span>
+                <span class="badge">2018 Batch</span>
+              </span>
+            </div>
+            <div class="contact-card">
+              <h5><span class="contact-name">Jihad Al-Yahmadi:</span> <a href="mailto: s129193@student.squ.edu.om" rel="nofollow">s129193@student.squ.edu.om</a></h5>
+              <span class="contact-info">
+                <span class="badge bg-primary">Website Developer</span>
+                <span class="badge bg-primary">Summaries Author</span>
+                <span class="badge">Drive Editor</span>
+                <span class="badge">2018 Batch</span>
+              </span>
+            </div>
+            <div class="section-separator">
+              <h5>2018 Batch Editors</h5>
+              <hr>
+            </div>
+            <div class="contact-card">
+              <h5><span class="contact-name">Abdulrahman Al-Hadhrami:</span> <a href="mailto: g12abood@gmail.com" rel="nofollow">g12abood@gmail.com</a></h5>
+              <span class="contact-info">
+                <span class="badge bg-primary">Golden Drive CEO</span>
+                <span class="badge">Drive Editor</span>
+                <span class="badge">2018 Batch</span>
+              </span>
+            </div>
+            <div class="contact-card">
+              <h5><span class="contact-name">Jihad Al-Yahmadi:</span> <a href="mailto: s129193@student.squ.edu.om" rel="nofollow">s129193@student.squ.edu.om</a></h5>
+              <span class="contact-info">
+                <span class="badge bg-primary">Website Developer</span>
+                <span class="badge bg-primary">Summaries Author</span>
+                <span class="badge">Drive Editor</span>
+                <span class="badge">2018 Batch</span>
+              </span>
+            </div>
+            <div class="contact-card">
+              <h5><span class="contact-name">Bayan Al-Harrasi:</span> <a href="mailto: happyhappyhappy123186@gmail.com" rel="nofollow">happyhappyhappy123186@gmail.com</a></h5>
+              <span class="contact-info">
+                <span class="badge bg-primary">Summaries Author</span>
+                <span class="badge">Drive Editor</span>
+                <span class="badge">2018 Batch</span>
+              </span>
+            </div>
+            <div class="contact-card">
+              <h5><span class="contact-name">Husain Al-Aswami:</span> <a href="mailto: i3swami00@gmail.com" rel="nofollow">i3swami00@gmail.com</a></h5>
+              <span class="contact-info">
+                <span class="badge bg-primary">Flashcards Author</span>
+                <span class="badge">Drive Editor</span>
+                <span class="badge">2018 Batch</span>
+              </span>
+            </div>
+            <div class="contact-card">
+              <h5><span class="contact-name">Abdullah Al-Lawati:</span> <a href="mailto: abdlawati1@gmail.com" rel="nofollow">abdlawati1@gmail.com</a></h5>
+              <span class="contact-info">
+                <span class="badge">Drive Editor</span>
+                <span class="badge">2018 Batch</span>
+              </span>
+            </div>
+            <div class="contact-card">
+              <h5><span class="contact-name">Mohammed Al-louyahi:</span> <a href="mailto: s127755@student.squ.edu.om" rel="nofollow">s127755@student.squ.edu.om</a></h5>
+              <span class="contact-info">
+                <span class="badge">Drive Editor</span>
+                <span class="badge">2018 Batch</span>
+              </span>
+            </div>
+            <div class="contact-card">
+              <h5><span class="contact-name">Meetham Al-Lawati:</span> <a href="mailto: allawati01@gmail.com" rel="nofollow">allawati01@gmail.com</a></h5>
+              <span class="contact-info">
+                <span class="badge">Drive Editor</span>
+                <span class="badge">2018 Batch</span>
+              </span>
+            </div>
+            <div class="contact-card">
+              <h5><span class="contact-name">Salha Al-Saadi:</span> <a href="mailto: s125602@student.squ.edu.om" rel="nofollow">s125602@student.squ.edu.om</a></h5>
+              <span class="contact-info">
+                <span class="badge">Drive Editor</span>
+                <span class="badge">2018 Batch</span>
+              </span>
+            </div>
+            <div class="contact-card">
+              <h5><span class="contact-name">Yamamah Jubori:</span> <a href="mailto: yamamahmahmood@hotmail.com" rel="nofollow">yamamahmahmood@hotmail.com</a></h5>
+              <span class="contact-info">
+                <span class="badge">Drive Editor</span>
+                <span class="badge">2018 Batch</span>
+              </span>
+            </div>
+            <div class="section-separator">
+              <h5>2019 Batch Editors</h5>
+              <hr>
+            </div>
+            <div class="contact-card">
+              <h5><span class="contact-name">Mohammed Al-Farsi:</span> <a href="mailto: m.alfarsi.02@gmail.com" rel="nofollow">m.alfarsi.02@gmail.com</a></h5>
+              <span class="contact-info">
+                <span class="badge bg-primary">Summaries Author</span>
+                <span class="badge">Drive Editor</span>
+                <span class="badge">2019 Batch</span>
+              </span>
+            </div>
+            <div class="contact-card">
+              <h5><span class="contact-name">Ibrahim Al-Ruhaili:</span> <a href="mailto: alruhailiibrahim02@gmail.com" rel="nofollow">alruhailiibrahim02@gmail.com</a></h5>
+              <span class="contact-info">
+                <span class="badge bg-primary">Flashcards Author</span>
+                <span class="badge">Drive Editor</span>
+                <span class="badge">2019 Batch</span>
+              </span>
+            </div>
+            <div class="contact-card">
+              <h5><span class="contact-name">Rashid Al-Shibli:</span> <a href="mailto: s129044@student.squ.edu.om" rel="nofollow">s129044@student.squ.edu.om</a></h5>
+              <span class="contact-info">
+                <span class="badge bg-primary">Flashcards Author</span>
+                <span class="badge">Drive Editor</span>
+                <span class="badge">2019 Batch</span>
+              </span>
+            </div>
+            <div class="contact-card">
+              <h5><span class="contact-name">Abdullah Al-Sawafi:</span> <a href="mailto: abdullah2001y@gmail.com" rel="nofollow">abdullah2001y@gmail.com</a></h5>
+              <span class="contact-info">
+                <span class="badge">Drive Editor</span>
+                <span class="badge">2019 Batch</span>
+              </span>
+            </div>
+            <div class="contact-card">
+              <h5><span class="contact-name">Mahmood Al-Jahdhami:</span> <a href="mailto: ma7moodj12@gmail.com" rel="nofollow">ma7moodj12@gmail.com</a></h5>
+              <span class="contact-info">
+                <span class="badge">Drive Editor</span>
+                <span class="badge">2019 Batch</span>
+              </span>
+            </div>
+            <div class="contact-card">
+              <h5><span class="contact-name">Mutaz Al-Hashmi:</span> <a href="mailto: alhashemi2221@gmail.com" rel="nofollow">alhashemi2221@gmail.com</a></h5>
+              <span class="contact-info">
+                <span class="badge">Drive Editor</span>
+                <span class="badge">2019 Batch</span>
+              </span>
+            </div>
+            <div class="contact-card">
+              <h5><span class="contact-name">Osama Al-Lawati:</span> <a href="mailto: u_sama2000@gmail.com" rel="nofollow">u_sama2000@hotmail.com</a></h5>
+              <span class="contact-info">
+                <span class="badge">Drive Editor</span>
+                <span class="badge">2019 Batch</span>
+              </span>
+            </div>
+            <div class="contact-card">
+              <h5><span class="contact-name">Wedad Al-Essai:</span> <a href="mailto: wedadalessai14@gmail.com" rel="nofollow">wedadalessai14@gmail.com</a></h5>
+              <span class="contact-info">
+                <span class="badge">Drive Editor</span>
+                <span class="badge">2019 Batch</span>
+              </span>
+            </div>
+            <div class="section-separator">
+              <h5>2020 Batch Editors</h5>
+              <hr>
+            </div>
+            <div class="contact-card">
+              <h5><span class="contact-name">Ahmed Al-Farsi:</span> <a href="mailto: alfarsi.0281@gmail.com" rel="nofollow">alfarsi.0281@gmail.com</a></h5>
+              <span class="contact-info">
+                <span class="badge">Drive Editor</span>
+                <span class="badge">2020 Batch</span>
+              </span>
+            </div>
+            <div class="contact-card">
+              <h5><span class="contact-name">Fatma Al-Shuhomi:</span> <a href="mailto: ffzozincloud@gmail.com" rel="nofollow">ffzozincloud@gmail.com</a></h5>
+              <span class="contact-info">
+                <span class="badge">Drive Editor</span>
+                <span class="badge">2020 Batch</span>
+              </span>
+            </div>
+            <div class="contact-card">
+              <h5><span class="contact-name">Mohammed Al-Hinai:</span> <a href="mailto: hinaioo53@gmail.com" rel="nofollow">hinaioo53@gmail.com</a></h5>
+              <span class="contact-info">
+                <span class="badge">Drive Editor</span>
+                <span class="badge">2020 Batch</span>
+              </span>
+            </div>
+            <div class="contact-card">
+              <h5><span class="contact-name">Mohammed Al-Suleimani:</span> <a href="mailto: mkhalidm6789@gmail.com" rel="nofollow">mkhalidm6789@gmail.com</a></h5>
+              <span class="contact-info">
+                <span class="badge">Drive Editor</span>
+                <span class="badge">2020 Batch</span>
+              </span>
+            </div>
+            <div class="contact-card">
+              <h5><span class="contact-name">Qabas Al-Ismaili:</span> <a href="mailto: alismailiqabas@gmail.com" rel="nofollow">alismailiqabas@gmail.com</a></h5>
+              <span class="contact-info">
+                <span class="badge">Drive Editor</span>
+                <span class="badge">2020 Batch</span>
+              </span>
+            </div>
+            <textarea id="copy-text"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for the Guides -->
+    <div class="modal fade" id="modal-guides" tabindex="-1" aria-labelledby="modal-guides-label" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-fullscreen">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-guides-label">Tips & Study Guide</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <iframe src="" id="guides-iframe" class="modal-content-preview"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for the timetable section -->
+    <div class="modal fade" id="modal-timetable" tabindex="-1" aria-labelledby="modal-timetable-label" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-fullscreen-sm-down modal-filled">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-timetable-label">Timetable</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div id="timetable-selector">
+              <div class="row">
+                <div class="col-4 timetable-item timetable-active" data-switch="timetable-exam">Exam Timetable</div>
+                <div class="col-4 timetable-item" data-switch="timetable-courses">Courses Timetable</div>
+                <div class="col-4 timetable-item" data-switch="timetable-student">Student Timetable</div>
+              </div>
+            </div>
+            <div id="timetable-exam" class="timetable-page">
+              <div class="form-group">
+                <select class="form-select" id="timetable-exam-semester">
+                  <option value="1" data-semester="p1">Phase 1</option>
+                  <!-- <option value="2" data-semester="p2s1">Phase 2 Semester 1</option> -->
+                  <option value="3" data-semester="p2s2">Phase 2 Semester 2</option>
+                  <!-- <option value="4" data-semester="p2s3">Phase 2 Semester 3</option> -->
+                  <option value="5" data-semester="p2s4">Phase 2 Semester 4</option>
+                </select>
+              </div>
+            </div>
+            <div id="timetable-courses" class="timetable-page hidden">
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-6">
+                    <select class="form-select" id="timetable-courses-semester">
+                      <option value="1" data-semester="p1">Phase 1</option>
+                      <option value="2" data-semester="p2s1">Phase 2 Semester 1</option>
+                      <option value="3" data-semester="p2s2">Phase 2 Semester 2</option>
+                      <option value="4" data-semester="p2s3">Phase 2 Semester 3</option>
+                      <option value="5" data-semester="p2s4">Phase 2 Semester 4</option>
+                    </select>
+                  </div>
+                  <div class="col-6">
+                    <select class="form-select" id="timetable-courses-course">
+                      <option value="1" data-semester="p1" data-url="https://drive.google.com/file/d/1nxfmmCP3-AqsneLWgWb3xvyv9cjQeTCF/preview">All Courses</option>
+                      <option value="2" data-semester="p1" data-url="https://drive.google.com/file/d/1bkmeM-LDlRfj2c7G9ZSHVMu6ZjPDdNFH/preview">Chemistry for Medicine</option>
+                      <option value="3" data-semester="p1" data-url="https://drive.google.com/file/d/1ScrQNCWChYjDHdJqR9LvdyEreuT_TDK1/preview">English for Medicine</option>
+                      <option value="4" data-semester="p1" data-url="https://drive.google.com/file/d/1ToBwvqU7fJDoGD-R7RP5eka9wNeoVN5x/preview">Medical Informatics 1</option>
+                      <option value="5" data-semester="p1" data-url="https://drive.google.com/file/d/10ZaKZUjOeAfzJqOIPBzCPF8qcizXCE9X/preview">Introduction to Anatomy</option>
+                      <option value="6" data-semester="p1" data-url="https://drive.google.com/file/d/1xiiiBncGWV-Ecmd_cLA9utsmCiRXPcXl/preview">Introduction to Physiology</option>
+                      <option value="7" data-semester="p1" data-url="https://drive.google.com/file/d/1bUcKWXCtEqFjA8ozH7e0luuFHBwSaDGW/preview">Enzymology and Metabolism</option>
+                      <option value="8" data-semester="p1" data-url="https://drive.google.com/file/d/1UM8tfExMpaolpOVKg2x0PnwV1cJiszET/preview">Cellular Communication</option>
+                      <option value="9" data-semester="p2s1" data-url="https://drive.google.com/file/d/1EXBThuWHrsQPeI1qmfyzBU7bWDEkEW5C/preview">All Courses</option>
+                      <option value="10" data-semester="p2s1" data-url="https://drive.google.com/file/d/1YW8efXXW-ws0o0B8lRgH5mxdkBJfa8rV/preview">Response to Infection and Pathobiology</option>
+                      <option value="11" data-semester="p2s1" data-url="https://drive.google.com/file/d/1ewo5mhgJeA8Zb8NoH308OtZAetIU5f7R/preview">Structure-Function Relationship</option>
+                      <option value="12" data-semester="p2s1" data-url="https://drive.google.com/file/d/1uuEGKSdPTchIUS2SPGmKyfrvGPbC1FXw/preview">Hospital and Community Attachment</option>
+                      <option value="13" data-semester="p2s1" data-url="https://docs.google.com/file/d/1F6hqAwTjMd4gTcH7xvZTObWjKOn5ntcr/preview">Molecular Biology</option>
+                      <option value="14" data-semester="p2s1" data-url="https://drive.google.com/file/d/1xtmygF5D9hi1lA3F-mFqG2BXQAsOoq-V/preview">Growth and Development</option>
+                      <option value="15" data-semester="p2s2" data-url="https://drive.google.com/file/d/1o9rAhuazLlxJJ2w93oHYbkQ8g-vixOLW/preview">All Courses</option>
+                      <option value="16" data-semester="p2s2" data-url="https://drive.google.com/file/d/1yssatOmVLw86stL81YDwvl75rVvYLHL5/preview">Cardiovascular System</option>
+                      <option value="17" data-semester="p2s2" data-url="https://drive.google.com/file/d/1zfldImZjc5GCTIg7NTG75R6YUA6iE8Ti/preview">Haematopoietic and Immune Systems</option>
+                      <option value="18" data-semester="p2s2" data-url="https://drive.google.com/file/d/11FQBbjdblxwwXGkxgmoUqamA1Egz0-G_/preview">Integrated Module 1</option>
+                      <option value="19" data-semester="p2s2" data-url="https://drive.google.com/file/d/13xT-xgMO9kpWdhTuoyu4lw-1uS6Tnl8O/preview">Respiratory System</option>
+                      <option value="20" data-semester="p2s2" data-url="https://drive.google.com/file/d/1Dj1q25uJXbL3AqV7cOjmrUB_4Grnhw2v/preview">Medical Informatics 2</option>
+                      <option value="21" data-semester="p2s2" data-url="https://drive.google.com/file/d/1mDnEvOwnx5Aiyh5S3eQhgwvU61T6bF3i/preview">Research Methodology</option>
+                      <option value="22" data-semester="p2s3" data-url="https://drive.google.com/file/d/1Q5SIqPlHJOVzEZwh5VYVjnYCRrwTifCN/preview">All Courses</option>
+                      <option value="23" data-semester="p2s3" data-url="https://drive.google.com/file/d/1C7Y39b6r2r0xEZRCmPsPInctesTcwIYS/preview">Alimentary System</option>
+                      <option value="24" data-semester="p2s3" data-url="https://drive.google.com/file/d/17yH2vw1uL3EC9qxb2ktUr7M7r2CvItOL/preview">Uro-reproductive System</option>
+                      <option value="25" data-semester="p2s3" data-url="https://drive.google.com/file/d/1Uu6EqMBb-f0NBLBaCgyDSzqhU1040yje/preview">Integrated Module 2</option>
+                      <option value="26" data-semester="p2s3" data-url="https://drive.google.com/file/d/1agkxDlvQm7asH9qbso211esLxlRUVIwX/preview">Clinical Nutrition</option>
+                      <option value="27" data-semester="p2s3" data-url="https://drive.google.com/file/d/1LsdkRjP154ierBSgjljsOsMMM7w2sZ5B/preview">Student Project 1</option>
+                      <option value="28" data-semester="p2s4" data-url="https://drive.google.com/file/d/1kMtLg6H9_M4YUIFH1U-N47WUCJB6K-YB/preview">All Courses</option>
+                      <option value="29" data-semester="p2s4" data-url="https://drive.google.com/file/d/1s0rL0eV77I7vbiey9H9NW-UJ8yHH_bUH/preview">Human Nervous System</option>
+                      <option value="30" data-semester="p2s4" data-url="https://drive.google.com/file/d/1r4qBUwbMimANCbL4owe4QnFSQILEooeT/preview">Endocrine System</option>
+                      <option value="31" data-semester="p2s4" data-url="https://drive.google.com/file/d/1muaXWaEvuh6LOruVYG4YVCeGZIHVtvaA/preview">Integrated Module 3</option>
+                      <option value="32" data-semester="p2s4" data-url="https://drive.google.com/file/d/176-zN6BQ00z2PZ1vFzABwm4FvFAhpg3d/preview">Locomotor System</option>
+                      <option value="33" data-semester="p2s4" data-url="https://drive.google.com/file/d/1T1MaHhsOWLPTy05pWv-jOxRI4N24VPDT/preview">Student Project 2</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <embed src="" id="timetable-courses-preview" class="modal-content-preview">
+            </div>
+            <div id="timetable-student" class="timetable-page hidden">
+              <div class="form-group">
+                <select class="form-select" id="timetable-student-semester">
+                  <option value="2" data-semester="p2s1" data-url="https://drive.google.com/uc?id=1-JqF1xbVPaSVWtM6hPZtqkwDSxE_lxZT">Phase 2 Semester 1</option>
+                  <option value="3" data-semester="p2s2" data-url="https://drive.google.com/uc?id=1UnHuHCOiD4OgMS93QFN80yH4E6mBX6vK">Phase 2 Semester 2</option>
+                  <option value="4" data-semester="p2s3" data-url="https://drive.google.com/uc?id=1PVoSRjnF-it5FfsCw1Aa49qpiyUjaJx5">Phase 2 Semester 3</option>
+                  <option value="5" data-semester="p2s4" data-url="https://drive.google.com/uc?id=1BaTViEgfuWLMHsp760bYsDvzkSWWJ2oX">Phase 2 Semester 4</option>
+                </select>
+              </div>
+              <img src="" id="timetable-student-preview" class="modal-content-preview">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for the changelog -->
+    <div class="modal fade" id="modal-changelog" tabindex="-1" aria-labelledby="modal-changelog-label" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-fullscreen-sm-down modal-filled">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-changelog-label">Changelog</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body modal-body-styled">
+            <h2>Changelog</h2>
+            <p>The update logs will show up here for any documented changes to the website or the drive. Whenever there is a new change, the Changelog tile on the website will be highlighted until clicked. New changes are shown first.</p>
+            <div id="changelog-container"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for the other batch drives -->
+    <div class="modal fade" id="modal-otherdrives" tabindex="-1" aria-labelledby="modal-otherdrives-label" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-fullscreen-sm-down modal-filled">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-otherdrives-label">Other Batch Drives</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <a href="https://drive.google.com/drive/u/1/folders/1xLHF_OpkFDieAzpLJdPoMret0QnzTR6B" rel="nofollow"><div class="otherdrives-link" rel="nofollow">2017 Batch Drive</div></a>
+            <a href="https://drive.google.com/drive/u/1/folders/1sy2ziMevMByhYy1WQ5dt42AII5r1LMKj" rel="nofollow"><div class="otherdrives-link" rel="nofollow">2016 Batch Drive</div></a>
+            <a href="https://drive.google.com/drive/u/1/folders/1iunSaV1bTeQEtXb2Ac0utuM8lOnk4q09" rel="nofollow"><div class="otherdrives-link" rel="nofollow">2015 Batch Drive</div></a>
+            <a href="https://drive.google.com/drive/u/1/folders/1zqeWHBl0-0a6Lv7nATO9mvF7ldLUO6lL" rel="nofollow"><div class="otherdrives-link" rel="nofollow">2014 Batch Drive</div></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="copy-message" class="hidden">Email copied to clipboard</div>
   </body>
 </html>

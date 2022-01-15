@@ -1,6 +1,7 @@
 // Navigation tree to be used to navigate back when the back button is clicked
 var tree = {
   chemistry: "phase1",
+  english: "phase1",
   informatics1: "phase1",
   anatomy: "phase1",
   physiology: "phase1",
@@ -29,6 +30,54 @@ var tree = {
   project2: "phase2sem4"
 }
 
+// Page to icon src to be used for bookmarks
+var iconsSrc = {
+  phase1: "icons/1.svg",
+  phase2: "icons/2.svg",
+  phase3: "icons/3.svg",
+  phase2sem1: "icons/1.svg",
+  phase2sem2: "icons/2.svg",
+  phase2sem3: "icons/3.svg",
+  phase2sem4: "icons/4.svg",
+  phase2sem1: "icons/1.svg",
+  preclerkship: "icons/trophy1.svg",
+  juniorclerkship: "icons/trophy2.svg",
+  seniorclerkship: "icons/trophy3.svg",
+  preinternship:"icons/trophy4.svg",
+  resources: "icons/resources.svg",
+  guides: "icons/guides.svg",
+  books: "icons/books.svg",
+  video: "icons/videolibrary.svg",
+  chemistry: "icons/chemistry.svg",
+  english: "icons/english.svg",
+  informatics1: "icons/informatics.svg",
+  anatomy: "icons/anatomy.svg",
+  physiology: "icons/physiology.svg",
+  enzymology: "icons/enzymology.svg",
+  cytology: "icons/cellular.svg",
+  rip: "icons/rip.svg",
+  sfr: "icons/sfr.svg",
+  hospital: "icons/hospital.svg",
+  molecular: "icons/molecular.svg",
+  growth: "icons/growth.svg",
+  cvs: "icons/cvs.svg",
+  his: "icons/his.svg",
+  integrated1: "icons/integrated.svg",
+  respiratory: "icons/respiratory.svg",
+  informatics2: "icons/informatics.svg",
+  research: "icons/research.svg",
+  alimentary: "icons/alimentary.svg",
+  uroreproductive: "icons/uroreproductive.svg",
+  integrated2: "icons/integrated.svg",
+  nutrition: "icons/nutrition.svg",
+  project1: "icons/project.svg",
+  hns: "icons/hns.svg",
+  endocrine: "icons/endocrine.svg",
+  integrated3: "icons/integrated.svg",
+  locomotor: "icons/locomotor.svg",
+  project2: "icons/project.svg"
+}
+
 // Load/initialise localStorage
 var storage = localStorage["goldenDriveStorage"];
 if(storage){
@@ -40,7 +89,9 @@ if(storage){
     defaultCourseSemester: "p1",
     defaultExamSemester: "p1",
     defaultStudentSemester: "p2s1",
+    lastAnnouncement: "",
     lastChangelog: "",
+    theme: "golden"
   }
   localStorage["goldenDriveStorage"] = JSON.stringify(storage);
 }
@@ -51,7 +102,9 @@ var bookmarkLabels = storage["bookmarkLabels"];
 var defaultCourseSemester = storage["defaultCourseSemester"];
 var defaultExamSemester = storage["defaultExamSemester"];
 var defaultStudentSemester = storage["defaultStudentSemester"];
+var lastAnnouncement = storage["lastAnnouncement"];
 var lastChangelog = storage["lastChangelog"];
+var theme = storage["theme"];
 // Handle an error that has occurred for some people during development
 if(typeof(lastChangelog) !== "string"){
   lastChangelog = "";
@@ -71,7 +124,9 @@ function updateStorage(){
   storage["defaultCourseSemester"] = defaultCourseSemester;
   storage["defaultExamSemester"] = defaultExamSemester;
   storage["defaultStudentSemester"] = defaultStudentSemester;
+  storage["lastAnnouncement"] = lastAnnouncement;
   storage["lastChangelog"] = lastChangelog;
+  storage["theme"] = theme;
   localStorage["goldenDriveStorage"] = JSON.stringify(storage);
 }
 
@@ -142,14 +197,20 @@ function updateBookmarks(){
   if(bookmarks.length){
     $("#bookmark-dropdown").html("");
     for(var i = 0; i < bookmarks.length; i++){
-      $("#bookmark-dropdown").append("<a class='dropdown-item' href='" + bookmarks[i] + "'>" + bookmarkLabels[bookmarks[i]] + "</a>");
+      var bookmarkIcon = "icons/home.svg";
+      for(var j = 0; j < bookmarks[i].split("#").length; j++){
+        if(iconsSrc[bookmarks[i].split("#")[j]]){
+          bookmarkIcon = iconsSrc[bookmarks[i].split("#")[j]];
+        }
+      }
+      $("#bookmark-dropdown").append("<a class='dropdown-item' href='" + bookmarks[i] + "'><object type='image/svg+xml' data='" + bookmarkIcon + "'></object>" + bookmarkLabels[bookmarks[i]] + "</a>");
     }
     $("#bookmark-dropdown a").click(function(){
       location.hash = $(this).attr("href");
       location.reload();
     });
   } else {
-    $("#bookmark-dropdown").html("<a class='dropdown-item disabled' style='white-space: initial'>No bookmarks</a>");
+    $("#bookmark-dropdown").html("<a class='dropdown-item disabled'>No bookmarks. Navigate to any page and click \"Add Bookmark\" to add a new bookmark.</a>");
   }
 }
 
@@ -158,13 +219,19 @@ function updateBookmarks(){
 function readExams(){
   var data = timetableText.replace(/(^[ \t]*\n)/gm, "").replace(/\n$/gm, "");
   var lines = data.split("\n");
+  var currentDateObj = new Date();
   for(var i = 0; i < lines.length; i++){
     var lineSegments = lines[i].split("|");
     var newDate = lineSegments[2].split("/");
     var newTime = lineSegments[3].split(":");
     var newDateObj = new Date(parseInt(newDate[2]), parseInt(newDate[1]) - 1, parseInt(newDate[0]), parseInt(newTime[0]), parseInt(newTime[1]));
-    var newExam = [lineSegments[0], lineSegments[1], newDateObj, lineSegments[4]];
-    examTimes.push(newExam);
+    if(newDateObj > currentDateObj){
+      var newExam = [lineSegments[0], lineSegments[1], newDateObj, lineSegments[4]];
+      examTimes.push(newExam);
+    }
+    examTimes.sort(function(a, b){
+      return a[2] - b[2];
+    });
   }
 }
 
@@ -221,8 +288,10 @@ function readChangelog(){
 
 // Translate changelogNotes into a changelog list on the website
 function updateChangelog(){
+  var newChanges = 0;
   if(currentChangelog != lastChangelog){
     $("#changelog").addClass("bigbtn-active");
+    $("#changelog-badge").show();
   }
   for(var i = 0; i < changelogNotes.length; i++){
     var notes = "";
@@ -241,6 +310,7 @@ function updateChangelog(){
           "<ul>" + notes + "</ul>" +
         "</div>";
     } else {
+      newChanges += 1;
       var newChangelogEntry =
         "<div class='changelog-note'>" +
           "<h6>" + changelogNotes[i][0] + " <span class='badge bg-changelog bg-primary'>New</span></h6>" +
@@ -249,6 +319,7 @@ function updateChangelog(){
     }
     $("#changelog-container").append(newChangelogEntry);
   }
+  $("#changelog-badge").text("+" + newChanges);
 }
 
 // Make sure the iframe size is always correct when the window is resized
@@ -259,12 +330,37 @@ $(window).on("resize", function(){
 
 $(document).ready(function(){
 
+  // The load timer is used to judge whether to force a longer loading time or not (for the MoTD)
+  var endLoadTime = (new Date()).getTime();
+  var loadTime = endLoadTime - startLoadTime;
+
   // Somehow this fixes a weird bug (CSS filter on #iframe-gdrive and #explorer-iframe get applied on the whole page momentarily)
   $("#iframe-gdrive").attr("src", "");
   $("#explorer-iframe").attr("src", "");
 
-  // Remove the loader when the script is loaded
-  $("body").css("background-image", "none");
+  // Remove the loader when the script is loaded or force a longer load time to read the MoTD\
+  // Also show the announcement if it has never been seen before
+  if(loadTime >= 1500){
+    $("body").css("overflow", "auto");
+    $("#loader-overlay").fadeOut(400);
+    $(".container").css("transform", "scale(1)");
+    if(showAnnouncement && announcements != lastAnnouncement){
+      var announcementsModal = new bootstrap.Modal($("#modal-announcements"));
+      $("#announcements-body").html(announcements);
+      announcementsModal.toggle();
+    }
+  } else {
+    setTimeout(function(){
+      $("body").css("overflow", "auto");
+      $("#loader-overlay").fadeOut(400);
+      $(".container").css("transform", "scale(1)");
+      if(showAnnouncement && announcements != lastAnnouncement){
+        var announcementsModal = new bootstrap.Modal($("#modal-announcements"));
+        $("#announcements-body").html(announcements);
+        announcementsModal.toggle();
+      }
+    }, 1500 - loadTime);
+  }
 
   // Navigate to the correct page depending on the URL hash
   if(location.hash.split("#").length > 2){
@@ -313,9 +409,16 @@ $(document).ready(function(){
   readChangelog();
   updateChangelog();
 
-  // Save the new changelog as lastChangelog and remove the .bigbtn-active class
+  // Prevent the announcements modal from showing again only when the close button is clicked
+  $("#modal-announcements-close").click(function(){
+    lastAnnouncement = announcements;
+    updateStorage();
+  });
+
+  // Save the new changelog as lastChangelog and remove the .bigbtn-active class and hide #changelog-badge
   $("body").on("click", ".bigbtn-active", function(){
     $("#changelog").removeClass("bigbtn-active");
+    $("#changelog-badge").hide();
     lastChangelog = currentChangelog;
     updateStorage();
   });
@@ -323,7 +426,7 @@ $(document).ready(function(){
   // Change the src of the modal explorer iframe when .table-file is clicked
   $("body").on("click", ".table-file", function(){
     $("#explorer-iframe").attr("src", "https://drive.google.com/embeddedfolderview?id=" + $(this).attr("data-id") + "#list");
-    $("#modal-explorer .modal-body").css("background-image", "url('loader.svg')");
+    $("#modal-explorer .modal-body").css("background-image", "url('puffloader.svg')");
     $("#explorer-iframe").on("load", function(){
       $("#explorer-iframe").css("opacity", "1");
       $("#modal-explorer .modal-body").css("background-image", "none");
@@ -363,6 +466,37 @@ $(document).ready(function(){
     }, 1500);
   });
 
+  // Functionality for changing themes
+  $(".theme-change").click(function(){
+    theme = $(this).attr("data-theme-change");
+    $("html").attr("data-theme", theme);
+    updateStorage();
+  });
+
+  // Change the iframe of the guides modal to the appropriate URL when .guide is clicked
+  $(".guide").click(function(){
+    $("#guides-iframe").attr("src", $(this).attr("data-guide"));
+    $("#modal-guides .modal-body").css("background-image", "url('puffloader.svg')");
+    $("#guides-iframe").on("load", function(){
+      $("#guides-iframe").css("opacity", "1");
+      $("#modal-guides .modal-body").css("background-image", "none");
+    });
+  });
+
+  // Reset the guides iframe when the modal is closed
+  document.getElementById("modal-guides").addEventListener("hidden.bs.modal", function(e){
+    $("#guides-iframe").replaceWith("<iframe src='' id='guides-iframe' class='modal-content-preview'></iframe>");
+    $("#guides-iframe").css("opacity", "0");
+  });
+
+  // Add animations for when the page is changed
+  $(".page-changer, .course-content[data-iframe='false']").click(function(){
+    $(".container").css("transform", "scale(0.9)");
+    setTimeout(function(){
+      $(".container").css("transform", "scale(1)");
+    }, 200);
+  });
+
   // Show the correct page when .page-changer is clicked
   $(".page-changer").click(function(){
     $(".page").fadeOut(200);
@@ -394,11 +528,25 @@ $(document).ready(function(){
     }, 200);
   });
 
+  // Load book thumbnails if the current page is the books page or if #bigbtn-book is clicked
+  if(location.hash == "#books"){
+    for(var i = 0; i < $(".book-cover").length; i++){
+      $(".book-cover").eq(i).attr("src", $(".book-cover").eq(i).attr("data-src"));
+    }
+  }
+  $("#bigbtn-books").click(function(){
+    for(var i = 0; i < $(".book-cover").length; i++){
+      $(".book-cover").eq(i).attr("src", $(".book-cover").eq(i).attr("data-src"));
+    }
+  });
+
   // Show the Google Drive iframe with the correct file ID when .course-content is clicked
   // Alternatively, if folders are supposed to be shown, list them under #table-files
   $(".course-content").click(function(){
     $(".page").fadeOut(200);
     if($(this).attr("data-iframe") == "true"){
+      $("#loader-overlay").fadeIn(400);
+      $(".container").css("transform", "scale(0.75)");
       $("#table-files").hide();
       $("#iframe-wrap").show();
       $("#top").fadeOut(200);
@@ -409,6 +557,8 @@ $(document).ready(function(){
         iframeResize();
         $("#iframe-gdrive").css("opacity", "1");
         $("#iframe-wrap").css("background-image", "none");
+        $("#loader-overlay").fadeOut(400);
+        $(".container").css("transform", "scale(1)");
       });
     } else {
       var explorerFiles = JSON.parse($(this).attr("data-id"));

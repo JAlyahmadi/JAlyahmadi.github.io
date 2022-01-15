@@ -5,11 +5,31 @@ var folderIDs = {
     notes: "1DU54tBxnpx_61tA6HVhBIUpLfDVk6Nha",
     qbank: "16mfqb68q7G2BdMEZDNW3TZaxq6Q67m52"
   },
+  english: {
+    lectures: [
+      ["Theory Chapters", "1XeSfxgIu5SkKdDakRR7y7BF2UIIllIg2"],
+      ["Medical Terminology", "1tgf3OreNqtSFj8XQqGcf-2xr5Ja0XVsn"]
+    ],
+    flashcards: "",
+    qbank: "1F7HDfJSEBBVBlmK-QWOZ2RLLMaOGi0_c"
+  },
+  informatics1: {
+    lectures: "1_M4-pg67IyHMgdZbYQc9gqIb_aV7JSxi",
+    notes: [
+      ["Photopea", "1PAVnGzFubio5cscy9fw3QxVe3q2dKBpK"],
+      ["Audacity", "1BHO0x77WckVc_BGBxBpkNLenuq8wfx7G"],
+      ["Kdenlive", "10cXAwVZUByP-OPrU_CIV5Ay2UuKqN-Hm"],
+      ["VeraCrypt", "13jqzxgQjbcrb4dBKK8BLYE61AsX98T8Q"],
+      ["LTB e-Poster", "1tJb4hQpElvPYTuW4jkpps0IZi314MsiI"]
+    ],
+    qbank: [
+      ["ICA", "16r4UM6pZlQqACCiTGTNkCC-j5vcBPu7I"],
+      ["Final", "1F6RM7Xzp6ZhqFXaEuyexCSg6uRFhoCAj"]
+    ]
+  },
   anatomy: {
     lectures: "15z20mqm0H83ZJ_VA9SCPmwzrC4nmo6UO",
-    practicals: [
-      ["Histology Program", "1g44VZdT3u1wAywtcuQv0MtLzYeoh9k1L"]
-    ],
+    practicals: "1QxjP3rMKHkqoVI8ktenfVvDkqdPy5Bt0",
     notes: "1DgJGkb2wvwXq6s9U7FpTvBPJr4dnbwnV",
     flashcards: [
       ["Histology", "1LlDiXbzPZYdLaMmynKWQCBdzC1wFc5Fu"],
@@ -29,10 +49,11 @@ var folderIDs = {
     notes: "1CRc9YGNTAEgH7yyQWJeKf9T3lZcqBCpy",
     flashcards: "1XHaGMLlYVs9-6gNcwCenyuf0bjovbqoa",
     qbank: [
+      ["Quizzes", "1UdyCByMFr76nfXsj8CKtnL0oav_OYNuG"],
       ["ICA 1", "1Mzu8fTXIEB-9Brj34LeQAEQNusKDR7Tc"],
       ["ICA 2", "1nT-V6PCH5_narSZGgg4uErerxBAqY0Et"],
       ["Final", "1Uc00G1fRqAQxDa8fNrvyJjiR32iIHNGl"],
-      ["System-based Questions", "1w9unOVTQqSBbaup1C4HIS2Exyd1mFJuP"],
+      ["System-Based Questions", "1w9unOVTQqSBbaup1C4HIS2Exyd1mFJuP"],
       ["Extra Questions", "1cZErjgeTrO2pXqhYogquUzjy7cldybgj"]
     ]
   },
@@ -55,12 +76,8 @@ var folderIDs = {
     ],
     notes: "1aLm0_Q5R4abbqzIEjKt_ejCdlNu19Xb-",
     qbank: [
-      ["Enzyme Questions", "1gPo9a4KLtjiY7QaOJlbCilPz-rTooZac"],
-      ["Bioenergetics", "1BpBmzcr1AyduTYsfUYKiBOJhyko10FFA"],
-      ["Carbohydrate Questions", "1fK6BAynS7nvbQyGBnoepEzX6ocjZfSJo"],
-      ["Amino Acid Questions", "1fxmhxDumdCAKNBlWqp2MUcD5O8wr43tC"],
       ["ICA", "1e5SUymY_iM3WCUKZE5drUnodMkAfK-mn"],
-      ["Open-book Exam", "1nILDCgU7812XvweZa0DbguTcOaRsDref"],
+      ["Open-Book Exam", "1nILDCgU7812XvweZa0DbguTcOaRsDref"],
       ["Final", "1eFyR3P-cGNNLfbE_PxRsU7LsU-WLfU76"],
       ["Extra Questions", "1DkYjwZEAZMa-miEV6_jwlZAxDlZFP9Is"]
     ]
@@ -134,8 +151,7 @@ var folderIDs = {
     practicals: [
       ["Anatomy Practicals", "1VuaA_8SAfl7x6FK-tpbvHJM6X_a-0Xum"],
       ["Physiology Practicals", "1lk2j0vFArrduJfqavoIU4q06ZRC3Vi5j"],
-      ["Surface Anatomy", "1m2nRO3eKjL0FT5yViVbI9R-K1x3Jv6g0"],
-      ["X-rays", "13OFLOdwDTtoTh__dycbwJxSRhlCpJ8IJ"]
+      ["Surface Anatomy", "1m2nRO3eKjL0FT5yViVbI9R-K1x3Jv6g0"]
     ],
     notes: "1-Mps0wDVmMuYgpVbz3FNMx-rpK1dLIKK",
     flashcards: "10zT3G2EVtU8U3ZQSEDQNWImG-8Gm_F7j",
@@ -520,11 +536,134 @@ var folderIDs = {
     notes: "1swoj5ds2jG8FlPv8VW11m11LEtsFjSMh"
   },
 
-  hns: {},
-  endocrine: {},
-  integrated3: {},
-  locomotor: {},
-  project2: {},
+  hns: {
+    lectures: "1Uql0jklcEU_iUD-mdX9tz5VQqIxP5Fg0",
+    tutorials: [
+      ["Tutorial 1", "1pP867HRuc2OSvG2XVrfj68CSSKFL2XU8"],
+      ["Tutorial 2", "1EBHzvhZVxqwokbVw7BwUMDV1GRPdmMbq"],
+      ["Tutorial 3", "1zwAAG4SxeGxbbj5hPbMxzv1j8hK81lWl"],
+      ["Tutorial 4", "1MUv4ov00uy-14Me_NJtgifhfZ63wYgbQ"],
+      ["Tutorial 5", "1eK4GHoXiWZ3qBvYV-EHnn9-c496FEW5W"],
+      ["Tutorial 6", "1gbp1weNUUgfK87Lj7WBCvaMYn5dM1Qtf"],
+      ["Tutorial 7", "1wih8jc7VjbA6crw2dzR-p7Cn9n_N6Dh0"],
+      ["Tutorial 8", "1ZXlziBkr9feV7cFlwxwmaoXKH5v9bhUS"],
+      ["Tutorial 9", "1CIlHP_RIA3mOHRkmm5YdbiX4ShvzfVd8"],
+      ["Tutorial 10", "1VBjIUYSQVPjLHZdwKijl5VarQ7M5ptYU"],
+      ["Tutorial 11", "1Wm73HcQDF-wafgCmxJ4cLP6wWxDwha8J"],
+      ["Tutorial 12", "18vww1RdgMZ99PFT7UGca75ix7ykTmfce"],
+      ["Tutorial 13", "1OFLTe__ggPegvFRZLA0ZEwzXPrKlcneC"],
+      ["Tutorial 14", "1tSGcxeR1XWkBXEQ9T3LXvplnxs8QcjD4"]
+    ],
+    practicals: [
+      ["Practical 1", "1JOGsZqQmcJarqse1uHN7v1Svm2cNCmjS"],
+      ["Practical 2", "1UoTNruci6o3KIlk_MwVCp786B0CwlI8T"],
+      ["Practical 3", "1UpIRGvAPyc0zQ2j7TXQljA9baSUsd_Eq"],
+      ["Practical 4", "1m50QqWs5M1Lg4KT2I5DPNdglSsol3SVY"],
+      ["Practical 5", "1EoB4EuMROqzlcJ5S7MrR-2HzQFk6e1Er"],
+      ["Practical 6", "1j0bF959lJFzn8IBIz-9MMYrXdvL-FTHB"],
+      ["Practical 7", "1WKM8ZHTDZW34NJyGC68FXHfL6Z_5XjCR"],
+      ["Practical 8", "1cn8FA9Y0R42DBtwJfas4AJ-Jkv3AGjJX"],
+      ["Practical 9", "1aFmp6DLfPU9DIHInlNdSjQZrNhCUNxgh"],
+      ["Practical 10", "1Pba1Qf0u_KrSwB5PMv859RThJgHMspt9"],
+      ["Practical 11", "1J3EppLpaAF_dtCjnN4YNpg4hM1vds0Cs"]
+    ],
+    notes: [
+      ["Bayan's Summaries", "1sfpMaoXjBlDBgxa7qFxB63GIUny5i7Wx"],
+      ["Jihad's Summaries", "1_g-_UA9E8rxfZFzJSvani-hNGmr57ZAi"],
+      ["Extra Notes", "14C_D9R44hHbGQJ2YYQmxMkP0G56vBtaY"]
+    ],
+    flashcards: "1NOxfKbZvFCl9c__QGMn6QXxkayB7WqtJ",
+    qbank: [
+      ["Clinical Cases", "19GLzRf3TLPICfFlVfAmBjEmLx-oxAy9A"],
+      ["ICA 1", "1ij13mO7lLBgCgEXdyrT2ZbXDLG0qReqG"],
+      ["ICA 2", "1zZVdeJtudUBelHyAycavLyNVaGHy_Wkn"],
+      ["Spotter", "1Uj2K9yltmZlakVad2eqUagB8mw-5ItwT"],
+      ["Final", "1LVdJndAcDvTMdvXEJsmjqlh4O6weWqYE"],
+      ["Extra Questions", "1eoGcPOqTU2Q5XNTuWxONld6NMx-sez2k"]
+    ]
+  },
+  endocrine: {
+    lectures: "14Gfj0h26WyCF__YVPMY882WaUIdiWQuZ",
+    tutorials: [
+      ["Tutorial 1", "1xfVkjbnona7EBOx9BcffG_pIvul1KOOu"],
+      ["Tutorial 2", "18UEtZ-V1vK837jIw84VhkJX7PK0du9cd"],
+      ["Tutorial 3", "1I6bXj105AbH-5xUkVpzfG6Ty3ydP5MIw"],
+      ["Tutorial 4", "1409fvGBAR5iJ471PfbXKH6RHy-wnPyUI"],
+      ["Tutorial 5", "1w9wnd46cVlj9lvb-yqcOlftuWLgTqbBI"],
+      ["Tutorial 6", "1NRSd1OeX2BPZpSR5E2IM3IbHQCB6gGFV"],
+      ["Tutorial 7", "1iZayqZ5r-lBjOLssJMazs9OPRMiBbAB_"],
+      ["Tutorial 8", "1JN97H_0dv2iQaZgoTyVjeNvj8chk5TQV"],
+      ["Tutorial 9", "1GfFCaqG8dky4kM11-96Xf-_5umM-jZOu"],
+      ["Tutorial 10", "1MK0PRG9fEd20XMwR_BjtKMBSOOklNPZk"],
+      ["Tutorial 11", "10ZDozYJ-9lW7gg8_QM6mkxU5JbpvIZsV"]
+    ],
+    practicals: [
+      ["Practical 1", "1h_-_WGRjqFa78J-uk86jMD24MvaW5LvE"],
+      ["Practical 2", "1suWSnJ2vxa2FrR5Tiiwsk6l3sejdk_xn"],
+      ["Practical 3", "154d9lO38cXJXl86Df8lqMneB4CJQrUET"]
+    ],
+    notes: [
+      ["Bayan's Summaries", "1XAdaCR9MxWJw4e7vAR0bN0uA4EIAaU7v"],
+      ["Jihad's Summaries", "1J66P8Xk7kEBkmGk_Yie80CUxt21yCV74"],
+      ["Extra Notes", "1d0esLTRsBrMPWs3btDViEN9sFr5q1urf"]
+    ],
+    flashcards: "1EoJHve-aZ7XM7ua0082I7q4u0IMUirpw",
+    qbank: "1bBJwTT64B4i9F1b_E_qWJkvoZ2Ch3jK5",
+  },
+  integrated3: {
+    cases: [
+      ["Case 1: Fever", "1QL8kzQHIf48sBO21FEfEzzukmcy9vmrP"],
+      ["Case 2: Headache", "1Gjd2k4ds4vHTZJlPulUxOZiqivL2vJb2"],
+      ["Case 3: Joint Pain and Back Pain", "11txEQAyDuCsgW8mXoPAQb2dIWYvh5fQo"],
+      ["Case 4: Neck Mass", "1AoJKYknrFz7GUZmMqNqYaKb_kYfBpsnl"],
+      ["Case 5: Acute Weakness", "1iqmzuFYtrp3lv78ktHLZVH6V5TFtrpKl"],
+      ["Case 6: Altered Sensorium", "1qAF8k-WgPHr-sU5k2C_PwQoz0BNCx4WH"]
+    ],
+    skillslab: "1al2KFD1j6hOYCNqNfpLLHxRjFN2EJDoo",
+    flashcards: "1dOzbRL5ctc8tPoTX2l4l_MiEnSVkCYKT",
+    qbank: [
+      ["iRAT and tRAT", "12fvVDL0VGf8vY6Zk4VNtXdKUozJ0GFh8"],
+      ["ICA", "1uj0FoOqX3zgJ5T_Pyq-MSzlxbWTV_PXu"],
+      ["OSCE", "1Vd8dMvhmPd37YDy_MwKSLe6M0umvi7mB"],
+      ["Final", "12fvVDL0VGf8vY6Zk4VNtXdKUozJ0GFh8"]
+    ]
+  },
+  locomotor: {
+    lectures: "18Y_W1pEAx1MjxXO4TgCChQkNt_jZW-rX",
+    tutorials: [
+      ["Tutorial 1", "17eQIPHm8LX8sKubB7z198Qyazf0L5E8K"],
+      ["Tutorial 2", "17Xy7juSrfnsDNkUqDE2qCIfVlpVbbxFe"],
+      ["Tutorial 3", "1xn3ybYn3oqt-_bolL6aj-6O2OJ6uXhfQ"],
+      ["Tutorial 4", "171_vPL8W-iZ2LByAnasZQ9j8_8kmzdjX"],
+      ["Tutorial 5", "1ch_H9FJqcn2KsUdKzlCdmyYVprMrLsG8"],
+      ["Tutorial 6", "1Hk5D3SOWnrYgrN2TB2WFNSDBbZaNdCtf"],
+      ["Tutorial 7", "11bPVDE85v6ghDekIr3uc2BrCCkg2CDuS"],
+      ["Tutorial 8", "1ls-uxkd75po0e6OSh2tTdEe6XUlW1jNJ"],
+      ["Tutorial 9", "10-1s05D9dYKki6hUMImYbgACWlHbqgkx"],
+      ["Tutorial 10", "11fB3t1og17lH7NbmiVFSnrw0DZBXIAJ4"],
+      ["Tutorial 11", "1aQW8Hrrm5Wb0jusnFzkoooyL7A91Ou8F"]
+    ],
+    practicals: [
+      ["Practical 1", "1ajJa7jQ266doDA2QEo3M0QwtahAxOz4i"],
+      ["Practical 2", "1E4FfWIyme9Tkch80l0U-0wyyNw7JisH9"],
+      ["Practical 3", "1VG4PSvL3Y1eD0uOiyAuQB7AZ3UrtRh3R"]
+    ],
+    notes: [
+      ["Bayan's Summaries", "1zzNI3KgRuu5CPiPRucORfVMGLnDWFpNA"],
+      ["Jihad's Summaries", "1tS9xh9Sm1BwQ-UW6Iwo1Mu_AzwazwHPT"],
+      ["Extra Notes", "1SzdTMryVCZw_XIQPcOW1BwFKd4xw8zgr"]
+    ],
+    qbank: [
+      ["ICA", "1z84YfxQcaTBCDkovPaPy7tdYxFxR8VlZ"],
+      ["Spotter", "12DqA8LE2BFEPCPf4M2-Yn2h-AchSIbYs"],
+      ["Final", "1qkwP0ojw7XLdN7gV1bgwEL1eM7lKAnj-"],
+      ["Extra Questions", "1gY8KkDX4UlmJgxmC9uS9ons-EfAN9IJl"]
+    ]
+  },
+  project2: {
+    lectures: "1Yp7rtHMLovMWwWa70krE94q-OsuJaFdg",
+    notes: "1O0FykIBv4PO1OfwLSnGPcdnWEitHbUg8"
+  },
 
   preclerkship: {},
   juniorclerkship: {},

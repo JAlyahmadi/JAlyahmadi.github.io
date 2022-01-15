@@ -25,23 +25,22 @@
 var timetableText = `
 
 
-p2s1|SFR ICA1|03/10/2021|08:00|1 hour, 12.5% weightage
-p2s1|RIP ICA1|10/10/2021|08:00|18% weightage
-p2s1|Growth ICA|24/10/2021|09:00|40% weightage
-p2s1|Hospital ICA|24/10/2021|12:00|50 minutes
-p2s1|SFR ICA2|07/11/2021|08:00|1 hour, 12.5% weightage
-p2s1|RIP ICA2|21/11/2021|08:00|18% weightage
-p2s1|Hospital SPSS Practical|28/11/2021|12:00|50 minutes
-p2s1|SFR OSPE|13/12/2021|13:00|3 hours, 13% weightage
-p2s1|Growth Final|27/12/2021|00:00|Time not confirmed
 
-p2s3|Integrated II ICA|01/11/2021|09:00|No extra information
-p2s3|Clinical Nutrition ICA|04/10/2021|09:00|No extra information
-p2s3|Uro-reproductive ICA2|14/11/2021|09:00|1 hour
-p2s3|Alimentary ICA2|21/11/2021|09:00|1 hour
-p2s3|Uro-reproductive Spotter|05/12/2021|10:00|No extra information
-p2s3|Alimentary Spotter|13/12/2021|8:00|No extra information
-p2s3|Integrated II OSCE|20/12/2021|00:00|Date and time not specified
+p2s4|HNS ICA1|13/02/2022|09:00|No Extra Information
+p2s4|HNS ICA2|20/03/2022|09:00|No Extra Information
+p2s4|HNS Clinical Cases|17/04/2022|10:00|Day not Confirmed
+p2s4|HNS Spotter|24/04/2022|00:00|Day not Confirmed
+p2s4|Endocrine ICA|13/03/2022|08:00|1 Hour
+p2s4|Endocrine Spotter|17/04/2022|09:00|1.5 Hours
+p2s4|IM3 iRAT1|06/02/2022|12:00|No Extra Information
+p2s4|IM3 iRAT2|20/02/2022|12:00|No Extra Information
+p2s4|IM3 ICA|06/03/2022|12:00|1 Hour
+p2s4|IM3 iRAT3|13/03/2022|12:00|No Extra Information
+p2s4|IM3 iRAT4|27/03/2022|12:00|No Extra Information
+p2s4|IM3 iRAT5|10/04/2022|12:00|No Extra Information
+p2s4|Locomotor ICA|27/02/2022|08:00|1 Hour
+p2s4|Locomotor Spotter|10/04/2022|08:00|1 Hour
+
 
 
 `;
