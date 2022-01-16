@@ -32,10 +32,12 @@
 
 var changelogText = `
 
+16/01/2021 20:50
+{summary} Added L01 HNS summary: Organisation of Nervous System.
+---
 16/01/2022 09:17
 {anki} Updated HNS to include L01
 ---
-
 15/01/2022 21:30
 Welcome back to the Golden Drive website, I hope you had an enjoyable winter break. This is a large website update. Here is the list of changes:
 <b style='color: var(--primary)'>Website load time:</b> Significant reduction in website load time on SQU campus by 87% (theoretical estimation; I will check for myself when I am back on campus).
