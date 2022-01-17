@@ -653,6 +653,7 @@ var folderIDs = {
       ["Jihad's Summaries", "1tS9xh9Sm1BwQ-UW6Iwo1Mu_AzwazwHPT"],
       ["Extra Notes", "1SzdTMryVCZw_XIQPcOW1BwFKd4xw8zgr"]
     ],
+    flashcards: "1VY4DQcn2eQ3eHkna38ld5GXAho-q2pVp",
     qbank: [
       ["ICA", "1z84YfxQcaTBCDkovPaPy7tdYxFxR8VlZ"],
       ["Spotter", "12DqA8LE2BFEPCPf4M2-Yn2h-AchSIbYs"],
