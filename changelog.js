@@ -38,6 +38,7 @@ var changelogText = `
 {summary} Added L01 Locomotor System summary: Development of Muscular System.
 {summary} Added L01 Endocrine System summary: Introduction to the Endocrine System.
 {summary} Updated L01 HNS summary to include minor additional notes for the parts not covered in the first session.
+{website} Added a page for flashcards in the Locomotor System course page.
 ---
 17/01/2022 18:56
 {anki} Updated Locomotor system to include L01
