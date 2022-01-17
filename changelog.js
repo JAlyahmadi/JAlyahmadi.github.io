@@ -31,6 +31,9 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+17/01/2022 10:31
+{anki} Updated HNS to inlude L02
+---
 
 16/01/2021 20:50
 {summary} Added L01 HNS summary: Organisation of Nervous System.
