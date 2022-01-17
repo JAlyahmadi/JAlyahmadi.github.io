@@ -31,6 +31,14 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+
+
+17/01/2021 22:25
+{summary} Added L02 HNS summary: Spinal Cord and Brain Stem.
+{summary} Added L01 Locomotor System summary: Development of Muscular System.
+{summary} Added L01 Endocrine System summary: Introduction to the Endocrine System.
+{summary} Updated L01 HNS summary to include minor additional notes for the parts not covered in the first session.
+---
 17/01/2022 18:56
 {anki} Updated Locomotor system to include L01
 ---
