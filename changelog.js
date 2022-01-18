@@ -31,9 +31,11 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
-
+18/01/2022 16:50
+{anki} Updated Endocrine deck to include L02
+---
 18/01/2022 10:51
-{anki} Updated HNS deck to include L02 Part A
+{anki} Updated HNS deck to include L03 Part A
 {anki} I may do Part B tonight or tomorrow
 ---
 
