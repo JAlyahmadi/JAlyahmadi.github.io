@@ -32,6 +32,10 @@
 
 var changelogText = `
 
+18/01/2022 10:51
+{anki} Updated HNS deck to include L02 Part A
+{anki} I may do Part B tonight or tomorrow
+---
 
 17/01/2021 22:25
 {summary} Added L02 HNS summary: Spinal Cord and Brain Stem.
