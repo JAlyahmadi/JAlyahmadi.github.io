@@ -31,6 +31,14 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+
+
+19/01/2022 00:25
+{summary} Added L03 HNS summary: Neurohistology (part 1 only, I will cover part 2 later).
+{summary} Added L02 Locomotor System summary: Development of Muscular System 2.
+{summary} Added L02 Endocrine System summary: Histology of Endocrine Glands.
+{summary} Updated L01 Locomotor System summary to include a few extra notes at the end for the section not covered by the first session.
+---
 18/01/2022 19:37
 {anki} Updated Locomotor System to include L02
 ---
@@ -43,7 +51,7 @@ var changelogText = `
 {anki} I may do Part B tonight or tomorrow
 ---
 
-17/01/2021 22:25
+17/01/2022 22:25
 {summary} Added L02 HNS summary: Spinal Cord and Brain Stem.
 {summary} Added L01 Locomotor System summary: Development of Muscular System.
 {summary} Added L01 Endocrine System summary: Introduction to the Endocrine System.
