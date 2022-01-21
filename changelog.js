@@ -32,6 +32,11 @@
 
 var changelogText = `
 
+
+21/01/2022 19:20
+{summary} Added L04 HNS: Brainstem.
+{summary} Updated L03 HNS to include part 2 (the self-study portion) and to include a missing note on microglial cell tumors potential to become lymphomas.
+---
 21/01/2022 12:07
 {anki} Updated HNS deck to include L04
 This is a tough lecture. I recommend going over the recording (can be found on the 2017 drive) once or twice before doing the cards
