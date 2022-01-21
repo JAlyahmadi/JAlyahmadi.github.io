@@ -32,7 +32,11 @@
 
 var changelogText = `
 
-
+21/01/2022 12:07
+{anki} Updated HNS deck to include L04
+This is a tough lecture. I recommend going over the recording (can be found on the 2017 drive) once or twice before doing the cards
+Best of luck
+---
 19/01/2022 00:25
 {summary} Added L03 HNS summary: Neurohistology (part 1 only, I will cover part 2 later).
 {summary} Added L02 Locomotor System summary: Development of Muscular System 2.
