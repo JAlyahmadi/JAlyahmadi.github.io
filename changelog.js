@@ -32,7 +32,10 @@
 
 var changelogText = `
 
-
+22/01/2022 18:09
+{anki} Updated Locomotor System to include Additional Cards on the anatomy of the upper limb
+{anki} You can find the cards under the tag UpperLimb
+---
 21/01/2022 19:20
 {summary} Added L04 HNS: Brainstem.
 {summary} Updated L03 HNS to include part 2 (the self-study portion) and to include a missing note on microglial cell tumors potential to become lymphomas.
