@@ -31,7 +31,9 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
-
+23/01/2022 13:47
+{anki} Added Locomotor System Spotter Deck including P1: Upper, lower limb and vertebral joints.
+---
 22/01/2022 18:09
 {anki} Updated Locomotor System to include Additional Cards on the anatomy of the upper limb
 {anki} You can find the cards under the tag UpperLimb
