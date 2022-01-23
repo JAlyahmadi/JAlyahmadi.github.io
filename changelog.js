@@ -31,6 +31,9 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+23/01/2022 18:26
+{anki} Updated Human Nervous System deck to include L05
+---
 23/01/2022 13:47
 {anki} Added Locomotor System Spotter Deck including P1: Upper, lower limb and vertebral joints.
 ---
