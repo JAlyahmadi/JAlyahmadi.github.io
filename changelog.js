@@ -31,6 +31,10 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+23/01/2022 21:26
+{anki} Added Endocrine Spotter Deck including P1: Gross anatomy of the endocrine glands & P2: Histology of the endocrine glands.
+{anki} Added HNS Spotter Deck including P1: Histology of the nervous system + eye.
+---
 23/01/2022 18:26
 {anki} Updated Human Nervous System deck to include L05
 ---
