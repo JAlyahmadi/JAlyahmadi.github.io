@@ -31,6 +31,9 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+24/01/2022 17:59
+{anki} Updated HNS to include L06 (Anatomy Sadhana)
+---
 23/01/2022 21:26
 {anki} Added Endocrine Spotter Deck including P1: Gross anatomy of the endocrine glands & P2: Histology of the endocrine glands.
 {anki} Added HNS Spotter Deck including P1: Histology of the nervous system + eye.
