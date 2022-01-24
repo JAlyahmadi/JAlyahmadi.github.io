@@ -31,6 +31,9 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+25/01/2000 00:33
+{anki} Updated HNS to include L07 (Shaker Physiology)
+---
 24/01/2022 17:59
 {anki} Updated HNS to include L06 (Anatomy Sadhana)
 ---
