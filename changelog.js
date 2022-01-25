@@ -31,6 +31,16 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+25/01/2022 22:10
+{summary} Added L05 HNS summary: Somato-Sensory Receptors.
+{summary} Added L06 HNS summary: Structure of Somato-Sensory System.
+{summary} Added L07 HNS summary: Pain and Natural Analgesia.
+{summary} Added P01 HNS summary: Neurohistology.
+{summary} Added L04 Locomotor System summary: Cellular & Molecular Structure of Muscles.
+{summary} For those looking for IM3 summaries, please bear with me; I am working on them and making some progress (although very slowly). Summary making has been quite slow this semester, probably due to full on-campus teaching, so things will probably take more time than in previous semesters. Do not wait for my summaries, it is better for you to study from the slides available until I finish working on them if you are in a hurry.
+{summary} As for tutorials and practicals, the plan is to continue making summaries for them, but expect them to come out late. I will try my absolute best to be fully done with all week 1 and week 2 content summary-wise by the end of this week, but no promises made. I apologise for all inconveniences.
+{summary} - Jihad Al-Yahmadi
+---
 25/01/2022 20:30
 {anki} Updated Locomotor System to include L04
 {anki} I skipped L03; Cards will be made once I find a proper resource to study for that abomination of a lecture :)
