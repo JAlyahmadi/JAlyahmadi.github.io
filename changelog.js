@@ -31,6 +31,12 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+25/01/2022 20:30
+{anki} Updated Locomotor System to include L04
+{anki} I skipped L03; Cards will be made once I find a proper resource to study for that abomination of a lecture :)
+{anki} Hit me up if you know one
+{anki} - Husain
+---
 25/01/2022 17:36
 {anki} Updated Endocrine System to include L03
 ---
