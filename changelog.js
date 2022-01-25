@@ -31,6 +31,9 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+25/01/2022 17:36
+{anki} Updated Endocrine System to include L03
+---
 25/01/2000 00:33
 {anki} Updated HNS to include L07 (Shaker Physiology)
 ---
