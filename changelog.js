@@ -31,6 +31,10 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+26/01/2022 23:30
+{summary} Added C1P1 IM3 summary: Fever (this includes both sessions by Dr. Meher, so this is 2 summaries in 1, 4 pages long).
+{summary} Added C1P2 IM3 summary: Sepsis.
+---
 26/01/2022 19:41
 {anki} Updated Endocrine System to include L04
 ---
@@ -140,7 +144,4 @@ Welcome back to the Golden Drive website, I hope you had an enjoyable winter bre
 <b style='color: var(--primary)'>Contact us page polish:</b> The contact us page has been more polished and editors for different batches are now grouped together for convenience. Old @golden-drive.net emails have been removed because they turned out to be inconvenient for us.
 <b style='color: var(--primary)'>New books and a video library:</b> Added 4 new books (Tabers dictionary, the chemistry textbook, Zumdahl's chemistry textbook, and Robbins review of pathology) and a new video library (Picmonic).
 <b style='color: var(--primary)'>More changes:</b> A lot of other minor changes were made, both to the website, and the drive on Google Drive.
-
-
-
 `;
