@@ -31,6 +31,9 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+26/01/2022 11:48
+{anki} Updated HNS Spotter Deck to include P2: Brain and Spinal cord: General topography.
+---
 25/01/2022 22:10
 {summary} Added L05 HNS summary: Somato-Sensory Receptors.
 {summary} Added L06 HNS summary: Structure of Somato-Sensory System.
