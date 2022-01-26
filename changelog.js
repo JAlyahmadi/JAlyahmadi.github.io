@@ -31,6 +31,9 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+26/01/2022 19:41
+{anki} Updated Endocrine System to include L04
+---
 26/01/2022 11:48
 {anki} Updated HNS Spotter Deck to include P2: Brain and Spinal cord: General topography.
 ---
