@@ -31,6 +31,10 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+27/01/2022 20:39
+{anki} Updated HNS to include L08 Part A
+{anki} Part B will be done tomorrow
+---
 26/01/2022 23:30
 {summary} Added C1P1 IM3 summary: Fever (this includes both sessions by Dr. Meher, so this is 2 summaries in 1, 4 pages long).
 {summary} Added C1P2 IM3 summary: Sepsis.
