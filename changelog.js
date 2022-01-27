@@ -31,6 +31,10 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+27/01/2022 23:50
+{summary} Added L03 Endocrine System summary: Metabolic Actions of Hormones.
+{summary} Added L04 Endocrine System summary: Development of Endocrine Glands.
+---
 27/01/2022 20:39
 {anki} Updated HNS to include L08 Part A
 {anki} Part B will be done tomorrow
