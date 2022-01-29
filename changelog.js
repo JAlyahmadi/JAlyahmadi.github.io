@@ -31,6 +31,10 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+29/01/2022 16:49
+{anki} Updated Locomotor to include L03
+{anki} Cards were made my Abdulrahman Al-Hadhrami -- Thanks
+---
 27/01/2022 23:50
 {summary} Added L03 Endocrine System summary: Metabolic Actions of Hormones.
 {summary} Added L04 Endocrine System summary: Development of Endocrine Glands.
