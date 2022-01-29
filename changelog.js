@@ -31,7 +31,20 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
-
+29/01/2022 20:30
+{summary} Added L08 HNS summary: Opioid Analgesics and Drug Abuse (both parts with recording notes)
+{summary} Added P02 HNS summary: Topography of Brain and Spinal Cord. Extremely high-yield summary with manually labelled images to include everything required from us; highly recommended that you use it to study this practical.
+{summary} Added L03 Locomotor System summary: Neuromuscular Junction (based on Dr. Ammar's slides from last year; this year's slides are awful, but I still added some stuff from it for completion).
+{summary} Added P01 Locomotor System summary: Joints and Movements (text-only, please self-study the images from whatever resources you have).
+{summary} Added T01 Locomotor System summary: Upper and Lower Limb Nerve Injury.
+{summary} Added P01 Endocrine System summary: Gross Anatomy of Endocrine Glands.
+{summary} Added P02 Endocrine System summary: Histology of Endocrine Glands.
+{summary} Updated L06 HNS summary to include a few extra notes from the recording.
+{summary} Updated L03 Endocrine System summary to fix a slight mistake: insulin is not a "dipeptide", it's composed of two polypeptide chains.
+{summary} Updated L03 Endocrine System summary to include a few extra notes from the recording.
+{summary} This covers up all week 1 and week 2 content except for a few IM3 summaries still not uploaded on Moodle. I apologise for the long wait. Good luck.
+{summary} - Jihad Al-Yahmadi <sub style="color: var(--light1)">time to kill myself</sub>
+---
 29/01/2022 18:49
 {anki} Updated HNS to include L08 Part B
 ---
