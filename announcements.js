@@ -5,7 +5,7 @@
 // PLEASE DO NOT EDIT ANYTHING ELSE IN THE CODE, INCLUDING THE ENDING `;
 // DO NOT RENAME THIS FILE
 
-var showAnnouncement = true;
+var showAnnouncement = false;
 var announcements = `
 
 <h2>Message to 2018 Batch Students</h2>
