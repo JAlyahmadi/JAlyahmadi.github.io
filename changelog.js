@@ -31,6 +31,10 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+
+29/01/2022 18:49
+{anki} Updated HNS to include L08 Part B
+---
 29/01/2022 16:49
 {anki} Updated Locomotor to include L03
 {anki} Cards were made my Abdulrahman Al-Hadhrami -- Thanks
