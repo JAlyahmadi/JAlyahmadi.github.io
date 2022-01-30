@@ -31,6 +31,9 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+{anki} Updated HNS to include L09
+{anki} Anking cards are mandatory do not suspend them (except for stuff completely unrelated to the lecture but I would still recommend not suspending them)
+---
 29/01/2022 20:30
 {summary} Added L08 HNS summary: Opioid Analgesics and Drug Abuse (both parts with recording notes)
 {summary} Added P02 HNS summary: Topography of Brain and Spinal Cord. Extremely high-yield summary with manually labelled images to include everything required from us; highly recommended that you use it to study this practical.
