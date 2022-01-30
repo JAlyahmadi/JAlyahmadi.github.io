@@ -31,6 +31,7 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+30/01/2022 19:50
 {anki} Updated HNS to include L09
 {anki} Anking cards are mandatory do not suspend them (except for stuff completely unrelated to the lecture but I would still recommend not suspending them)
 ---
