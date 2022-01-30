@@ -31,7 +31,10 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
-
+30/01/2022 23:53
+{anki} Added Integrated Module 3 Deck includes: Fever & Sepsis.
+Will be adding more cards later.
+---
 30/01/2022 22:40
 {summary} Added L09 HNS summary: Eye, Optic Nerve and Visual Pathway.
 ---
