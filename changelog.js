@@ -31,6 +31,9 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+31/01/2022 22:52
+{anki} Updated Endocrine System to include L05
+---
 31/01/2022 17:55
 {anki} Updated HNS to include L10 (Pharma by Aly)
 {anki} Anking cards are mandatory. Please watch Sketchy's chapter on Sedative hypnotics
@@ -66,7 +69,7 @@ Will be adding more cards later.
 ---
 29/01/2022 16:49
 {anki} Updated Locomotor to include L03
-{anki} Cards were made my Abdulrahman Al-Hadhrami -- Thanks
+{anki]} Cards were made my Abdulrahman Al-Hadhrami -- Thanks
 ---
 27/01/2022 23:50
 {summary} Added L03 Endocrine System summary: Metabolic Actions of Hormones.
