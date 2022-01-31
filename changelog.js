@@ -31,6 +31,7 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+31/01/2022 17:55
 {anki} Updated HNS to include L10 (Pharma by Aly)
 {anki} Anking cards are mandatory. Please watch Sketchy's chapter on Sedative hypnotics
 {anki} Complementary additional cards were made to cover missing stuff
