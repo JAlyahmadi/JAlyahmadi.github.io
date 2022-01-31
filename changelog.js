@@ -31,6 +31,10 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+{anki} Updated HNS to include L10 (Pharma by Aly)
+{anki} Anking cards are mandatory. Please watch Sketchy's chapter on Sedative hypnotics
+{anki} Complementary additional cards were made to cover missing stuff
+---
 30/01/2022 23:53
 {anki} Added Integrated Module 3 Deck includes: Fever & Sepsis.
 Will be adding more cards later.
