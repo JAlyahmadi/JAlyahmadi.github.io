@@ -31,6 +31,11 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+31/01/2022 23:00
+{summary} Added L10 HNS summary: General and Local Anesthetics. <sub style="color: var(--light1)">You screwed up Husain, you made cards for the wrong lecture :3</sub>
+{summary} Added L05 Locomotor System summary: Physiology of Muscle Contraction.
+{summary} Added L05 Endocrine System summary: Anterior Pituitary Hypersecretion.
+---
 31/01/2022 22:52
 {anki} Updated Endocrine System to include L05
 ---
