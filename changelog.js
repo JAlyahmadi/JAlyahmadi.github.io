@@ -34,6 +34,7 @@ var changelogText = `
 01/02/2022 00:14
 {anki} Updated Locomotor system to include L05
 {anki} <sub style="color: var(--light1)">Who cares lol</sub>
+---
 31/01/2022 23:00
 {summary} Added L10 HNS summary: General and Local Anesthetics. <sub style="color: var(--light1)">You screwed up Husain, you made cards for the wrong lecture :3</sub>
 {summary} Added L05 Locomotor System summary: Physiology of Muscle Contraction.
