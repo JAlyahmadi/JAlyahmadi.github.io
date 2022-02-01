@@ -31,6 +31,14 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+01/02/2022 21:40
+{summary} Added L11 HNS summary: Anxiolytic and Hypnotic Drugs.
+{summary} Added L06 Locomotor System summary: Muscle Biochemistry.
+{summary} Added L06 Endocrine System summary: Autoimmunity in Endocrine Disorders.
+{summary} Added C1P5 IM3 summary: Fever with Dyspnea.
+{summary} Added C1P6 IM3 summary: Fever with Hematuria.
+{summary} C1P3 and C1P4 IM3 and practicals/tutorials of this week will be uploaded this weekend hopefully, no promises though.
+---
 01/02/2022 18:15
 {anki} Updated HNS to include Latest Pharma lecture (Anesthesia)
 {anki} This lecture is horrible. The cards are only placeholders until I have the بارض to make proper cards
