@@ -31,6 +31,11 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+01/02/2022 18:15
+{anki} Updated HNS to include Latest Pharma lecture (Anesthesia)
+{anki} This lecture is horrible. The cards are only placeholders until I have the بارض to make proper cards
+{anki} Apologies :)
+---
 01/02/2022 00:14
 {anki} Updated Locomotor system to include L05
 {anki} <sub style="color: var(--light1)">Who cares lol</sub>
