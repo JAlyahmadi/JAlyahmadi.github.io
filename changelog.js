@@ -33,6 +33,7 @@
 var changelogText = `
 02/02/2022 00:16
 {anki} Updated Locomotor System to include L06
+{anki} Updated Endocrine System to include L06
 ---
 01/02/2022 21:40
 {summary} Added L11 HNS summary: Anxiolytic and Hypnotic Drugs.
