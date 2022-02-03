@@ -31,6 +31,11 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+03/02/2022 23:35
+{anki} Updated HNS to include L12
+{anki} The Anking cards are mandatory. Some are not necessary; be selective about them
+Hus
+---
 03/02/2022 00:45
 {summary} Added L12 HNS summary: Anatomy of Ear and Cranial Nerve VIII.
 {summary} Just follow this summary while listening to the recording, no need to write down any notes as almost everything is already covered in the summary. <sub style="color: var(--light1)">you don't deserve to go through the same suffering I did</sub>
