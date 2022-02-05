@@ -25,6 +25,28 @@
 var timetableText = `
 
 
+p1|Anatomy ICA1|20/02/2022|09:00|1 Hour
+p1|Anatomy ICA2|20/03/2022|08:00|1 Hour
+p1|Anatomy Spotter|24/04/2022|11:00|Day and Time not Confirmed
+p1|Physiology ICA1|06/03/2022|00:00|Time not Confirmed
+p1|Physiology ICA2|10/04/2022|00:00|Time not Confirmed
+p1|Cytology/Pharmacology Quiz 1|14/02/2022|11:00|1 Hour
+p1|Cytology/Pharmacology Quiz 2|08/03/2022|10:00|1 Hour
+p1|Cytology/Pharmacology ICA|22/03/2022|10:00|1 Hour
+p1|Enzymology ICA|03/03/2022|13:00|1 Hour
+p1|Enzymology Open Book|14/04/2022|12:00|No Extra Information
+
+p2s2|CVS ICA1|20/02/2022|08:00|No Extra Information
+p2s2|CVS ICA2|28/03/2022|08:00|No Extra Information
+p2s2|CVS Spotter|24/04/2022|08:00|No Extra Information
+p2s2|Respiratory ICA|06/03/2022|09:00|No Extra Information
+p2s2|Respiratory OSPE|17/04/2022|00:00|Time not Confirmed
+p2s4|HIS ICA1|27/02/2022|08:00|50 Minutes
+p2s4|HIS ICA2|03/04/2022|09:00|50 Minutes
+p2s4|HIS ICA1|13/02/2022|09:00|No Extra Information
+p2s4|IM1 ICA1|13/03/2022|09:00|1 Hour
+p2s4|IM1 OSCE|27/04/2022|09:00|4 Hours
+p2s4|Informatics 2 ICA|15/03/2022|10:30|25 Minutes
 
 p2s4|HNS ICA1|13/02/2022|09:00|No Extra Information
 p2s4|HNS ICA2|20/03/2022|09:00|No Extra Information
