@@ -31,6 +31,13 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+
+05/02/2022 22:45
+{website} Updated the exam and course timetables for phase 1 and phase 2 semester 2.
+{website} Added 3 books: LANC curriculum book, LANC pharmacology book, Marks' Essentials Biochemistry.
+{website} Added a new subfolder under Informatics 1 > Notes: "Theory Lectures".
+{website} Please note that Bacteriology Biochemicals is now available; check out Resources > Bacteriology Biochemicals (still work in progress).
+---
 03/02/2022 23:35
 {anki} Updated HNS to include L12
 {anki} The Anking cards are mandatory. Some are not necessary; be selective about them
