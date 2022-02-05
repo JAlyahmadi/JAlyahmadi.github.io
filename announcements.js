@@ -5,12 +5,12 @@
 // PLEASE DO NOT EDIT ANYTHING ELSE IN THE CODE, INCLUDING THE ENDING `;
 // DO NOT RENAME THIS FILE
 
-var showAnnouncement = false;
+var showAnnouncement = true;
 var announcements = `
 
-<h2>Message to 2018 Batch Students</h2>
-<p>Lately, a lot of people have been asking me about integrated module 3 summaries. I am not ditching them; I am already making progress in them, though very slow progress. If you are in a hurry, you should study from the slides available until I am done. Summary making has been quite slow this semester, probably due to full on-campus teaching. I still wish to make summaries for every single thing, including tutorials and practicals, but expect them to come out later than what you might had been used to in previous semesters.</p>
-<p>I will try my absolute best to be fully done with all week 1 and week 2 content summary-wise by the end of this week (week 2), but no promises made, so bear with me please. I apologise for all inconveniences, I am trying to do my best.</p>
-<p>- Jihad Al-Yahmadi (25/01/2022, 22:30)</p>
+<h2>Update for Phase1 and Phase2sem2 Students</h2>
+<p>The timetable section for Phase 1 and Phase 2 Semester 2 has been fully updated, both for exams and for individual courses. Please check out the timetables page and try out both "Exam Timetable" and "Courses Timetable" (do not forget to select your semester and/or your course).</p>
+<p>New books were added: LANC pharmacology book, the LANC curriculum book, Marks' Essentials Biochemistry.</p>
+<p></p>
 
 `;

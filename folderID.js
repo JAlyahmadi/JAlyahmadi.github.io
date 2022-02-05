@@ -16,6 +16,7 @@ var folderIDs = {
   informatics1: {
     lectures: "1_M4-pg67IyHMgdZbYQc9gqIb_aV7JSxi",
     notes: [
+      ["Theory Lectures", "1VtxcmVWjUD6Z1sGmK1U9Q33OY0CYM5ps"],
       ["Photopea", "1PAVnGzFubio5cscy9fw3QxVe3q2dKBpK"],
       ["Audacity", "1BHO0x77WckVc_BGBxBpkNLenuq8wfx7G"],
       ["Kdenlive", "10cXAwVZUByP-OPrU_CIV5Ay2UuKqN-Hm"],
