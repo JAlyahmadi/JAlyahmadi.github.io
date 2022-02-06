@@ -32,7 +32,9 @@
 
 var changelogText = `
 
-
+07/02/2022 00:16
+{anki} Updated HNS to include L13
+---
 06/02/2022 18:35
 {summary} Added L13 HNS summary: Optics of Eye and Its Disorders.
 {summary} Added T01 HNS summary: Rubbery Limbs (Guillain-Barre Syndrome).
