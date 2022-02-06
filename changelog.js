@@ -32,6 +32,13 @@
 
 var changelogText = `
 
+
+06/02/2022 18:35
+{summary} Added L13 HNS summary: Optics of Eye and Its Disorders.
+{summary} Added T01 HNS summary: Rubbery Limbs (Guillain-Barre Syndrome).
+{summary} Added C1P3 IM3 summary: Fever with Cough.
+{summary} Added C1P4 IM3 summary: Fever with Rash.
+---
 05/02/2022 22:45
 {website} Updated the exam and course timetables for phase 1 and phase 2 semester 2.
 {website} Added 3 books: LANC curriculum book, LANC pharmacology book, Marks' Essentials Biochemistry.
