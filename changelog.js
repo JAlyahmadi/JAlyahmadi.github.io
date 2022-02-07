@@ -31,6 +31,9 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+07/02/2022 23:59
+{anki} Updated Endocrine system to include L07
+---
 07/02/2022 21:00
 {summary} Added L14 HNS summary: Photo-Transduction, Receptor Potential.
 {summary} Added L07 Locomotor System summary: Calcium Metabolism, Formation of Bone.
