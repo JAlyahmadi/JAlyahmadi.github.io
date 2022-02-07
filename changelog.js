@@ -31,6 +31,9 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+08/02/2022 03:40
+{anki} Updated Locomotor system to include L07
+---
 07/02/2022 23:59
 {anki} Updated Endocrine system to include L07
 ---
