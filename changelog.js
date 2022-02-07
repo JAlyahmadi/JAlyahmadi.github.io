@@ -31,6 +31,11 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+07/02/2022 21:00
+{summary} Added L14 HNS summary: Photo-Transduction, Receptor Potential.
+{summary} Added L07 Locomotor System summary: Calcium Metabolism, Formation of Bone.
+{summary} Added L07 Endocrine System summary: Pituitary Dwarfism.
+---
 07/02/2022 20:34
 {anki} Updated HNS to include L14
 {anki} Additional cards cover topics related to retinal and iris pathology
