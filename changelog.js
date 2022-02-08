@@ -31,6 +31,11 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+08/02/2022 21:30
+{summary} Updated the following summaries: L03 Endocrine, L06 Locomotor, L08 HNS, L11 HNS.
+{summary} The edits include addition of missing notes, corrected mistakes, corrected typos, reordered sections, etc.
+{summary} Most of the changes are minor, but I still recommend you update the summaries you have downloaded.
+---
 08/02/2022 20:46
 {anki} Updated HNS to include L15
 {anki} The cards are tough but not many. Read the explanation in the notes
