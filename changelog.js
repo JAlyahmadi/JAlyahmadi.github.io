@@ -31,6 +31,10 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+08/02/2022 20:46
+{anki} Updated HNS to include L15
+{anki} The cards are tough but not many. Read the explanation in the notes
+---
 08/02/2022 20:30
 {summary} Added L15 HNS summary: Information Processing in Retina.
 {summary} Added L16 HNS summary: Colour Vision and Its Disorders.
