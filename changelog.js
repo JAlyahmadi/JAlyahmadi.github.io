@@ -31,6 +31,12 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+08/02/2022 20:30
+{summary} Added L15 HNS summary: Information Processing in Retina.
+{summary} Added L16 HNS summary: Colour Vision and Its Disorders.
+{summary} Added L08 Endocrine System summary: Pathology of Pituitary Gland.
+{summary} Added L08 Locomotor System summary: Extracellular Matrix Connective Tissue.
+---
 08/02/2022 03:40
 {anki} Updated Locomotor system to include L07
 ---
