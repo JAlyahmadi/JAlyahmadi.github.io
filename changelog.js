@@ -31,6 +31,9 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+09/02/2022 00:54
+{anki} Updated Locomotor to include L08
+---
 08/02/2022 21:30
 {summary} Updated the following summaries: L03 Endocrine, L06 Locomotor, L08 HNS, L11 HNS.
 {summary} The edits include addition of missing notes, corrected mistakes, corrected typos, reordered sections, etc.
