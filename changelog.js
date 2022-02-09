@@ -31,6 +31,13 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+09/02/2022 23:38
+{anki} Updated Integrated Module 3 Deck includes:
+Fever w/Cough
+Fever w/Rash
+Fever w/Dyspnea
+Fever w/Hematuria
+---
 09/02/2022 00:54
 {anki} Updated Locomotor to include L08
 ---
