@@ -31,6 +31,9 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+10/02/2022 20:55
+{anki} Updated HNS Spotter Deck to include P3: Brainstem External & Internal Features
+---
 09/02/2022 23:38
 {anki} Updated Integrated Module 3 Deck includes:
 Fever w/Cough
