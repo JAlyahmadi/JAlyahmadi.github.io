@@ -31,6 +31,9 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+13/02/2022 19:48
+{anki} Updated HNS to include L16 and L17
+---
 10/02/2022 20:55
 {anki} Updated HNS Spotter Deck to include P3: Brainstem External & Internal Features
 ---
