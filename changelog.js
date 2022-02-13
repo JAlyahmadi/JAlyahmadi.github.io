@@ -31,6 +31,18 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+13/02/2022 20:30
+{summary} Added L18 HNS summary: Physiology of Hearing (will do L17 (anatomy by Dr. Sadhana) tomorrow).
+{summary} Added T02 HNS summary: Unsteady Girl (Multiple Sclerosis).
+{summary} Added T03 HNS summary: Unconscious Businessman (Coma).
+{summary} Added C1P7 IM3 summary: Hepatosplenomegaly and LAD. This wraps up all of case 1 (fever).
+{summary} Added T01 Endocrine System summary: Hyperprolactinemia.
+{summary} Added T02 Endocrine System summary: Pituitary Apoplexy.
+{summary} Added P02 Locomotor System summary: Living and Applied Anatomy of Joints.
+{summary} Added T02 Locomotor System summary: Vitamin D Deficiency Diseases.
+{summary} Updated T01 HNS summary to include a link to the original slides for further reading.
+{summary} This concludes all summaries of all weeks 1-4 except for IM3 case 2 summaries and skills lab summaries. Good luck. <sub style="color: var(--light1)">can someone end my suffering pls :D</sub>
+---
 13/02/2022 19:48
 {anki} Updated HNS to include L16 and L17
 ---
