@@ -31,9 +31,12 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+14/02/2022 23:29
+{anki} Updated Integrated Module 3 Deck to include Fever w/ Hepatosplenomegaly.
+---
 14/02/2022 22:15
 {anki} Updated HNS to include L19
-(anki} Updated MSK to include L09
+{anki} Updated MSK to include L09
 ---
 14/02/2022 19:30
 {summary} Added L17 HNS summary: Cranial Nerves I, III, VI, V.
