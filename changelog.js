@@ -31,6 +31,11 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+14/02/2022 19:30
+{summary} Added L17 HNS summary: Cranial Nerves I, III, VI, V.
+{summary} Added L09 Locomotor System summary: Fracture Healing.
+{summary} Added L09 Endocrine System summary: Pharmacotherapy of Thyroid Disorders.
+---
 13/02/2022 20:30
 {summary} Added L18 HNS summary: Physiology of Hearing (will do L17 (anatomy by Dr. Sadhana) tomorrow).
 {summary} Added T02 HNS summary: Unsteady Girl (Multiple Sclerosis).
