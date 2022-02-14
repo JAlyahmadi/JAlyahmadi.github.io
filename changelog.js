@@ -31,6 +31,10 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+15/02/2022 01:19
+{anki} Updated Endocrine system to include L09
+{anki} I forgot L08 ever existed, I will try to make cards for it but no promises
+---
 14/02/2022 23:29
 {anki} Updated Integrated Module 3 Deck to include Fever w/ Hepatosplenomegaly.
 ---
