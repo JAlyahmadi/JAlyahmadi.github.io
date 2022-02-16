@@ -37,8 +37,8 @@ var changelogText = `
 15/02/2022 23:30
 {summary} Added L19 HNS summary: Physiology of Balance.
 {summary} Added L20 HNS summary: Olfaction and Gustation.
-{summary} Added L10 Locomotor System summary: Imaging of Endocrine System. Summary includes fully-labelled radiology images according to the recording, highly recommended to rely on this in your studying.
-{summary} Added L10 Endocrine System summary: Soft Tissue Tumors.
+{summary} Added L10 Locomotor System summary: Soft Tissue Tumors.
+{summary} Added L10 Endocrine System summary: Imaging of Endocrine System. Summary includes fully-labelled radiology images according to the recording, highly recommended to rely on this in your studying.
 ---
 15/02/2022 20:44
 {anki} Updated HNS deck to include L19
