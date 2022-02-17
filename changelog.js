@@ -31,6 +31,9 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+17/02/2022 09:55
+{summary} Added P03 HNS summary: Brainstem. It is highly recommended that you study from this practical when studying L04 (brainstem) as this one is well-labelled.
+---
 15/02/2022 23:30
 {anki} Updated Locomotor to include L10
 ---
