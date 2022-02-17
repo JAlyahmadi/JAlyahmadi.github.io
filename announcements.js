@@ -8,9 +8,8 @@
 var showAnnouncement = true;
 var announcements = `
 
-<h2>Update for Phase1 and Phase2sem2 Students</h2>
-<p>The timetable section for Phase 1 and Phase 2 Semester 2 has been fully updated, both for exams and for individual courses. Please check out the timetables page and try out both "Exam Timetable" and "Courses Timetable" (do not forget to select your semester and/or your course).</p>
-<p>New books were added: LANC pharmacology book, the LANC curriculum book, Marks' Essentials Biochemistry.</p>
-<p></p>
+<h2>Message to Sem 4 Students Studying for HNS ICA</h2>
+<p>If you are a phase 2 semester 4 student studying for the HNS ICA and you rely on my summaries, please note that I have uploaded a practical summary for HNS P03 (brainstem). When studying my L04 (brainstem) lecture summary for the ICA, I highly recommend you refer to my P03 practical summary as well, as I have labelled the histology images there according to the recording. I think it will help you quite a lot. Good luck :)</p>
+<p>- Jihad Al-Yahmadi</p>
 
 `;
