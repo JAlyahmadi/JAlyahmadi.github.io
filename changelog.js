@@ -31,6 +31,9 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+19/02/2022 23:20
+{summary} Updated L05 HNS summary to add a missing slide: Page 2 at the end: "Proprioception Pathways". Please download this summary again if you are studying from the outdated one.
+---
 17/02/2022 09:55
 {summary} Added P03 HNS summary: Brainstem. It is highly recommended that you study from this practical when studying L04 (brainstem) as this one is well-labelled.
 ---
