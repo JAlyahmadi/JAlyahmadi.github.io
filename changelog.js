@@ -31,6 +31,9 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+23/02/2022 15:36
+{anki} Updated HNS Spotter Deck to include P4: Cerebrum Gross anatomy and sections
+---
 19/02/2022 23:20
 {summary} Updated L05 HNS summary to add a missing slide: Page 2 at the end: "Proprioception Pathways". Please download this summary again if you are studying from the outdated one.
 ---
