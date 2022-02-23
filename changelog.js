@@ -31,6 +31,12 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+23/02/2022 17:11
+{anki} Updated HNS to include L19-L22
+{anki} Updated Locomotor to include L10-L12
+{anki} Updated Endocrine to include L10-12
+---
+
 23/02/2022 15:36
 {anki} Updated HNS Spotter Deck to include P4: Cerebrum Gross anatomy and sections
 ---
