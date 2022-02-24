@@ -31,6 +31,25 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+24/02/2022 13:00
+{summary} Added L21 HNS summary: Cerebral Cortex.
+{summary} Added L22 HNS summary: Descending Tracts.
+{summary} Added L23 HNS summary: Stretch Reflex and Motor Coordination.
+{summary} Added L24 HNS summary: Control of Voluntary Movement.
+{summary} Added L11 Locomotor System summary: Eicosanoids.
+{summary} Added L14 Locomotor System summary: Bone and Joint Infections.
+{summary} Added T03 Locomotor System summary: Osteoporosis.
+{summary} Added T06 Locomotor System summary: Osteomyelitis.
+{summary} Added L11 Endocrine System summary: Pathology of Thyroid Diseases.
+{summary} Added L12 Endocrine System summary: Feed and Fast Cycle.
+{summary} Added T04 Endocrine System summary: Hyperthyroidism.
+{summary} Added C2P1 IM3 summary: Headache.
+{summary} Added C2P2 IM3 summary: Headache.
+{summary} Added C2P3 IM3 summary: Headache.
+{summary} Added C3P1 IM3 summary: Back Pain.
+{summary} Updated P02 HNS summary to include links to the original PDF and the videos.
+{summary} This wraps up all of weeks 1-6 except the following summaries: P04 HNS, T03 endocrine, C1P8+C3P2+SL1+SL2 IM3.
+---
 23/02/2022 17:11
 {anki} Updated HNS to include L19-L22
 {anki} Updated Locomotor to include L10-L12
