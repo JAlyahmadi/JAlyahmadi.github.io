@@ -31,6 +31,9 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+26/02/2022 17:58
+{anki} Updated Integrated Module 3 Deck to include Headaches.
+---
 24/02/2022 13:00
 {summary} Added L21 HNS summary: Cerebral Cortex.
 {summary} Added L22 HNS summary: Descending Tracts.
