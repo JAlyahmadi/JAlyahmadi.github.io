@@ -77,6 +77,7 @@ var folderIDs = {
     ],
     notes: "1aLm0_Q5R4abbqzIEjKt_ejCdlNu19Xb-",
     qbank: [
+      ["Quizzes", "1beS97fNKmaNM30GgcecluGI_Ixijd0wR"],
       ["ICA", "1e5SUymY_iM3WCUKZE5drUnodMkAfK-mn"],
       ["Open-Book Exam", "1nILDCgU7812XvweZa0DbguTcOaRsDref"],
       ["Final", "1eFyR3P-cGNNLfbE_PxRsU7LsU-WLfU76"],
