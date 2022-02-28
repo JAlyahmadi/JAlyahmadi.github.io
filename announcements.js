@@ -8,8 +8,8 @@
 var showAnnouncement = true;
 var announcements = `
 
-<h2>Message to Sem 4 Students Studying for HNS ICA</h2>
-<p>If you are a phase 2 semester 4 student studying for the HNS ICA and you rely on my summaries, please note that I have uploaded a practical summary for HNS P03 (brainstem). When studying my L04 (brainstem) lecture summary for the ICA, I highly recommend you refer to my P03 practical summary as well, as I have labelled the histology images there according to the recording. I think it will help you quite a lot. Good luck :)</p>
+<h2>For Students Studying for the IM3 ICA</h2>
+<p>If you are a phase 2 semester 4 student studying for the IM3 ICA and you rely on my summaries, please make sure you go through the objectives yourself and judge whether there is anything missing and needs to be covered on your own or not. Unlike last semester for IM2 when I did this task myself and made summaries for all missing objectives, I am too busy this semester to do this for IM3. I am so sorry, please go through the objectives and check for yourself. Best of luck in the exam :)</p>
 <p>- Jihad Al-Yahmadi</p>
 
 `;
