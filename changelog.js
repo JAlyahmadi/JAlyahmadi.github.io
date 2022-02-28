@@ -31,6 +31,11 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+28/02/2022 22:40
+{summary} Added L25 HNS summary: Anatomy of Cerebellum.
+{summary} Added L26 HNS summary: Cerebellar Physiology.
+{summary} Added L13 Endocrine System summary: Hypo and Hyperparathyroidism.
+---
 28/02/2022
 {anki} Updated Endocrine system deck to include L13 & 14. 
 ---
