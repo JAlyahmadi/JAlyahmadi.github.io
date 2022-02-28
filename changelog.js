@@ -31,6 +31,9 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+28/02/2022 23:19
+{anki} Updated HNS to include L23 and L24
+---
 28/02/2022 22:40
 {summary} Added L25 HNS summary: Anatomy of Cerebellum.
 {summary} Added L26 HNS summary: Cerebellar Physiology.
