@@ -31,6 +31,9 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+28/02/2022
+{anki} Updated Endocrine system deck to include L13 & 14. 
+---
 28/02/2022 06:00
 {anki} Updated HNS to include L23
 {anki} Rest of lectures will be done this week en shaa ALLAH
