@@ -31,6 +31,10 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+28/02/2022 06:00
+{anki} Updated HNS to include L23
+{anki} Rest of lectures will be done this week en shaa ALLAH
+---
 26/02/2022 17:58
 {anki} Updated Integrated Module 3 Deck to include Headaches.
 ---
