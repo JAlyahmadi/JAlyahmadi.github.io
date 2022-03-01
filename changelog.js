@@ -31,6 +31,10 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+01/03/2022 20:15
+{summary} Added C1P8 IM3 summary: Fever with Diarrhea.
+{summary} Added C3P2 IM3 summary: Back Pain.
+---
 28/02/2022 23:19
 {anki} Updated HNS to include L23 and L24
 ---
