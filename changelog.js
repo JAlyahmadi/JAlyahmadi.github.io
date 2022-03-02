@@ -31,6 +31,9 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+02/03/2022 08:46
+{anki} Updated HNS to include L25 and L26 (The cerebellum lectures)
+---
 01/03/2022 20:15
 {summary} Added C1P8 IM3 summary: Fever with Diarrhea.
 {summary} Added C3P2 IM3 summary: Back Pain.
