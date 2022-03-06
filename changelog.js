@@ -31,6 +31,10 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+06/03/2022 18:50
+{anki} Updated Locomotor system to include L13: Hereditary Muscle & Bone Disorders.
+{anki} Updated Endocrine system to include L11: Feed & Fast Cycle and L12: Goiter & Thyroid Malignancy.
+---
 02/03/2022 08:46
 {anki} Updated HNS to include L25 and L26 (The cerebellum lectures)
 ---
