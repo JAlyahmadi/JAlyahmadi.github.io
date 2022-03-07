@@ -31,6 +31,10 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+07/03/2022 21:06
+{anki} Updated HNS to include L31 (CN 9, 10 and 11)
+{anki} I'm actually not sure about the # of the lecture I will double check later
+---
 06/03/2022 18:50
 {anki} Updated Locomotor system to include L13: Hereditary Muscle & Bone Disorders.
 {anki} Updated Endocrine system to include L11: Feed & Fast Cycle and L12: Goiter & Thyroid Malignancy.
