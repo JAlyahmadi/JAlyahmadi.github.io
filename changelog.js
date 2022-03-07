@@ -31,6 +31,14 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+07/03/2022 22:30
+{summary} Added L27 HNS summary: Corpus Striatum or Basal Ganglia.
+{summary} Added L28 HNS summary: Physiology of Basal Ganglia.
+{summary} Added L29 HNS summary: Pharmacotherapy of Parkinson’s Disease.
+{summary} Added L30 HNS summary: Anatomy of Facial and Hypoglossal Nerve.
+{summary} Added L31 HNS summary: Anatomy of Cranial Nerves IX, X, XI.
+{summary} Yeah hus, you messed up the lecture numbers yet again. Perhaps you should check out the timetables thing on the website :)
+---
 07/03/2022 21:06
 {anki} Updated HNS to include L31 (CN 9, 10 and 11)
 {anki} I'm actually not sure about the # of the lecture I will double check later
