@@ -32,8 +32,7 @@
 
 var changelogText = `
 07/03/2022 22:33
-{anki} Updated HNS to include L27? The lecture on Parkinson's treatment
-Again I lost track of lecture numbers so bear with me till I figure it out
+{anki} Updated HNS to include L29: Parkinson's treatment.
 ---
 07/03/2022 22:30
 {summary} Added L27 HNS summary: Corpus Striatum or Basal Ganglia.
