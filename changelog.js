@@ -31,6 +31,9 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+08/03/2022 23:30
+{anki} Updated Endocrine system deck to include T3: Hypothyroidism & T4: Hyperthyroidism
+---
 07/03/2022 22:33
 {anki} Updated HNS to include L29: Parkinson's treatment.
 ---
