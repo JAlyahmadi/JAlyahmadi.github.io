@@ -31,6 +31,9 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+10/03/2022 1:00
+{anki} Updated Endocrine system deck to include L15: Endocrine and Immune System, L16: Pharmacotherapy of Bone Mineral Homeostasis Disorders.
+---
 09/03/2022 05:21
 {anki} Updated HNS to include L32
 {anki} I think I got the hang of the missing cards: I highly recommend doing anking cards on the basal ganglia. They are to the point and leave out all the useless fluff the professors at our college add
