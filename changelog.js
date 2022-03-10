@@ -31,7 +31,18 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
-10/03/2022 1:00
+10/03/2022 12:15
+{summary} Added L32 HNS summary: Autonomic Nervous System.
+{summary} Added L14 Endocrine System summary: Calcium Metabolism.
+{summary} Added L15 Endocrine System summary: Immune and Endocrine Systems.
+{summary} Added L16 Endocrine System summary: Pharmacotherapy of Bone Disorders.
+{summary} Added T05 Endocrine System summary: Hypercalcemia.
+{summary} Added L12 Locomotor System summary: Pathology of Muscle and Nerve.
+{summary} Added L13 Locomotor System summary: Hereditary Bone and Muscle Diseases.
+{summary} Added L15 Locomotor System summary: Bacterial Infections of Bones and Joints.
+{summary} Updated L07 Endocrine System summary to include Part 2 (ADH Disorders).
+---
+10/03/2022 01:00
 {anki} Updated Endocrine system deck to include L15: Endocrine and Immune System, L16: Pharmacotherapy of Bone Mineral Homeostasis Disorders.
 ---
 09/03/2022 05:21
