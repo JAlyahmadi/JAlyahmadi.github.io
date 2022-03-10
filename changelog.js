@@ -31,6 +31,9 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+
+{anki} Updated Locomotor system deck to include L14 & L15.
+---
 10/03/2022 12:15
 {summary} Added L32 HNS summary: Autonomic Nervous System.
 {summary} Added L14 Endocrine System summary: Calcium Metabolism.
