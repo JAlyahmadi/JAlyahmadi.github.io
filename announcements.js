@@ -5,7 +5,7 @@
 // PLEASE DO NOT EDIT ANYTHING ELSE IN THE CODE, INCLUDING THE ENDING `;
 // DO NOT RENAME THIS FILE
 
-var showAnnouncement = true;
+var showAnnouncement = false;
 var announcements = `
 
 <h2>For Students Studying for the IM3 ICA</h2>
