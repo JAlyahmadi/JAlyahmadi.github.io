@@ -31,6 +31,23 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+21/03/2022 23:15
+{summary} Guess who recently finished all their ICAs and is finally free to upload summaries? :D
+{summary} Added L33 HNS summary: Hypothalamus.
+{summary} Added L34 HNS summary: Homeostatic Drives.
+{summary} Added L35 HNS summary: Anatomy of the Limbic System.
+{summary} Added L36 HNS summary: Antidepressant Drugs.
+{summary} Added L37 HNS summary: Antipsychotic Drugs.
+{summary} Added L39 HNS summary: Consciousness, Arousal and Sleep.
+{summary} Added L16 Locomotor System summary: Pharmacotherapy of Bone Disorders.
+{summary} Added L17 Locomotor System summary: TB of Bone, Septic Arthritis, Bone Tumors.
+{summary} Added T05 Locomotor System summary: Hereditary Muscle Disease.
+{summary} Added L18 Endocrine System summary: Circadian Rhythm and Hypercortisolism.
+{summary} Added T03 Endocrine System summary: Hypothyroidism.
+{summary} Added C3P3 IM3 summary: Joint and Back Pain.
+{summary} Added C3P4 IM3 summary: Joint and Back Pain.
+{summary} Added C4P1 IM3 summary: Neck Mass.
+---
 11/03/2022 2:58
 {anki} Updated Locomotor system deck to include L14 & L15.
 ---
