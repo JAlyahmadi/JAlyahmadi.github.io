@@ -31,6 +31,9 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+03/22/2022 7:09
+{anki} Updated HNS deck to include L27-L37.
+---
 21/03/2022 23:15
 {summary} Guess who recently finished all their ICAs and is finally free to upload summaries? :D
 {summary} Added L33 HNS summary: Hypothalamus.
