@@ -31,6 +31,10 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+03/22/2022 11:09
+{anki} Updated Locomotor system deck to include L16 and L17.
+{anki} Updated Endocrine system deck to include L17 & 18.
+---
 03/22/2022 7:09
 {anki} Updated HNS deck to include L27-L37.
 ---
