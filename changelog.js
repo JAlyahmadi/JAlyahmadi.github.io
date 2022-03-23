@@ -31,6 +31,15 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+23/03/2022 21:45
+{summary} Added L38 HNS summary: Thalamus and Reticular Formation.
+{summary} Added L40 HNS summary: Sleep and Its Disorders.
+{summary} Added L41 HNS summary: Verbal Behaviour and Its Disorders.
+{summary} Added L18 Locomotor System summary: NSAIDs.
+{summary} Added L19 Locomotor System summary: Anti-rheumatic Drugs.
+{summary} Added L19 Endocrine System summary: Adrenal Insufficiency.
+{summary} Added L20 Endocrine System summary: Pathology of Adrenal Gland.
+---
 03/22/2022 11:09
 {anki} Updated Locomotor system deck to include L16 and L17.
 {anki} Updated Endocrine system deck to include L17 & 18.
