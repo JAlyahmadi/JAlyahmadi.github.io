@@ -31,6 +31,9 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+24/03/2022 17:56
+{anki} Updated HNS deck to include L38-L41.
+---
 23/03/2022 21:45
 {summary} Added L38 HNS summary: Thalamus and Reticular Formation.
 {summary} Added L40 HNS summary: Sleep and Its Disorders.
