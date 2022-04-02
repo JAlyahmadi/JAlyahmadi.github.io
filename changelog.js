@@ -31,6 +31,39 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+03/04/2022 00:20
+{summary} Greetings all, sorry for the long delay, christmas came early today, have this massive barrage of summaries. This finally, finally, finally concludes *all* summaries for *all* content currently on Moodle for *everything* up to the end of week 11. Have fun, وكل عام وانتم بخير, consider this my تهنئة رمضان if you wish, at least it's more useful than all the walls of text you guys keep spamming to each other for Ramadan on WhatsApp and no one reads you boomers :)
+{summary} Added L42 HNS summary: Learning and Memory.
+{summary} Added L43 HNS summary: Memory Storage.
+{summary} Added L44 HNS summary: Cognition and Its Disorders.
+{summary} Added T4 HNS summary: Staggering Student (Friedreich's Ataxia).
+{summary} Added T5 HNS summary: Shaking Palsy (Parkinson’s Disease).
+{summary} Added T6 HNS summary: Blues in the Spring (Depression).
+{summary} Added T7 HNS summary: Police are Following Me (Schizophrenia).
+{summary} Added T8 HNS summary: Under a Spell (Epilepsy).
+{summary} Added T9 HNS summary: Crisis Upon Crisis (Stroke).
+{summary} Added P4 HNS summary: Examination of Sensory System.
+{summary} Added P5 HNS summary: Cerebrum and Sections.
+{summary} Added P6 HNS summary: Cerebellum, Ventricles and CSF.
+{summary} Added P7 HNS summary: Examination of Motor System.
+{summary} Added P8 HNS summary: Cranial Nerves, Eye, Ear, Blood Supply.
+{summary} Added P9 HNS summary: Examination of Cranial Nerves.
+{summary} Added L20 Locomotor System summary: Immunological Disorders of Joints.
+{summary} Added L21 Locomotor System summary: Immunological Disorders of CT.
+{summary} Added P3 Locomotor System summary: Bacteriology Practical.
+{summary} Added L21 Endocrine System summary: Adrenal Medulla and Stress.
+{summary} Added L22 Endocrine System summary: Pharmacotherapy of Adrenal Disorders.
+{summary} Added L23 Endocrine System summary: DM Type 1 & 2.
+{summary} Added T6 Endocrine System summary: Hypocalcemia.
+{summary} Added T7 Endocrine System summary: Endocrine Hypertension.
+{summary} Added T8 Endocrine System summary: Adrenal Insufficiency.
+{summary} Added T9 Endocrine System summary: Metabolic Syndrome.
+{summary} Added SL1 IM3 summary: Examination of the Cervical Spine.
+{summary} Added SL1 IM3 summary: Range of Movement.
+{summary} Added SL1 IM3 summary: Examination of the Neck.
+{summary} Added SL1 IM3 summary: Acute Weakness.
+{summary} Updated HNS L21 to include part 2 of the lecture.
+---
 24/03/2022 17:56
 {anki} Updated HNS deck to include L38-L41.
 ---
