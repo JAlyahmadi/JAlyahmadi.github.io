@@ -31,6 +31,10 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+15/04/2022 14:00
+{summary} Added P03 Endocrine System summary: Pathology Practical.
+{summary} With this, all spotter summaries are ready (P01, P02, P03, L10). Good luck in the spotter.
+---
 03/04/2022 00:20
 {summary} Greetings all, sorry for the long delay, christmas came early today, have this massive barrage of summaries. This finally, finally, finally concludes *all* summaries for *all* content currently on Moodle for *everything* up to the end of week 11. Have fun, وكل عام وانتم بخير, consider this my تهنئة رمضان if you wish, at least it's more useful than all the walls of text you guys keep spamming to each other for Ramadan on WhatsApp and no one reads you boomers :)
 {summary} Added L42 HNS summary: Learning and Memory.
