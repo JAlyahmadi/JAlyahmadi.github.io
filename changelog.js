@@ -31,10 +31,13 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+16/04/2022 14:30
+{summary} Updated P01 Endocrine System summary to add more labels to the abdomen/adrenal cutsection image.
+---
 16/04/2022 14:15
 {summary} Extremely important fixes in endocrine spotter summaries:
-{summary} Updated P1 Endocrine System summary to fix a mislabeled image: The neck/thyroid cross section image had wrong labels for the trachea, esophagus and vertebra. Also one radiological image who a wrong placement for the label for hypophyseal fossa.
-{summary} Updated P3 Endocrine System summary to fix a mislabeled image: Station 5: "Rounded or elongated neoplastic cells" cells -> nuclei.
+{summary} Updated P01 Endocrine System summary to fix a mislabeled image: The neck/thyroid cross section image had wrong labels for the trachea, esophagus and vertebra. Also one radiological image who a wrong placement for the label for hypophyseal fossa.
+{summary} Updated P03 Endocrine System summary to fix a mislabeled image: Station 5: "Rounded or elongated neoplastic cells" cells -> nuclei.
 {summary} Updated L10 Endocrine System summary to fix swapped labelling of an image: The bottom right image in pancreas CT scans had swapped labels for adenocarcinoma and pancreatitis.
 {summary} Thanks to everyone who reported those mistakes in a timely manner; I highly appreciate it. I also apologise for the mistakes. Please spread the word about these corrections.
 ---
