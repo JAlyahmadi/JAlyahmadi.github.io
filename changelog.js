@@ -31,6 +31,43 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+21/04/2022 02:40
+{website} Added a separate section for CCPs for HNS and removed those tutorials from the tutorials page.
+{summary} Added L45 HNS summary: Antiepileptic Drugs.
+{summary} Added L46 HNS summary: Blood Supply of Brain and Spinal Cord.
+{summary} Added L47 HNS summary: Brain Metabolism.
+{summary} Added L48 HNS summary: Dementia & Neurodegenerative Diseases.
+{summary} Added L49 HNS summary: Cerebrovascular Diseases, Raised ICP.
+{summary} Added L50 HNS summary: Tumors of Nervous System.
+{summary} Added L51 HNS summary: Bacterial Meningitis and Brain Abscess.
+{summary} Added L52 HNS summary: Parasitic Infections of Nervous System.
+{summary} Added L53 HNS summary: Autoimmune Diseases of Nervous System.
+{summary} Added L54 HNS summary: Development of Nervous System 1.
+{summary} Added L55 HNS summary: Development of Nervous System 2.
+{summary} Added L56 HNS summary: Viral Infections of Nervous System.
+{summary} Added P10 HNS summary: Examination of Higher Mental Functions.
+{summary} Added P11 HNS summary: CNS Tumors.
+{summary} Added P12 HNS summary: Meningitis Practical.
+{summary} Added T10 HNS summary: Motor Control, Higher Mental Functions.
+{summary} Added T11 HNS summary: Brain Metabolism.
+{summary} Added T13 HNS summary: Neuropathology Tutorial.
+{summary} Added T14 HNS summary: Autoimmune Diseases of Nervous System.
+{summary} Added L22 Locomotor System summary: Autacoids.
+{summary} Added L23 Locomotor System summary: Pharmacology of Gout.
+{summary} Added L24 Locomotor System summary: Bone Tumors.
+{summary} Added L25 Locomotor System summary: Imaging of Locomotor System (the slides, no summary).
+{summary} Added L26 Locomotor System summary: Work-Related Musculoskeletal Disorders.
+{summary} Added L27 Locomotor System summary: Management of Multiple Trauma.
+{summary} Added T04 Locomotor System summary: Inflammatory Muscle Diseases.
+{summary} Added T07 Locomotor System summary: Osteoarthritis.
+{summary} Added T10 Locomotor System summary: Soft tissue & Bone Tumor.
+{summary} Added L24 Endocrine System summary: Pathology of Diabetes Mellitus.
+{summary} Added L25 Endocrine System summary: Drug Therapy of Diabetes Mellitus 1.
+{summary} Added L26 Endocrine System summary: Drug Therapy of Diabetes Mellitus 2.
+{summary} Added L27 Endocrine System summary: Exercise and Hypoglycemia.
+{summary} Added L28 Endocrine System summary: Adipocyte Tissue as an Endocrine Organ.
+{summary} Added T11 Endocrine System summary: Diabetes Management.
+---
 16/04/2022 14:30
 {summary} Updated P01 Endocrine System summary to add more labels to the abdomen/adrenal cutsection image.
 ---
