@@ -541,18 +541,9 @@ var folderIDs = {
   hns: {
     lectures: "1Uql0jklcEU_iUD-mdX9tz5VQqIxP5Fg0",
     tutorials: [
-      ["Tutorial 1", "1pP867HRuc2OSvG2XVrfj68CSSKFL2XU8"],
-      ["Tutorial 2", "1EBHzvhZVxqwokbVw7BwUMDV1GRPdmMbq"],
-      ["Tutorial 3", "1zwAAG4SxeGxbbj5hPbMxzv1j8hK81lWl"],
       ["Tutorial 4", "1MUv4ov00uy-14Me_NJtgifhfZ63wYgbQ"],
-      ["Tutorial 5", "1eK4GHoXiWZ3qBvYV-EHnn9-c496FEW5W"],
-      ["Tutorial 6", "1gbp1weNUUgfK87Lj7WBCvaMYn5dM1Qtf"],
-      ["Tutorial 7", "1wih8jc7VjbA6crw2dzR-p7Cn9n_N6Dh0"],
-      ["Tutorial 8", "1ZXlziBkr9feV7cFlwxwmaoXKH5v9bhUS"],
-      ["Tutorial 9", "1CIlHP_RIA3mOHRkmm5YdbiX4ShvzfVd8"],
       ["Tutorial 10", "1VBjIUYSQVPjLHZdwKijl5VarQ7M5ptYU"],
       ["Tutorial 11", "1Wm73HcQDF-wafgCmxJ4cLP6wWxDwha8J"],
-      ["Tutorial 12", "18vww1RdgMZ99PFT7UGca75ix7ykTmfce"],
       ["Tutorial 13", "1OFLTe__ggPegvFRZLA0ZEwzXPrKlcneC"],
       ["Tutorial 14", "1tSGcxeR1XWkBXEQ9T3LXvplnxs8QcjD4"]
     ],
@@ -567,8 +558,20 @@ var folderIDs = {
       ["Practical 8", "1cn8FA9Y0R42DBtwJfas4AJ-Jkv3AGjJX"],
       ["Practical 9", "1aFmp6DLfPU9DIHInlNdSjQZrNhCUNxgh"],
       ["Practical 10", "1Pba1Qf0u_KrSwB5PMv859RThJgHMspt9"],
-      ["Practical 11", "1J3EppLpaAF_dtCjnN4YNpg4hM1vds0Cs"]
+      ["Practical 11", "1J3EppLpaAF_dtCjnN4YNpg4hM1vds0Cs"],
+      ["Practical 12", "17pLXkXsoXmxlCGqJqVxaZYoqyxM2vA3r"]
     ],
+    cases: [
+      ["Case 1", "1IKXKIbhlOe78w5OibvXcIClfgZGWV7h9"],
+      ["Case 2", "14QEzRL2x43ajE_WjdJqGzWXi1kHyqgWx"],
+      ["Case 3", "1J0ZDZywO5H990HAxS4YPp1n27_hD9kBS"],
+      ["Case 4", "1wxBPB2-O4Yyp2sfxBGuSGAgLmS-8EFco"],
+      ["Case 5", "12Khg1dxG8OCT2zmIykR6ry6yhbc7UmE-"],
+      ["Case 6", "1GI9dUrx-DIAy-Dhr9omVYRuY4pPrkbJk"],
+      ["Case 7", "1CnaLuVirdhG_CjMj4rTiJ-zBkH4M7y_U"],
+      ["Case 8", "1YnFuJ_RoyCjAURQ1PyeDC1q5Fl5qH8Hc"],
+      ["Case 9", "1xYAsTmD33Cy6c7HkjHVUXslkuoSOzEuo"]
+    ]
     notes: [
       ["Bayan's Summaries", "1sfpMaoXjBlDBgxa7qFxB63GIUny5i7Wx"],
       ["Jihad's Summaries", "1_g-_UA9E8rxfZFzJSvani-hNGmr57ZAi"],
