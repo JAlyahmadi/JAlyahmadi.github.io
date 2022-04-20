@@ -8,7 +8,8 @@
 var showAnnouncement = true;
 var announcements = `
 
-<h2>Endocrine Spotter Summaries Mistakes</h2>
-<p>Please note that there were a few mistakes in my endocrine practical summaries. I have already corrected them; please check the changelog for what exactly got fixed. Please spread to word. Thanks to everyone who notified me of those mistakes, and I apologise for making them in the first place.</p>
+<h2>For Phase 2 Sem 4 Students</h2>
+<p>Almost all summaries for HNS, locomotor and endocrine (except a few tutorial summaries) are done. I will work on the rest of the tutorials and the IM3 summaries shortly. I apologise for the long day.</p>
+<p>For the HNS spotter, all summaries for all practicals are ready. Please pay attention to what I write in the notes/disclaimer area. You may use the summary as a core study material, but I highly recommend you check the links I post at least once. Some are mandatory.</p>
 <p>- Jihad Al-Yahmadi</p>
 `;
