@@ -571,7 +571,7 @@ var folderIDs = {
       ["Case 7", "1CnaLuVirdhG_CjMj4rTiJ-zBkH4M7y_U"],
       ["Case 8", "1YnFuJ_RoyCjAURQ1PyeDC1q5Fl5qH8Hc"],
       ["Case 9", "1xYAsTmD33Cy6c7HkjHVUXslkuoSOzEuo"]
-    ]
+    ],
     notes: [
       ["Bayan's Summaries", "1sfpMaoXjBlDBgxa7qFxB63GIUny5i7Wx"],
       ["Jihad's Summaries", "1_g-_UA9E8rxfZFzJSvani-hNGmr57ZAi"],
