@@ -31,6 +31,9 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+21/04/2022 13:15
+{website} Fixed course pages not showing up.
+---
 21/04/2022 02:40
 {website} Added a separate section for CCPs for HNS and removed those tutorials from the tutorials page.
 {summary} Added L45 HNS summary: Antiepileptic Drugs.
