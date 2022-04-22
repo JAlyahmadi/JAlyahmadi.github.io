@@ -31,6 +31,22 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+22/04/2022 07:30
+{summary} Added C4P4 IM3 summary: Neck Mass.
+{summary} Added C5P1 IM3 summary: Acute Weakness.
+{summary} Added C5P2 IM3 summary: Acute Weakness.
+{summary} Added C5P3 IM3 summary: Acute Weakness.
+{summary} Added C5P4 IM3 summary: Acute Weakness.
+{summary} Added C6P1 IM3 summary: Altered Sensorium.
+{summary} Added C6P2 IM3 summary: Altered Sensorium.
+{summary} Added C6P3 IM3 summary: Altered Sensorium.
+{summary} Added C6P4 IM3 summary: Altered Sensorium.
+{summary} Added SL05 IM3 summary: Sensory Examination.
+{summary} Added T08 Locomotor System summary: Rheumatoid Arthritis.
+{summary} Added T09 Locomotor System summary: Gait and Posture.
+{summary} Added T11 Locomotor System summary: Long Bone Fractures.
+{summary} Added T10 Endocrine System summary: Hypoglycemia.
+---
 21/04/2022 13:15
 {website} Fixed course pages not showing up.
 ---
