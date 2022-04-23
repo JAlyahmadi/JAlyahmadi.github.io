@@ -31,6 +31,14 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+23/04/2022 17:50
+{summary} Updated P01 HNS summary: Minor formatting fix, not important.
+{summary} Updated P02 HNS summary: Image for the medial aspect of the brain had swapped locations for the infundibular and optic recesses.
+{summary} Updated P03 HNS summary: Second row first image had wrong order of trigons. Fixed it to vagal -> hypoglossal -> vestibular from bottom up.
+{summary} Updated P08 HNS summary: Blood supply third image had a wrong location for the label of posterior spinal artery. Also fixed the labelling under of the eye image (second row middle image): Iris and sclera locations.
+{summary} Updated P12 HNS summary: Case 1 was missing the chocolate agar finding. Case 4 added type of hemolysis of listeria (beta hemolysis).
+{summary} Updated P03 Endocrine System summary: Added a note for station 8 on the discrepancy between the lecture notes and the practical recording for the next batch.
+---
 22/04/2022 07:30
 {summary} Added C4P4 IM3 summary: Neck Mass.
 {summary} Added C5P1 IM3 summary: Acute Weakness.
