@@ -31,6 +31,9 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+24/04/2022 22:45
+{summary} Updated P03 HNS summary: Fixed the trigones again after getting confirmation from Dr. Sadhana: From bottom up: Hypoglossal -> vagal -> vestibular.
+---
 23/04/2022 17:50
 {summary} Updated P01 HNS summary: Minor formatting fix, not important.
 {summary} Updated P02 HNS summary: Image for the medial aspect of the brain had swapped locations for the infundibular and optic recesses.
