@@ -31,6 +31,9 @@
 // DO NOT RENAME THIS FILE
 
 var changelogText = `
+28/04/2022 16:40
+{summary} Updated L20 Endocrine System summary: I accidentally merged the points for acute adrenal insufficiency with chronic. I separated them both.
+---
 24/04/2022 22:45
 {summary} Updated P03 HNS summary: Fixed the trigones again after getting confirmation from Dr. Sadhana: From bottom up: Hypoglossal -> vagal -> vestibular.
 ---
