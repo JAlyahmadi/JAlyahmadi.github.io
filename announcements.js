@@ -5,8 +5,8 @@
 // PLEASE DO NOT EDIT ANYTHING ELSE IN THE CODE, INCLUDING THE ENDING `;
 // DO NOT RENAME THIS FILE
 
-var showAnnouncement = true;
+var showAnnouncement = false;
 var announcements = `
 
-<img src="https://puu.sh/IXWCI/07ac6769b6.jpg" width="100%">
+
 `;
