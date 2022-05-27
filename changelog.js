@@ -35,7 +35,6 @@ var changelogText = `
 {anki} Updated HNS deck to include L52-L56.
 {anki} Updated locomotor system deck to include L18-L26.
 {anki} updated endocrine system deck to include L20-L28.
-{anki} - Credits to Abdullah Al-Amri for making all of those cards.
 ---
 28/04/2022 16:40
 {summary} Updated L20 Endocrine System summary: I accidentally merged the points for acute adrenal insufficiency with chronic. I separated them both.
