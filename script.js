@@ -88,7 +88,7 @@ if(storage){
     bookmarkLabels: {},
     defaultCourseSemester: "p1",
     defaultExamSemester: "p1",
-    defaultStudentSemester: "p2s1",
+    defaultStudentSemester: "p1",
     lastAnnouncement: "",
     lastChangelog: "",
     theme: "golden"
@@ -111,11 +111,15 @@ if(typeof(lastChangelog) !== "string"){
 }
 
 // Other variables
-var semesterValues = {"p1": 1, "p2s1": 2, "p2s2": 3, "p2s3": 4, "p2s4": 5};
+var semesterValues = {"p1": 1, "p2s1": 2, "p2s2": 3, "p2s3": 4, "p2s4": 5, "p3s1": 6};
 var currentChangelog = "";
 var examTimes = [];
 var changelogNotes = [];
 var lastChangelogNotes = [];
+var historyBack = [JSON.parse(JSON.stringify(location.hash))];
+var historyForward = [];
+var lastHash = JSON.parse(JSON.stringify(location.hash));
+var transitioning = false;
 
 // Update localStorage with the new values of the variables
 function updateStorage(){
@@ -138,18 +142,27 @@ function zero(num, digits){
 }
 
 // This is used to check if an item within changelogNotes exists in old changelogs
-function shallowEqual(object1, object2) {
+function shallowEqual(object1, object2){
   const keys1 = Object.keys(object1);
   const keys2 = Object.keys(object2);
   if(keys1.length !== keys2.length){
     return false;
   }
   for(let key of keys1){
-    if (object1[key] !== object2[key]) {
+    if(object1[key] !== object2[key]){
       return false;
     }
   }
   return true;
+}
+
+// Shuffle elements within an array
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
 }
 
 // Show the needed navigation buttons in #page-course for the given course
@@ -169,6 +182,78 @@ function showNeededPages(course){
   }
 }
 
+// Navigate to the correct page depending on the URL hash
+function pageFromHash(){
+  if(location.hash.split("#").length > 2){
+    var hashes = location.hash.split("#");
+    showNeededPages(hashes[2]);
+    $("#course-back").attr("data-go", "page-" + hashes[1]);
+    if(hashes.length >= 4 && folderIDs[hashes[2]]){
+      $("#page-files").show();
+      $("#top").show();
+      $("#iframe-back").attr("data-hash", "#" + hashes[1] + "#" + hashes[2]);
+      if(Array.isArray(folderIDs[hashes[2]][hashes[3]])){
+        var explorerFiles = folderIDs[hashes[2]][hashes[3]];
+        $("#iframe-wrap").hide();
+        $("#table-files").show();
+        for(var i = 0; i < explorerFiles.length; i++){
+          var newExplorerFile = "<tr><td class='table-file' data-bs-toggle='modal' data-bs-target='#modal-explorer' data-id='" + explorerFiles[i][1] + "'><i class='fa fa-folder-o'></i> " + explorerFiles[i][0] + "</td></tr>";
+          $("#table-files tbody").append(newExplorerFile);
+        }
+      } else {
+        $("#iframe-gdrive").attr("src", "https://drive.google.com/embeddedfolderview?id=" + folderIDs[hashes[2]][hashes[3]]);
+        $("#top").hide();
+        $("#iframe-wrap").height(200);
+        $("body").css("overflow", "hidden");
+        $("#iframe-gdrive").on("load", function(){
+          iframeResize();
+          $("#iframe-gdrive").css("opacity", "1");
+          $("#iframe-wrap").css("background-image", "none");
+        });
+      }
+    } else {
+      $("#page-course").show();
+      $("#top").show();
+    }
+  } else if(!location.hash || !$("#page-" + location.hash.replace("#", "")).length){
+    $("#page-main").show();
+    $("#top").show();
+  } else {
+    $("#page-" + location.hash.replace("#", "")).show();
+    $("#top").show();
+  }
+}
+
+// Animate each .bigbtn showing up individually and in sequence
+function showBtnsAnimation(){
+  $(".page .bigbtn").css("opacity", "0").css("transform", "scale(0.85)");
+  setTimeout(function(){
+    for(var i = 0; i < $(".page").length; i++){
+      var timeInterval = 40;
+      for(var j = 0; j < $(".page:eq(" + i + ") .bigbtn:not(:hidden)").length; j++){
+        var showBtn = function(page, btn, interval){
+          setTimeout(function(){
+            $(".page:eq(" + page + ") .bigbtn:not(:hidden):eq(" + btn + ")").css("opacity", "1").css("transform", "scale(1)");
+          }, interval)
+        };
+        showBtn(i, j, timeInterval);
+        timeInterval += 40;
+      }
+    }
+  }, 200);
+}
+
+
+// Change the position of the main container to be always in the centre
+function containerPosition(){
+  var newTop = ($(window).height() - $("#page-main").height()) / 2 - 115;
+  if(newTop > 0 && $(window).width() > 991){
+    $(".container").css("top", newTop + "px");
+  } else {
+    $(".container").css("top", 0);
+  }
+}
+
 // Set the height of the iframe to be the remainder of the page and properly resize the iframe according to the transform: scale(1.5) of it
 function iframeResize(){
   $("#iframe-wrap").height($(window).height() - $("#iframe-wrap").offset()["top"] - 80);
@@ -185,14 +270,45 @@ function previewResize(){
   }
 }
 
+// Shuffle the names in the phase 3 group randomiser
+function groupShuffle(){
+  var males = $("#randomiser-male").val().split("\n").filter(function(x){return x.replace(/ /g, "") !== ""}).map(function(x){return [x, "male"]});
+  var females = $("#randomiser-female").val().split("\n").filter(function(x){return x.replace(/ /g, "") !== ""}).map(function(x){return [x, "female"]});
+  var students = shuffleArray(males).concat(shuffleArray(females));
+  var groupNum = parseInt($("#randomiser-number").val());
+  var groups =  [];
+  var output = "";
+  for(var i = 0; i < groupNum; i++){
+    groups.push([]);
+  }
+  for(var i = 0; i < students.length; i++){
+    groups[i % groupNum].push(students[i]);
+  }
+  for(var i = 0; i < groupNum; i++){
+    output += "<div class='randomiser-group'><h5>Group " + (i + 1) + "</h5>";
+    for(var j = 0; j < groups[i].length; j++){
+      output += "<span class='badge rounded-pill bg-" + groups[i][j][1] + "'>" + groups[i][j][0] + "</span>";
+    }
+    output += "</div>";
+  }
+  $("#randomiser-output").html(output);
+}
+
+// Set the height of all .guide-container to the one with the largest height value
+function guideResize(){
+  $(".guide-container").css("height", "100%");
+  var maxHeight = Math.max.apply(null, $(".guide-container").map(function(){return $(this).height()}).get());
+  $(".guide-container").css("height", maxHeight + "px");
+}
+
 // Change the text of the Add Bookmark button according to whether the current page is included, and update the bookmarks list
 function updateBookmarks(){
   if(bookmarks.includes(location.hash || "#main")){
     $("#bookmark-add").attr("data-state", "remove");
-    $("#bookmark-add").html("<i class='bi bi-star-fill'></i> Remove Bookmark");
+    $("#bookmark-add").html("<i class='material-symbols-outlined' style='font-variation-settings: \"FILL\" 1'>star</i> <span>Remove Bookmark</span>");
   } else {
     $("#bookmark-add").attr("data-state", "add");
-    $("#bookmark-add").html("<i class='bi bi-star'></i> Add Bookmark");
+    $("#bookmark-add").html("<i class='material-symbols-outlined'>star</i> <span>Add Bookmark</span>");
   }
   if(bookmarks.length){
     $("#bookmark-dropdown").html("");
@@ -206,6 +322,7 @@ function updateBookmarks(){
       $("#bookmark-dropdown").append("<a class='dropdown-item' href='" + bookmarks[i] + "'><object type='image/svg+xml' data='" + bookmarkIcon + "'></object>" + bookmarkLabels[bookmarks[i]] + "</a>");
     }
     $("#bookmark-dropdown a").click(function(){
+      transitioning = true;
       location.hash = $(this).attr("href");
       location.reload();
     });
@@ -322,10 +439,12 @@ function updateChangelog(){
   $("#changelog-badge").text("+" + newChanges);
 }
 
-// Make sure the iframe size is always correct when the window is resized
+// Make sure the iframe size and the main container position are always correct when the window is resized, and also the height of .guide-container
 $(window).on("resize", function(){
+  containerPosition();
   iframeResize();
   previewResize();
+  guideResize();
 });
 
 $(document).ready(function(){
@@ -338,7 +457,7 @@ $(document).ready(function(){
   $("#iframe-gdrive").attr("src", "");
   $("#explorer-iframe").attr("src", "");
 
-  // Remove the loader when the script is loaded or force a longer load time to read the MoTD\
+  // Remove the loader when the script is loaded or force a longer load time to read the MoTD
   // Also show the announcement if it has never been seen before
   if(loadTime >= 1500){
     $("body").css("overflow", "auto");
@@ -362,48 +481,11 @@ $(document).ready(function(){
     }, 1500 - loadTime);
   }
 
-  // Navigate to the correct page depending on the URL hash
-  if(location.hash.split("#").length > 2){
-    var hashes = location.hash.split("#");
-    showNeededPages(hashes[2]);
-    $("#course-back").attr("data-go", "page-" + hashes[1]);
-    if(hashes.length >= 4 && folderIDs[hashes[2]]){
-      $("#page-files").show();
-      $("#top").show();
-      $("#iframe-back").attr("data-hash", "#" + hashes[1] + "#" + hashes[2]);
-      if(Array.isArray(folderIDs[hashes[2]][hashes[3]])){
-        var explorerFiles = folderIDs[hashes[2]][hashes[3]];
-        $("#iframe-wrap").hide();
-        $("#table-files").show();
-        for(var i = 0; i < explorerFiles.length; i++){
-          var newExplorerFile = "<tr><td class='table-file' data-bs-toggle='modal' data-bs-target='#modal-explorer' data-id='" + explorerFiles[i][1] + "'><i class='fa fa-folder-o'></i> " + explorerFiles[i][0] + "</td></tr>";
-          $("#table-files tbody").append(newExplorerFile);
-        }
-      } else {
-        $("#iframe-gdrive").attr("src", "https://drive.google.com/embeddedfolderview?id=" + folderIDs[hashes[2]][hashes[3]]);
-        $("#top").hide();
-        $("#iframe-wrap").height(200);
-        $("body").css("overflow", "hidden");
-        $("#iframe-gdrive").on("load", function(){
-          iframeResize();
-          $("#iframe-gdrive").css("opacity", "1");
-          $("#iframe-wrap").css("background-image", "none");
-        });
-      }
-    } else {
-      $("#page-course").show();
-      $("#top").show();
-    }
-  } else if(!location.hash || !$("#page-" + location.hash.replace("#", "")).length){
-    $("#page-main").show();
-    $("#top").show();
-  } else {
-    $("#page-" + location.hash.replace("#", "")).show();
-    $("#top").show();
-  }
-
-  // Update the bookmarks, exam timetables and changelog
+  // Show the correct page from hash, update the main container position, the bookmarks, .guide-container heights, exam timetables and changelog
+  pageFromHash();
+  containerPosition();
   updateBookmarks();
+  guideResize();
   readExams();
   updateExams();
   readChangelog();
@@ -426,7 +508,7 @@ $(document).ready(function(){
   // Change the src of the modal explorer iframe when .table-file is clicked
   $("body").on("click", ".table-file", function(){
     $("#explorer-iframe").attr("src", "https://drive.google.com/embeddedfolderview?id=" + $(this).attr("data-id") + "#list");
-    $("#modal-explorer .modal-body").css("background-image", "url('puffloader.svg')");
+    $("#modal-explorer .modal-body").css("background-image", "");
     $("#explorer-iframe").on("load", function(){
       $("#explorer-iframe").css("opacity", "1");
       $("#modal-explorer .modal-body").css("background-image", "none");
@@ -476,7 +558,7 @@ $(document).ready(function(){
   // Change the iframe of the guides modal to the appropriate URL when .guide is clicked
   $(".guide").click(function(){
     $("#guides-iframe").attr("src", $(this).attr("data-guide"));
-    $("#modal-guides .modal-body").css("background-image", "url('puffloader.svg')");
+    $("#modal-guides .modal-body").css("background-image", "");
     $("#guides-iframe").on("load", function(){
       $("#guides-iframe").css("opacity", "1");
       $("#modal-guides .modal-body").css("background-image", "none");
@@ -487,14 +569,6 @@ $(document).ready(function(){
   document.getElementById("modal-guides").addEventListener("hidden.bs.modal", function(e){
     $("#guides-iframe").replaceWith("<iframe src='' id='guides-iframe' class='modal-content-preview'></iframe>");
     $("#guides-iframe").css("opacity", "0");
-  });
-
-  // Add animations for when the page is changed
-  $(".page-changer, .course-content[data-iframe='false']").click(function(){
-    $(".container").css("transform", "scale(0.9)");
-    setTimeout(function(){
-      $(".container").css("transform", "scale(1)");
-    }, 200);
   });
 
   // Show the correct page when .page-changer is clicked
@@ -525,6 +599,8 @@ $(document).ready(function(){
     }
     setTimeout(function(){
       $(moveTo).fadeIn(200);
+      // This is in case the button navigates to the guides page
+      guideResize();
     }, 200);
   });
 
@@ -582,6 +658,116 @@ $(document).ready(function(){
     $("#explorer-iframe").css("opacity", "0");
   });
 
+  // Add animations for when the page is changed
+  $(".page-changer, .course-content").click(function(){
+    $("body").css("overflow", "hidden");
+    transitioning = true;
+    setTimeout(function(){transitioning = false}, 210);
+    if($(this).hasClass("page-back") && $(this).attr("id") != "iframe-back"){
+      $(".page").css("transform", "translateX(100px)");
+      setTimeout(function(){$(".page").css("transition", "none").css("transform", "translateX(-100px)")}, 200);
+      setTimeout(function(){$(".page").css("transition", "transform 400ms").css("transform", "none")}, 210);
+    } else if($(this).attr("id") == "title" || $(this).attr("id") == "iframe-back"){
+      $(".page").css("transform", "scale(0.8)");
+      setTimeout(function(){$(".page").css("transition", "none").css("transform", "scale(1.2)"); $("body").css("overflow", "hidden")}, 200);
+      setTimeout(function(){$(".page").css("transition", "transform 400ms").css("transform", "none")}, 210);
+    } else if($(this).hasClass("course-content") && $(this).attr("data-iframe") != "true"){
+      $(".page").css("transform", "scale(1.2)");
+      setTimeout(function(){$(".page").css("transition", "none").css("transform", "scale(0.8)")}, 200);
+      setTimeout(function(){$(".page").css("transition", "transform 400ms").css("transform", "none")}, 210);
+    } else if($(this).attr("data-iframe") != "true"){
+      $(".page").css("transform", "translateX(-100px)");
+      setTimeout(function(){$(".page").css("transition", "none").css("transform", "translateX(100px)")}, 200);
+      setTimeout(function(){$(".page").css("transition", "transform 400ms").css("transform", "none")}, 210);
+    }
+    showBtnsAnimation();
+    setTimeout(function(){$("body").css("overflow", "visible")}, 400);
+  });
+
+  // Enable back and forward page navigation
+  $(window).on("hashchange", function(){
+    if(location.hash != lastHash){
+      lastHash = JSON.parse(JSON.stringify(location.hash));
+      if(!transitioning){
+        $("body").css("overflow", "hidden");
+        if(location.hash == $(historyBack).get(-2)){
+          historyForward.push(historyBack.pop());
+          $(".page").css("transform", "translateX(100px)");
+          setTimeout(function(){$(".page").hide();pageFromHash();$(".page").css("transition", "none").css("transform", "translateX(-100px)")}, 200);
+          setTimeout(function(){$(".page").css("transition", "transform 400ms").css("transform", "none")}, 210);
+        } else if(location.hash == $(historyForward).get(-1)){
+          historyBack.push(historyForward.pop());
+          $(".page").css("transform", "translateX(-100px)");
+          setTimeout(function(){$(".page").hide();pageFromHash();$(".page").css("transition", "none").css("transform", "translateX(100px)")}, 200);
+          setTimeout(function(){$(".page").css("transition", "transform 400ms").css("transform", "none")}, 210);
+        } else {
+          if(location.hash == "#course"){
+            if(historyForward.length && $(historyForward).get(-1).split("#").length == 3){
+              history.forward()
+            } else {
+              history.back();
+            }
+          } else {
+            historyBack.push(location.hash);
+            historyForward = [];
+            $(".page").css("transform", "scale(1.2)");
+            setTimeout(function(){$(".page").hide();pageFromHash();$(".page").css("transition", "none").css("transform", "scale(0.8)")}, 200);
+            setTimeout(function(){$(".page").css("transition", "transform 400ms").css("transform", "none")}, 210);
+          }
+        }
+        showBtnsAnimation();
+        setTimeout(function(){$("body").css("overflow", "visible")}, 400);
+      } else {
+        if(location.hash == $(historyBack).get(-2)){
+          historyForward.push(historyBack.pop());
+        } else if(location.hash == $(historyForward).get(-1)){
+          historyBack.push(historyForward.pop());
+        } else {
+          historyBack.push(location.hash);
+          historyForward = [];
+        }
+      }
+    }
+  });
+
+  // Swiping right on phones should act as the back button, and swiping left should act as the forward button
+  $(window).on("swiperight", function(){
+    history.back();
+  }).on("swipeleft", function(){
+    history.forward();
+  });
+
+  // Enable stacking of modals on top of each other (used in the phase 3 randomiser)
+  $(document).on("show.bs.modal", ".modal", function(){
+    var zIndex = 1040 + 10 * $(".modal:visible").length;
+    $(this).css("z-index", zIndex);
+    setTimeout(function(){$(".modal-backdrop").not(".modal-stack").css("z-index", zIndex - 1).addClass("modal-stack")});
+  });
+
+  // Fix the problem where the scrollbar on body becomes hidden when #modal-randomiser-output shows up
+  $(document).on("hide.bs.modal", ".modal", function(){
+    setTimeout(function(){$("body").css("overflow", "visible")}, 310);
+  });
+
+  // Phase 3 group randomiser, perform checks first before execution
+  $("#randomiser-btn").click(function(){
+    $("#randomiser-form").removeClass("randomiser-error");
+    var males = $("#randomiser-male").val().split("\n").filter(function(x){return x.replace(/ /g, "") !== ""});
+    var females = $("#randomiser-female").val().split("\n").filter(function(x){return x.replace(/ /g, "") !== ""});
+    if(males.concat(females).length){
+      groupShuffle();
+      var outputModal = new bootstrap.Modal($("#modal-randomiser-output"));
+      outputModal.show();
+    } else {
+      setTimeout(function(){$("#randomiser-form").addClass("randomiser-error")});
+    }
+  });
+
+  // As for the reshuffle button, there is no need to perform checks, as input values are certain to be valid
+  $("#randomiser-reshuffle").click(function(){
+    groupShuffle();
+  });
+
   // Swap between exam, courses and student timetables when the timetable selector is clicked
   $(".timetable-item").click(function(){
     if(!$(this).hasClass("timetable-active")){
@@ -598,6 +784,7 @@ $(document).ready(function(){
         $("#" + switchTo).fadeIn(200);
       }, 200);
     }
+    setTimeout(function(){previewResize()}, 210);
   });
 
   // Switch to the default exam timetable and show the exam timetable of the selected semester
@@ -616,19 +803,24 @@ $(document).ready(function(){
   $("#timetable-courses-semester").val(semesterValues[defaultCourseSemester]);
   $("#timetable-courses-course option").hide();
   $("#timetable-courses-course option[data-semester='" + defaultCourseSemester + "']").show();
+  $("#timetable-courses-course").val($("#timetable-courses-course option[data-semester='" + defaultCourseSemester + "']:eq(0)").attr("value"));
   $("#timetable-courses-preview").attr("src", $("#timetable-courses-course option[data-semester='" + defaultCourseSemester + "']:eq(0)").attr("data-url"));
   $("#timetable-courses-semester").change(function(){
     var selectedSem = $("#timetable-courses-semester option:selected").attr("data-semester");
     $("#timetable-courses-course option").hide();
     $("#timetable-courses-course option[data-semester='" + selectedSem + "']").show();
     $("#timetable-courses-course").val($("#timetable-courses-course option[data-semester='" + selectedSem + "']:eq(0)").attr("value"));
+    $("#timetable-courses-preview").replaceWith("<embed src='' id='timetable-courses-preview' class='modal-content-preview'>");
     $("#timetable-courses-preview").attr("src", $("#timetable-courses-course option[data-semester='" + selectedSem + "']:eq(0)").attr("data-url"));
     defaultCourseSemester = selectedSem;
     updateStorage();
+    previewResize();
   });
   $("#timetable-courses-course").change(function(){
     var selectedCourse = $("#timetable-courses-course option:selected").attr("data-url");
+    $("#timetable-courses-preview").replaceWith("<embed src='' id='timetable-courses-preview' class='modal-content-preview'>");
     $("#timetable-courses-preview").attr("src", selectedCourse);
+    previewResize();
   });
 
   // Switch to the default student timetable and show the student timetable of the selected semester
@@ -636,6 +828,7 @@ $(document).ready(function(){
   $("#timetable-student-preview").attr("src", $("#timetable-student-semester option:selected").attr("data-url"));
   $("#timetable-student-semester").change(function(){
     var selectedSem = $("#timetable-student-semester option:selected").attr("data-semester");
+    $("#timetable-student-preview").replaceWith("<img src='' id='timetable-student-preview' class='modal-content-preview'>");
     $("#timetable-student-preview").attr("src", $("#timetable-student-semester option:selected").attr("data-url"));
     defaultStudentSemester = selectedSem;
     updateStorage();

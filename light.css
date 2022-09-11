@@ -1,0 +1,367 @@
+@media (min-width: 992px) {
+  html[data-theme="light"] #navbar .dropdown-menu {
+    background-color: #ffffff;
+    border: 1px solid #000000;
+  }
+  html[data-theme="light"] #navbar .dropdown-menu a {
+    padding: 8px 16px;
+    transition: background-color 400ms, color 400ms;
+  }
+  html[data-theme="light"] #navbar .dropdown-menu a:hover {
+    background-color: #000000;
+    border-color: transparent;
+    color: #ffffff;
+  }
+  html[data-theme="light"] #navbar .dropdown-menu a:hover object {
+    filter: invert(1);
+  }
+  html[data-theme="light"] #theme-changer .theme-change[data-theme-change="light"] i {
+    color: #000000;
+    text-shadow: none;
+  }
+  html[data-theme="light"] #theme-changer .theme-change[data-theme-change="light"]:hover i {
+    color: #ffffff;
+  }
+  html[data-theme="light"] .dropdown-divider {
+    border-top: 1px solid #e1e1e1;
+  }
+}
+
+
+@media (max-width: 991px) {
+  html[data-theme="light"] #navbar .dropdown-menu a:not(.theme-change):hover {
+    border-color: #ffffff;
+    color: #ffffff;
+  }
+  html[data-theme="light"] #navbar .dropdown-menu a:not(.theme-change):hover object {
+    filter: invert(1);
+  }
+  html[data-theme="light"] #navbar .nav-item:hover {
+    border-color: #ffffff;
+  }
+  html[data-theme="light"] #navbar.navbar-dark .navbar-nav .nav-item:hover .nav-link {
+    color: #ffffff;
+  }
+  html[data-theme="light"] .dropdown-divider {
+    border-top: 1px solid #363636;
+  }
+}
+
+
+html[data-theme="light"] {
+  --dark0: #efefef;
+  --dark1: #ffffff;
+  --light0: #dddddd;
+  --light1: #aaaaaa;
+}
+
+
+html[data-theme="light"], html[data-theme="light"] body {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+
+html[data-theme="light"] #changelog-badge {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+
+html[data-theme="light"] #copy-message {
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  box-shadow: none;
+}
+
+
+html[data-theme="light"] #explorer-iframe, html[data-theme="light"] #iframe-gdrive {
+  filter: none;
+}
+
+
+html[data-theme="light"] #loader-motdlight {
+  display: block;
+}
+
+
+html[data-theme="light"] #modal-explorer .modal-body, html[data-theme="light"] #modal-guides .modal-body {
+  background-image: url("puffloader-light.svg");
+}
+
+
+html[data-theme="light"] #modal-timetable .form-select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23000000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  border-width: 1px;
+  color: #000000;
+}
+
+
+html[data-theme="light"] #modal-timetable .form-select option {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+
+html[data-theme="light"] #randomiser-form select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23000000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  color: #000000;
+}
+
+
+html[data-theme="light"] #randomiser-form select, html[data-theme="light"] #randomiser-form textarea {
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  box-shadow: none;
+}
+
+
+html[data-theme="light"] #table-files tbody {
+  border: 1px solid #000000;
+  box-shadow: none;
+}
+
+
+html[data-theme="light"] #table-files tbody tr:hover {
+  box-shadow: none;
+}
+
+
+html[data-theme="light"] #table-files td {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+
+html[data-theme="light"] #table-files td {
+  background-color: #ffffff;
+}
+
+
+html[data-theme="light"] #table-files tr:hover td {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+
+html[data-theme="light"] #title {
+  color: #000000;
+}
+
+
+html[data-theme="light"] #timetable-courses-preview, html[data-theme="light"] #timetable-student-preview {
+  background-image: url(puffloader-light.svg)
+}
+
+
+html[data-theme="light"] #timetable-selector {
+  box-shadow: none;
+}
+
+
+html[data-theme="light"] #timetable-selector .row {
+  border: 1px solid #000000;
+}
+
+
+html[data-theme="light"] #timetable-selector .timetable-item:last-child.timetable-active {
+  box-shadow: 1px 0 0 #000000;
+}
+
+
+html[data-theme="light"] #timetable-selector .timetable-item:not(.timetable-active) {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+
+html[data-theme="light"] #timetable-selector .timetable-item:not(.timetable-active):hover {
+  background-color: var(--dark0);
+}
+
+
+html[data-theme="light"] .badge {
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  box-shadow: none;
+  color: #000000;
+}
+
+
+html[data-theme="light"] .badge.bg-female {
+  background-color: var(--pink) !important;
+  border: 1px solid #000000;
+  color: #000000;
+}
+
+
+html[data-theme="light"] .badge.bg-male {
+  background-color: var(--blue) !important;
+  border: 1px solid #000000;
+  color: #000000;
+}
+
+
+html[data-theme="light"] .badge.bg-primary {
+  color: #ffffff;
+}
+
+
+html[data-theme="light"] .bigbtn {
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  box-shadow: none;
+  transform: scale(1);
+}
+
+
+html[data-theme="light"] .bigbtn:hover {
+  background-color: #000000;
+}
+
+
+html[data-theme="light"] .bigbtn:hover .bigbtn-icon {
+  filter: invert(1);
+}
+
+
+html[data-theme="light"] .bigbtn:hover .bigbtn-name {
+  color: #ffffff;
+}
+
+
+html[data-theme="light"] .bigbtn-icon {
+  filter: invert(0);
+}
+
+
+html[data-theme="light"] .bigbtn-name {
+  color: #000000;
+}
+
+
+html[data-theme="light"] .book-cover {
+  border: 1px solid #000000;
+  box-shadow: none;
+  filter: saturate(0) brightness(1) contrast(1);
+}
+
+
+html[data-theme="light"] .book-cover:hover {
+  filter: none;
+}
+
+
+html[data-theme="light"] .btn-close {
+  opacity: 0.3 !important;
+}
+
+
+html[data-theme="light"] .btn-close:hover {
+  filter: brightness(50%);
+  opacity: 1 !important;
+}
+
+
+html[data-theme="light"] .changelog-note {
+  border: 1px solid transparent;
+  transition: border-color 200ms;
+}
+
+
+html[data-theme="light"] .changelog-note:hover {
+  background-color: #ffffff;
+  border-color: #000000;
+  box-shadow: none;
+}
+
+
+html[data-theme="light"] .contact-card {
+  border: 1px solid transparent;
+  transition: border-color 200ms;
+}
+
+
+html[data-theme="light"] .contact-card:hover {
+  background-color: transparent;
+  border-color: #000000;
+  box-shadow: none;
+}
+
+
+html[data-theme="light"] .contact-copy {
+  color: #000000;
+}
+
+
+html[data-theme="light"] .guide {
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  box-shadow: none;
+}
+
+
+html[data-theme="light"] .guide:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+
+html[data-theme="light"] .modal-body-styled p:not(:last-child) {
+  color: #555555;
+}
+
+
+html[data-theme="light"] .modal-footer-btn {
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  box-shadow: none;
+  color: #000000;
+}
+
+
+html[data-theme="light"] .modal-footer-btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+
+html[data-theme="light"] .modal-title {
+  color: #000000;
+}
+
+
+html[data-theme="light"] .randomiser-group {
+  border: 1px solid transparent;
+  box-shadow: none;
+  transition: border-color 200ms;
+}
+
+
+html[data-theme="light"] .randomiser-group:hover {
+  background-color: #ffffff;
+  border-color: #000000;
+  box-shadow: none;
+}
+
+
+html[data-theme="light"] .section-separator h5 {
+  color: #000000;
+}
+
+html[data-theme="light"] .theme-change i {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+
+html[data-theme="light"] .timer {
+  border: 1px solid transparent;
+  box-shadow: none;
+  transition: border-color 200ms;
+}
+
+
+html[data-theme="light"] .timer:hover {
+  background-color: #ffffff;
+  border-color: #000000;
+}

@@ -31,6 +31,7 @@ var folderIDs = {
   anatomy: {
     lectures: "15z20mqm0H83ZJ_VA9SCPmwzrC4nmo6UO",
     practicals: "1QxjP3rMKHkqoVI8ktenfVvDkqdPy5Bt0",
+    prerecorded: "1lcmntkqjcFWfCKmVBV3GPRZDHzftilOX",
     notes: "1DgJGkb2wvwXq6s9U7FpTvBPJr4dnbwnV",
     flashcards: [
       ["Histology", "1LlDiXbzPZYdLaMmynKWQCBdzC1wFc5Fu"],
@@ -47,6 +48,7 @@ var folderIDs = {
   },
   physiology: {
     lectures: "1vk4Y1aJG-YQNjeefFxIQSm1w5H9FUZkj",
+    prerecorded: "1yHPmxLA159iUtTkvpKXTD0emJ2k6kgWM",
     notes: "1CRc9YGNTAEgH7yyQWJeKf9T3lZcqBCpy",
     flashcards: "1XHaGMLlYVs9-6gNcwCenyuf0bjovbqoa",
     qbank: [
@@ -86,6 +88,7 @@ var folderIDs = {
   },
   cytology: {
     lectures: "1B5ioEI1jp3eH9ndY011agaBHipdhv08k",
+    prerecorded: "1cAZV1-FUWyBYr8y_Lk-atDG0ZALoH9T9",
     notes: "1IMA6ihVDKO-Znz5y8nMM6xrYo2ypCVpY",
     flashcards: "119_hTmqMf3Y0OP_XnQI9CEzfRNYM6QbD",
     qbank: [
@@ -122,6 +125,7 @@ var folderIDs = {
       ["Practical 10 (Immunology)", "13xsz22JMw1Api-HIfSzLxKMPdkjcuMwE"],
       ["Practical 11-15 (Pathology)", "1-V0OZuEOHx2J_sZGrUvq4EAWjv6JVuKH"]
     ],
+    prerecorded: "1eL6pF7965ZtdTAkr8ZAkd7yaG-XNcHyU",
     notes: [
       ["Bacteriology", "1W3xwbgf9HsMh_qsNtYGUhr5DCL_Q5zUG"],
       ["Parasitology", "1-gyxtUCZIYDPSp6d72TDdswtAQFAFQbx"],
@@ -155,6 +159,7 @@ var folderIDs = {
       ["Physiology Practicals", "1lk2j0vFArrduJfqavoIU4q06ZRC3Vi5j"],
       ["Surface Anatomy", "1m2nRO3eKjL0FT5yViVbI9R-K1x3Jv6g0"]
     ],
+    prerecorded: "1FVKNkdXnBCuYUwAyl6U9qILi3i21e2eP",
     notes: "1-Mps0wDVmMuYgpVbz3FNMx-rpK1dLIKK",
     flashcards: "10zT3G2EVtU8U3ZQSEDQNWImG-8Gm_F7j",
     qbank: [
@@ -168,6 +173,7 @@ var folderIDs = {
   hospital: {
     lectures: "1581jX_cmm2LI8EYy8zuzZn5ohpyb0_nh",
     tutorials: "16XShOJKy5lvk0cr2E1BZOOM_XO7JdxGk",
+    prerecorded: "1lglglCCkH7I1GQvgshoeyviMSp2KWIEj",
     spss: "1tOAiUbVIxDPxzctqXaNIMUWp_bA3b5_D",
     essays: [
       ["Information", "1_0UilTPYtExTUfAYNHetpv2KmRw0C6p_"],
@@ -197,6 +203,7 @@ var folderIDs = {
       ["Tutorial 11", "1SqSEPgMnUON8Q3DcDWryg346rk6HIcOq"]
     ],
     practicals: "1HvXu49b03xwM8VgIPMW4HeY1IUgbsWSG",
+    prerecorded: "1FAav1E17Z7Zs1-7rPSzPBh6gWEOUpceE",
     notes: "1QqJvTISJ5GmWgHnMaWr-6hit6MYcKitL",
     flashcards: "1INLp_6q1fdAg49YSZfVP7D8HcaQIGN43",
     qbank: [
@@ -210,6 +217,7 @@ var folderIDs = {
   },
   growth: {
     lectures: "1tAbegwYEhgJVhVTWnNqh8W12CvcEjn7Y",
+    prerecorded: "1QKqpi9olIr-8YXLppnojbFKewNWn-0QJ",
     notes: "1a0eQhWUBpmf80og7_ghKBkG1vHZO6DAy",
     qbank: [
       ["ICA", "1Bih_A7JVLx-ezX82I84fFMhWakVxLA8e"],
@@ -245,6 +253,7 @@ var folderIDs = {
       ["Practical 6", "1T3hSzHj4hyjwR7JdCIjacHhU1M6RDLac"],
       ["Practical 7", "1SCv2bPs6SR61LVYAk4TQyw0zrCMd68r1"]
     ],
+    prerecorded: "1X0PBn9UCZBJy8imtv18dWeWh30EDAP3h",
     cases: [
       ["Case 1", "1M-swgsSy2GsdYU1XCq4g33aEuJx6figc"],
       ["Case 2", "1KfoZh0M5VkAiSSqlDLbpBRRk-CbAmrLu"],
@@ -281,6 +290,7 @@ var folderIDs = {
       ["Tutorial 13", "1QMRwHpdms58wvJJJ6gEsL5mX8ewt-l5J"],
       ["Tutorial 14", "14eMGi4S8xHROmg-MpLCuvyJlqafw9ptg"]
     ],
+    prerecorded: "1FsKfCeM02UCkbzlExwrPEPY_FONr-JaQ",
     notes: "1-9_Ntwd4Z5XIb6rJRShiGeFvCpwq8FIW",
     flashcards: "1UOK5ylK0QY4qpJQzRO1AqNwjmeshEt87",
     qbank: [
@@ -341,6 +351,7 @@ var folderIDs = {
       ["SQUIH Histology Program", "1lMXYCyXszllFa2zgBZDsi-xk3EvGQIyi"],
       ["X-rays", "1m5daD6glbnZFKdybL-xpjfrGINn-mDi0"]
     ],
+    prerecorded: "1-oOEiFE-qFe2AeIOqiP7yYfkSU48LSEX",
     notes: "1rHCSBDQcR5sgRxwfpg6EHaIEIuiNflDV",
     flashcards: "1xfD1XLVxRtindRgyFKuaYFTdmR_wn7K_",
     qbank: [
@@ -352,6 +363,7 @@ var folderIDs = {
   },
   informatics2: {
     lectures: "1fhS6PxRPUDtUgz-RRBiRQiGx_SkLSEnB",
+    prerecorded: "1E8v9fKJXa3ri7GFNriG2pP2ohhTrrLTZ",
     presentations: "1C0GT9TqVH9ec0zhDxLfMLbALxdn4kc-P",
     notes: "1Wwqvnle8jt_iLekbktbLWWEPECUeU5JA",
     flashcards: "1nZfufZ2tAsF6tDNIo8if7KxWEUrnZcrR",
@@ -379,6 +391,7 @@ var folderIDs = {
       ["Tutorial 13", "1TePKyM7jwHmYJFiusCOcWG35vBfbpchh"],
       ["Tutorial 14", "1XT2R3s5UVikfFsp1T5sLJqxbKONFfj7A"]
     ],
+    prerecorded: "1wkVQmPNDj2E4rgfMiEJ-c3vyJRrTe_qs",
     proposals: [
       ["Information", "19frlMyolpWiehZesCXaTY4vATFETXUFI"],
       ["Examples", "1Xxc-1qHUkZDp0h1Pj4ba9bH1iKoHqIDQ"]
@@ -422,6 +435,7 @@ var folderIDs = {
       ["Practical 8", "1GyTXevz43b1OqZS8knHO_lBxPMtiFpg2"],
       ["Practical 9", "1MOW9uSaibdCeLq124EPThtJOm826EulB"]
     ],
+    prerecorded: "1Dv9I1SLTM5GwrdTXXWO5i4u5gdIhpejc",
     notes: [
       ["Bayan's Summaries", "19fWsvdVc3U2bcb6Nay_IcmyNoGngEZTa"],
       ["Handwritten Notes", "1jPeGoYBPlMp1jcu3ZBX2TqxwES1useks"],
@@ -469,6 +483,7 @@ var folderIDs = {
       ["Practical 8", "172e9ontOkcv1q2s2hRsToWXEEsJjHQUK"],
       ["Practical 9", "1OqEQ168VTLqkwuLjtS1OVjxnyJH-Ulnu"]
     ],
+    prerecorded: "1m81CsjIJlyq_UNCy4ylplRbTb9W3xIFu",
     notes: [
       ["Bayan's Summaries", "1NtxVFYK3SctUhUDpy13l_Vis03Vuz7u6"],
       ["Jihad's Summaries", "1BCr-_KXl71n-f959YmAsOSPlsf7BykaZ"],
@@ -520,6 +535,7 @@ var folderIDs = {
       ["Tutorial 13", "1ZPUYCprAQUgm5nzrLgG3lUCGHKe-gtXr"],
       ["Tutorial 14", "12Yx44Brq6p-L-0kGUrhZEUdS6gD_h9tf"]
     ],
+    prerecorded: "14fmviZuHnBbiQjwo8lAuttAel7bVfC4_",
     notes: [
       ["Bayan's Summaries", "10FSHWaiHgXzbmWNasyda8JfuXBGrfNh1"],
       ["Jihad's Summaries", "1lm7swAW1Omu5-USpNgrjjx6YQ0rAJzuI"],
@@ -561,6 +577,7 @@ var folderIDs = {
       ["Practical 11", "1J3EppLpaAF_dtCjnN4YNpg4hM1vds0Cs"],
       ["Practical 12", "17pLXkXsoXmxlCGqJqVxaZYoqyxM2vA3r"]
     ],
+    prerecorded: "1dWidj-DDZu8JRlTh0lZsdOa4-qVHZLVF",
     cases: [
       ["Case 1", "1IKXKIbhlOe78w5OibvXcIClfgZGWV7h9"],
       ["Case 2", "14QEzRL2x43ajE_WjdJqGzWXi1kHyqgWx"],
@@ -607,6 +624,7 @@ var folderIDs = {
       ["Practical 2", "1suWSnJ2vxa2FrR5Tiiwsk6l3sejdk_xn"],
       ["Practical 3", "154d9lO38cXJXl86Df8lqMneB4CJQrUET"]
     ],
+    prerecorded: "1jh8kWSWKzTk6aO6n-hxQ9tETtgWvK9oi",
     notes: [
       ["Bayan's Summaries", "1XAdaCR9MxWJw4e7vAR0bN0uA4EIAaU7v"],
       ["Jihad's Summaries", "1J66P8Xk7kEBkmGk_Yie80CUxt21yCV74"],
@@ -653,6 +671,7 @@ var folderIDs = {
       ["Practical 2", "1E4FfWIyme9Tkch80l0U-0wyyNw7JisH9"],
       ["Practical 3", "1VG4PSvL3Y1eD0uOiyAuQB7AZ3UrtRh3R"]
     ],
+    prerecorded: "1UAzrbolJXTUfCwFKvRiD8YQ_cFnVx2KF",
     notes: [
       ["Bayan's Summaries", "1zzNI3KgRuu5CPiPRucORfVMGLnDWFpNA"],
       ["Jihad's Summaries", "1tS9xh9Sm1BwQ-UW6Iwo1Mu_AzwazwHPT"],
@@ -669,10 +688,5 @@ var folderIDs = {
   project2: {
     lectures: "1Yp7rtHMLovMWwWa70krE94q-OsuJaFdg",
     notes: "1O0FykIBv4PO1OfwLSnGPcdnWEitHbUg8"
-  },
-
-  preclerkship: {},
-  juniorclerkship: {},
-  seniorclerkship: {},
-  preinternship: {}
+  }
 };

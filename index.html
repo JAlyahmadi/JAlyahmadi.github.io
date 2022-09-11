@@ -11,23 +11,25 @@
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Golden Drive">
-    <meta property="og:url" content="https://golden-drive.net/">
+    <meta property="og:url" content="https://golden-drive.com/">
     <meta property="og:description" content="A very inclusive archive of useful resources for medical students of Sultan Qaboos University hosted on Google Drive.">
-    <meta property="og:image" content="https://www.golden-drive.net/logo.jpg">
+    <meta property="og:image" content="https://www.golden-drive.com/logo.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:domain" content="">
-    <meta property="twitter:url" content="http://golden-drive.net/">
+    <meta property="twitter:url" content="http://golden-drive.com/">
     <meta name="twitter:title" content="Golden Drive">
     <meta name="twitter:description" content="A very inclusive archive of useful resources for medical students of Sultan Qaboos University hosted on Google Drive.">
-    <meta name="twitter:image" content="http://www.golden-drive.net/logo.jpg">
+    <meta name="twitter:image" content="http://www.golden-drive.com/logo.jpg">
 
     <title>Golden Drive</title>
 
     <!-- Bootstrap and CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="light.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed">
@@ -38,7 +40,9 @@
     <script>var startLoadTime = (new Date()).getTime();</script>
     <script>document.querySelector("html").setAttribute("data-theme", JSON.parse(localStorage["goldenDriveStorage"])["theme"] || "golden");</script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script>$(document).on("mobileinit", function(){$.mobile.autoInitializePage = false});</script>
+    <script src="https://code.jquery.com/mobile/1.5.0-rc1/jquery.mobile-1.5.0-rc1.min.js" integrity="sha256-c3VbCrdCtTHmXYAuxRT4D0Cy5VC/0zBnXVRIvJiV9xo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
     <script src="motd.js"></script>
     <script>
@@ -62,12 +66,17 @@
     <!-- Loading Animation Overlay and MoTD -->
     <div id="loader-overlay">
       <div id="loader-content">
-        <img src="loader.svg">
+        <img src="loader.svg" id="loader">
         <span id="loader-motd"></span>
+        <span id="loader-motdlight"></span>
         <script>
           var motdRng = new Math.seedrandom(~~((new Date) / 86400000));
           var motdMessage = motdPool[Math.floor(motdRng() * motdPool.length)];
-          $("#loader-motd").html("<b>MOTD:</b> " + motdMessage);
+          var motdLightMessage = motdLight[Math.floor(motdRng() * motdLight.length)];
+          document.getElementById("loader").onload = function(){
+            $("#loader-motd").html("<b>MOTD:</b> " + motdMessage);
+            $("#loader-motdlight").html(motdLightMessage);
+          };
         </script>
       </div>
     </div>
@@ -82,44 +91,51 @@
         <div class="collapse navbar-collapse" id="navbar-collapse">
           <ul class="navbar-nav me-auto">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="bi bi-bookmark"></i> Bookmarks</a>
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="material-symbols-outlined">bookmarks</i> <span>Bookmarks</span></a>
               <div class="dropdown-menu" id="bookmark-dropdown"></div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="bookmark-add" data-state="add"><i class="bi bi-star"></i> Add Bookmark</a>
+              <a class="nav-link" id="bookmark-add" data-state="add"><i class="material-symbols-outlined">star</i> <span>Add Bookmark</span></a>
             </li>
           </ul>
           <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="https://drive.google.com/drive/folders/1QyR6jsYoBEsCkND5n61dh52bre8UFBk2?usp=sharing"><i class="bi bi-folder2" rel="nofollow"></i> Google Drive<a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="material-symbols-outlined">folder_open</i> <span>Google Drive</span></a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="https://drive.google.com/drive/u/1/folders/1QyR6jsYoBEsCkND5n61dh52bre8UFBk2" rel="nofollow">Golden Drive</a>
+                <a class="dropdown-item" href="https://drive.google.com/drive/u/1/folders/1xLHF_OpkFDieAzpLJdPoMret0QnzTR6B" rel="nofollow">2017 Batch Drive</a>
+                <a class="dropdown-item" href="https://drive.google.com/drive/u/1/folders/1sy2ziMevMByhYy1WQ5dt42AII5r1LMKj" rel="nofollow">2016 Batch Drive</a>
+                <a class="dropdown-item" href="https://drive.google.com/drive/u/1/folders/1iunSaV1bTeQEtXb2Ac0utuM8lOnk4q09" rel="nofollow">2015 Batch Drive</a>
+                <a class="dropdown-item" href="https://drive.google.com/drive/u/1/folders/1zqeWHBl0-0a6Lv7nATO9mvF7ldLUO6lL" rel="nofollow">2014 Batch Drive</a>
+              </div>
             </li>
             <li class="nav-item" data-bs-toggle="modal" data-bs-target="#modal-contact">
-              <a class="nav-link"><i class="bi bi-envelope"></i> Contact Us</a>
+              <a class="nav-link"><i class="material-symbols-outlined">alternate_email</i> <span>Contact Us</span></a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="bi bi-palette"></i> Theme</a>
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="material-symbols-outlined">format_paint</i> <span>Theme</span></a>
               <div class="dropdown-menu" id="theme-changer">
-                <a class="dropdown-item theme-change" data-theme-change="golden"><i class="bi bi-circle-fill"></i> Golden</a>
-                <a class="dropdown-item theme-change" data-theme-change="orange"><i class="bi bi-circle-fill"></i> Orange</a>
-                <a class="dropdown-item theme-change" data-theme-change="red"><i class="bi bi-circle-fill"></i> Red</a>
-                <a class="dropdown-item theme-change" data-theme-change="magenta"><i class="bi bi-circle-fill"></i> Magenta</a>
-                <a class="dropdown-item theme-change" data-theme-change="pink"><i class="bi bi-circle-fill"></i> Pink</a>
-                <a class="dropdown-item theme-change" data-theme-change="purple"><i class="bi bi-circle-fill"></i> Purple</a>
-                <a class="dropdown-item theme-change" data-theme-change="blue"><i class="bi bi-circle-fill"></i> Blue</a>
-                <a class="dropdown-item theme-change" data-theme-change="cyan"><i class="bi bi-circle-fill"></i> Cyan</a>
-                <a class="dropdown-item theme-change" data-theme-change="green"><i class="bi bi-circle-fill"></i> Green</a>
-                <a class="dropdown-item theme-change" data-theme-change="lime"><i class="bi bi-circle-fill"></i> Lime</a>
+                <a class="dropdown-item theme-change" data-theme-change="golden"><i class="material-symbols-outlined">circle</i> <span>Golden</span></a>
+                <a class="dropdown-item theme-change" data-theme-change="orange"><i class="material-symbols-outlined">circle</i> <span>Orange</span></a>
+                <a class="dropdown-item theme-change" data-theme-change="red"><i class="material-symbols-outlined">circle</i> <span>Red</span></a>
+                <a class="dropdown-item theme-change" data-theme-change="magenta"><i class="material-symbols-outlined">circle</i> <span>Magenta</span></a>
+                <a class="dropdown-item theme-change" data-theme-change="pink"><i class="material-symbols-outlined">circle</i> <span>Pink</span></a>
+                <a class="dropdown-item theme-change" data-theme-change="purple"><i class="material-symbols-outlined">circle</i> <span>Purple</span></a>
+                <a class="dropdown-item theme-change" data-theme-change="blue"><i class="material-symbols-outlined">circle</i> <span>Blue</span></a>
+                <a class="dropdown-item theme-change" data-theme-change="cyan"><i class="material-symbols-outlined">circle</i> <span>Cyan</span></a>
+                <a class="dropdown-item theme-change" data-theme-change="green"><i class="material-symbols-outlined">circle</i> <span>Green</span></a>
+                <a class="dropdown-item theme-change" data-theme-change="lime"><i class="material-symbols-outlined">circle</i> <span>Lime</span></a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item theme-change" data-theme-change="white"><i class="bi bi-circle-fill"></i> White</a>
-                <a class="dropdown-item theme-change" data-theme-change="grey"><i class="bi bi-circle-fill"></i> Grey</a>
-                <a class="dropdown-item theme-change" data-theme-change="slategrey"><i class="bi bi-circle-fill"></i> Slate Grey</a>
-                <a class="dropdown-item theme-change" data-theme-change="brown"><i class="bi bi-circle-fill"></i> Brown</a>
+                <a class="dropdown-item theme-change" data-theme-change="white"><i class="material-symbols-outlined">circle</i> <span>White</span></a>
+                <a class="dropdown-item theme-change" data-theme-change="grey"><i class="material-symbols-outlined">circle</i> <span>Grey</span></a>
+                <a class="dropdown-item theme-change" data-theme-change="slategrey"><i class="material-symbols-outlined">circle</i> <span>Slate Grey</span></a>
+                <a class="dropdown-item theme-change" data-theme-change="brown"><i class="material-symbols-outlined">circle</i> <span>Brown</span></a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="https://youtu.be/dQw4w9WgXcQ" rel="nofollow"><i class="bi bi-sun-fill"></i> Light mode</a>
+                <a class="dropdown-item theme-change" data-theme-change="light"><i class="material-symbols-outlined">light_mode</i> <span>Light Mode</span></a>
               </div>
             </li>
             <li class="nav-item" data-bs-toggle="modal" data-bs-target="#modal-about">
-              <a class="nav-link"><i class="bi bi-exclamation-circle"></i> About</a>
+              <a class="nav-link"><i class="material-symbols-outlined">info</i> <span>About</span></a>
             </li>
           </ul>
         </div>
@@ -216,7 +232,7 @@
         </div>
       </div>
 
-      <!-- Phase 3 courses -->
+      <!-- Phase 3 semesters -->
       <div id="page-phase3" class="page hidden">
         <div class="row">
           <div class="col-md-12">
@@ -225,7 +241,7 @@
             </div>
           </div>
           <div class="col-md-3 col-sm-6">
-            <div class="bigbtn page-changer" data-go="page-course" data-forward="true" data-course="preclerkship">
+            <div class="bigbtn page-changer" data-go="page-preclerkship">
               <img src="icons/trophy1.svg" alt="Icon" class="bigbtn-icon">
               <h6 class="bigbtn-name">Pre-clerkship</h6>
             </div>
@@ -288,18 +304,18 @@
             </a>
           </div>
           <div class="col-md-3 col-sm-6">
-            <a href="https://drive.google.com/drive/u/1/folders/1Vhm3O454fwMrbRa_RdIoXCsyNVvCOtty" rel="nofollow">
+            <a href="https://docs.google.com/spreadsheets/u/1/d/1DbzhO3YfkQkJnMcoo7m33Whn7ix_pnNq/edit?usp=drive_web&ouid=107367659675470856721&rtpof=true" rel="nofollow">
               <div class="bigbtn">
                 <img src="icons/bacteriology.svg" alt="Icon" class="bigbtn-icon">
-                <h6 class="bigbtn-name">Bacteriology Biochemicals</h6>
+                <h6 class="bigbtn-name">Microbiology Reference Table</h6>
               </div>
             </a>
           </div>
           <div class="col-md-3 col-sm-6">
-            <a href="https://drive.google.com/drive/u/1/folders/18125Jk1IJh9-wkShu49KnAzslX1y2Y-O" rel="nofollow">
+            <a href="https://docs.google.com/spreadsheets/u/1/d/1Tf9EC83r3XqG8b0VS36vW-s-Z8iq1OlH/edit?usp=drive_web&ouid=107367659675470856721&rtpof=true" rel="nofollow">
               <div class="bigbtn">
-                <img src="icons/virology.svg" alt="Icon" class="bigbtn-icon">
-                <h6 class="bigbtn-name">Virology Virus Properties</h6>
+                <img src="icons/antibiotics.svg" alt="Icon" class="bigbtn-icon">
+                <h6 class="bigbtn-name">Antibiotics Reference Table</h6>
               </div>
             </a>
           </div>
@@ -312,9 +328,9 @@
             </a>
           </div>
           <div class="col-md-3 col-sm-6">
-            <div class="bigbtn" data-bs-toggle="modal" data-bs-target="#modal-otherdrives">
-              <img src="icons/otherdrives.svg" alt="Icon" class="bigbtn-icon">
-              <h6 class="bigbtn-name">Other Batch Drives</h6>
+            <div class="bigbtn" data-bs-toggle="modal" data-bs-target="#modal-randomiser">
+              <img src="icons/grouprandomiser.svg" alt="Icon" class="bigbtn-icon">
+              <h6 class="bigbtn-name">Phase 3 Group Randomiser</h6>
             </div>
           </div>
         </div>
@@ -328,7 +344,7 @@
               <h6 class="bigbtn-name">Back</h6>
             </div>
           </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="col-lg-2 col-md-4 col-sm-6">
             <a href="https://mega.nz/folder/vVwwERbZ#moQ_r3LhT6uYng8kgA9kKQ" rel="nofollow">
               <div class="bigbtn">
                 <img src="icons/boards.svg" alt="Icon" class="bigbtn-icon">
@@ -336,7 +352,15 @@
               </div>
             </a>
           </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="col-lg-2 col-md-4 col-sm-6">
+            <a href="https://mega.nz/folder/IRQXxCjZ#7ssrxQLJt5KtNWBdY82_Yg/folder/NEZVUYTI" rel="nofollow">
+              <div class="bigbtn">
+                <img src="icons/kenhub.svg" alt="Icon" class="bigbtn-icon">
+                <h6 class="bigbtn-name">Kenhub</h6>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-6">
             <a href="https://mega.nz/folder/LaxVkKQL#aEyR7cRE0qcUQiEg-nrQYw" rel="nofollow">
               <div class="bigbtn">
                 <img src="icons/lecturio.svg" alt="Icon" class="bigbtn-icon">
@@ -344,7 +368,7 @@
               </div>
             </a>
           </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="col-lg-2 col-md-4 col-sm-6">
             <a href="https://www.youtube.com/c/NinjaNerdScience/featured" rel="nofollow">
               <div class="bigbtn">
                 <img src="icons/ninjanerd.svg" alt="Icon" class="bigbtn-icon">
@@ -352,15 +376,15 @@
               </div>
             </a>
           </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <a href="https://mega.nz/folder/coZQmRgK#dFol15Cwe8zx_jiyzCda1g" rel="nofollow">
+          <div class="col-lg-2 col-md-4 col-sm-6">
+            <a href="https://mega.nz/folder/IRQXxCjZ#7ssrxQLJt5KtNWBdY82_Yg/folder/VQQlBYZb" rel="nofollow">
               <div class="bigbtn">
                 <img src="icons/osmosis.svg" alt="Icon" class="bigbtn-icon">
                 <h6 class="bigbtn-name">Osmosis</h6>
               </div>
             </a>
           </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="col-lg-2 col-md-4 col-sm-6">
             <a href="https://mega.nz/folder/3OJEzDBS#Xp0HdxkA0SfLzDETacVJtA" rel="nofollow">
               <div class="bigbtn">
                 <img src="icons/pathoma.svg" alt="Icon" class="bigbtn-icon">
@@ -368,7 +392,7 @@
               </div>
             </a>
           </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="col-lg-2 col-md-4 col-sm-6">
             <a href="https://mega.nz/folder/2l40jQBD#9mk1l-iCOMklRzDOzi6MMA" rel="nofollow">
               <div class="bigbtn">
                 <img src="icons/picmonic.svg" alt="Icon" class="bigbtn-icon">
@@ -376,7 +400,23 @@
               </div>
             </a>
           </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="col-lg-2 col-md-4 col-sm-6">
+            <a href="https://mega.nz/folder/IRQXxCjZ#7ssrxQLJt5KtNWBdY82_Yg/folder/NZpRyAQK" rel="nofollow">
+              <div class="bigbtn">
+                <img src="icons/pixorize.svg" alt="Icon" class="bigbtn-icon">
+                <h6 class="bigbtn-name">Pixorize</h6>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-6">
+            <a href="https://mega.nz/folder/IRQXxCjZ#7ssrxQLJt5KtNWBdY82_Yg/folder/JNZRECbL" rel="nofollow">
+              <div class="bigbtn">
+                <img src="icons/physeo.svg" alt="Icon" class="bigbtn-icon">
+                <h6 class="bigbtn-name">Physeo</h6>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-6">
             <a href="https://youtube.com/playlist?list=PLD7882068A01C370F" rel="nofollow">
               <div class="bigbtn">
                 <img src="icons/shotgun.svg" alt="Icon" class="bigbtn-icon">
@@ -384,7 +424,7 @@
               </div>
             </a>
           </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="col-lg-2 col-md-4 col-sm-6">
             <a href="https://mega.nz/folder/R4NEDT5D#dFZg0Av2cZcqwJuju9ToiQ" rel="nofollow">
               <div class="bigbtn">
                 <img src="icons/sketchy.svg" alt="Icon" class="bigbtn-icon">
@@ -392,7 +432,7 @@
               </div>
             </a>
           </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="col-lg-2 col-md-4 col-sm-6">
             <a href="https://www.youtube.com/c/TheNotedAnatomist/featured" rel="nofollow">
               <div class="bigbtn">
                 <img src="icons/thenotedanatomist.svg" alt="Icon" class="bigbtn-icon">
@@ -411,19 +451,19 @@
               <h6 class="bigbtn-name">Back</h6>
             </div>
           </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="col-lg-4 col-md-4 col-sm-6">
             <div class="bigbtn page-changer" data-go="page-course" data-forward="true" data-course="chemistry">
               <img src="icons/chemistry.svg" alt="Icon" class="bigbtn-icon">
               <h6 class="bigbtn-name">Chemistry for Medicine</h6>
             </div>
           </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="col-lg-4 col-md-4 col-sm-6">
             <div class="bigbtn page-changer" data-go="page-course" data-forward="true" data-course="english">
               <img src="icons/english.svg" alt="Icon" class="bigbtn-icon">
               <h6 class="bigbtn-name">English for Medicine</h6>
             </div>
           </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="col-lg-4 col-md-4 col-sm-6">
             <div class="bigbtn page-changer" data-go="page-course" data-forward="true" data-course="informatics1">
               <img src="icons/informatics.svg" alt="Icon" class="bigbtn-icon">
               <h6 class="bigbtn-name">Informatics 1</h6>
@@ -626,6 +666,125 @@
         </div>
       </div>
 
+      <!-- Phase 3 pre-clerkship -->
+      <div id="page-preclerkship" class="page hidden">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="bigbtn page-changer page-back" data-go="page-phase3">
+              <h6 class="bigbtn-name">Back</h6>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-6">
+            <div class="bigbtn table-file" data-bs-toggle="modal" data-bs-target="#modal-explorer" data-id="1_hDFVo4OLnaU5mXGHQxP4kL-THSaK7hG">
+              <img src="icons/preclerkship-lectures.svg" alt="Icon" class="bigbtn-icon">
+              <h6 class="bigbtn-name">Thursday Lectures</h6>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-6">
+            <div class="bigbtn table-file" data-bs-toggle="modal" data-bs-target="#modal-explorer" data-id="1jDoD3aGofe1ft0km8yKnJ_ITzMQZrHiv">
+              <img src="icons/preclerkship-general.svg" alt="Icon" class="bigbtn-icon">
+              <h6 class="bigbtn-name">General</h6>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-6">
+            <div class="bigbtn table-file" data-bs-toggle="modal" data-bs-target="#modal-explorer" data-id="1S7NGaPxm2uU5JGKwsGX9ofawOx6wgVpn">
+              <img src="icons/cvs.svg" alt="Icon" class="bigbtn-icon">
+              <h6 class="bigbtn-name">Cardiovascular</h6>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-6">
+            <div class="bigbtn table-file" data-bs-toggle="modal" data-bs-target="#modal-explorer" data-id="1PrdoFH61q_VXoA__xJwXesBpJWyj1zjR">
+              <img src="icons/hns.svg" alt="Icon" class="bigbtn-icon">
+              <h6 class="bigbtn-name">Neurology</h6>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-6">
+            <div class="bigbtn table-file" data-bs-toggle="modal" data-bs-target="#modal-explorer" data-id="1VeLIc81rL9IOHOrvno9Z5NxJ-C4lV7_-">
+              <img src="icons/locomotor.svg" alt="Icon" class="bigbtn-icon">
+              <h6 class="bigbtn-name">Musculoskeletal</h6>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-6">
+            <div class="bigbtn table-file" data-bs-toggle="modal" data-bs-target="#modal-explorer" data-id="1d5XBFmx0x2VX6XWwGUDX4fVs1mI9zz02">
+              <img src="icons/respiratory.svg" alt="Icon" class="bigbtn-icon">
+              <h6 class="bigbtn-name">Respiratory</h6>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-6">
+            <div class="bigbtn table-file" data-bs-toggle="modal" data-bs-target="#modal-explorer" data-id="1UdqwQGbONXkW45XzKD00JVfdGMFZZ1UY">
+              <img src="icons/sfr.svg" alt="Icon" class="bigbtn-icon">
+              <h6 class="bigbtn-name">Abdomen</h6>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-6">
+            <div class="bigbtn table-file" data-bs-toggle="modal" data-bs-target="#modal-explorer" data-id="1wNzOj234T5Mt9HaB7fQGcEyBBffftD-b">
+              <img src="icons/preclerkship-obgyn.svg" alt="Icon" class="bigbtn-icon">
+              <h6 class="bigbtn-name">Gynecology & Obstetrics</h6>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-6">
+            <div class="bigbtn table-file" data-bs-toggle="modal" data-bs-target="#modal-explorer" data-id="1rdEImxkkgUDpxfJIHlux44fbEZa-OAIb">
+              <img src="icons/preclerkship-psychiatry.svg" alt="Icon" class="bigbtn-icon">
+              <h6 class="bigbtn-name">Psychiatry</h6>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-6">
+            <div class="bigbtn table-file" data-bs-toggle="modal" data-bs-target="#modal-explorer" data-id="1cN5tKzkhcmhm96KzdDkPJghxRMiNTD79">
+              <img src="icons/preclerkship-ent.svg" alt="Icon" class="bigbtn-icon">
+              <h6 class="bigbtn-name">ENT & Dentistry</h6>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-6">
+            <div class="bigbtn table-file" data-bs-toggle="modal" data-bs-target="#modal-explorer" data-id="1TFxPr69U_EydppGRg2LYTFJS_MMQTqyY">
+              <img src="icons/preclerkship-pediatrics.svg" alt="Icon" class="bigbtn-icon">
+              <h6 class="bigbtn-name">Pediatrics</h6>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-6">
+            <div class="bigbtn table-file" data-bs-toggle="modal" data-bs-target="#modal-explorer" data-id="18sMB9EhWF-FpfgMmNSe6xZUnQBfCYFRk">
+              <img src="icons/uroreproductive.svg" alt="Icon" class="bigbtn-icon">
+              <h6 class="bigbtn-name">Genitourinary & Breast</h6>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-6">
+            <div class="bigbtn table-file" data-bs-toggle="modal" data-bs-target="#modal-explorer" data-id="1RxCaczcxK6jjILCgiNUx-5ciOdOgEROB">
+              <img src="icons/preclerkship-ophthalmology.svg" alt="Icon" class="bigbtn-icon">
+              <h6 class="bigbtn-name">Ophthalmology</h6>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-6">
+            <div class="bigbtn table-file" data-bs-toggle="modal" data-bs-target="#modal-explorer" data-id="1mOroQd1xTLbtiNTbGowK8tANhErQ2dZE">
+              <img src="icons/preclerkship-pharmacology.svg" alt="Icon" class="bigbtn-icon">
+              <h6 class="bigbtn-name">Pharmacology</h6>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-6">
+            <div class="bigbtn table-file" data-bs-toggle="modal" data-bs-target="#modal-explorer" data-id="1wEA8_OEshvU3FteOVtkEtIhX_BryHl-N">
+              <img src="icons/preclerkship-counselling.svg" alt="Icon" class="bigbtn-icon">
+              <h6 class="bigbtn-name">Counselling</h6>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-6">
+            <div class="bigbtn table-file" data-bs-toggle="modal" data-bs-target="#modal-explorer" data-id="1xe7qUlx3k0ZU6NUFY4wZimUH49eLILbE">
+              <img src="icons/preclerkship-bls.svg" alt="Icon" class="bigbtn-icon">
+              <h6 class="bigbtn-name">Basic Life Support</h6>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-6">
+            <div class="bigbtn table-file" data-bs-toggle="modal" data-bs-target="#modal-explorer" data-id="1pZa32bT35eU5kWzsCwC3JPfh9sqO43rC">
+              <img src="icons/qbank.svg" alt="Icon" class="bigbtn-icon">
+              <h6 class="bigbtn-name">Question Bank</h6>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-6">
+            <div class="bigbtn table-file" data-bs-toggle="modal" data-bs-target="#modal-explorer" data-id="12eODfouEUTteKwz3JDBDKD3tmYRnK7SY">
+              <img src="icons/otherdrives.svg" alt="Icon" class="bigbtn-icon">
+              <h6 class="bigbtn-name">Other Drives</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Course content page -->
       <div id="page-course" class="page hidden">
         <div class="row">
@@ -650,6 +809,12 @@
             <div class="bigbtn">
               <img src="icons/practicals.svg" alt="Icon" class="bigbtn-icon">
               <h6 class="bigbtn-name">Practicals</h6>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 course-content" id="c-prerecorded">
+            <div class="bigbtn">
+              <img src="icons/prerecorded.svg" alt="Icon" class="bigbtn-icon">
+              <h6 class="bigbtn-name">Pre-recorded Material</h6>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 col-sm-6 course-content" id="c-spss">
@@ -830,7 +995,7 @@
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
             <div class="book">
-              <a href="https://drive.google.com/file/d/1qAK7cI_PyeUOlLoxaG-_ppgpLK4f9jkB/view?usp=sharing" rel="nofollow"><img data-src="thumbnails/informatics.jpg" alt="Thumbnail" class="book-cover"></a>
+              <a href="https://www.dropbox.com/s/vldzzmd3clh12aq/Health%20Informatics%20Practical%20Guide.pdf?dl=0" rel="nofollow"><img data-src="thumbnails/informatics.jpg" alt="Thumbnail" class="book-cover"></a>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
@@ -1051,60 +1216,58 @@
               <h6 class="bigbtn-name">Back</h6>
             </div>
           </div>
-        </div>
-        <div class="row">
+          <div class="col-md-4 col-sm-6 col-12 guide-container">
+            <div class="guide" data-bs-toggle="modal" data-bs-target="#modal-guides" data-guide="https://drive.google.com/file/d/18ooAh87CpMghLkAbf35am0BjW5T36U8s/preview">
+              <h4 class="guide-title"><span class="material-symbols-outlined">looks_one</span> Phase 1</h3>
+              <span class="guide-subtitle">An overview guide covering phase 1 courses and various tips concerning them.</span>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-12 guide-container">
+            <div class="guide" data-bs-toggle="modal" data-bs-target="#modal-guides" data-guide="https://drive.google.com/file/d/1la4OGVP1FYjbaq54PUGcrPdAHGWjtDoS/preview">
+              <h4 class="guide-title"><span class="material-symbols-outlined">looks_two</span> Phase 2</h3>
+              <span class="guide-subtitle">An overview guide covering all semesters of phase 2, their courses and various tips concerning them.</span>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-12 guide-container">
+            <div class="guide" data-bs-toggle="modal" data-bs-target="#modal-guides" data-guide="https://drive.google.com/file/d/1bVjxofF_CIcoqQPBdYx-HgJNVn7BIB82/preview">
+              <h4 class="guide-title"><span class="material-symbols-outlined">looks_3</span> Phase 3</h3>
+              <span class="guide-subtitle">An overview guide covering all years of phase 3 and tips concerning them.</span>
+            </div>
+          </div>
           <div class="col-md-4 col-sm-6 col-12 guide-container">
             <div class="guide" data-bs-toggle="modal" data-bs-target="#modal-guides" data-guide="https://drive.google.com/file/d/1AfKfcNl2bdywYP3Dz17w16teMqBCzGrJ/preview">
-              <h4 class="guide-title">Best Study Method</h3>
-              <span class="guide-subtitle">Read about the ideal study method we found to be the best from our cumulative experience and observations.</span>
+              <h4 class="guide-title"><span class="material-symbols-outlined">local_library</span> Best Study Method</h3>
+              <span class="guide-subtitle">This guide explains the ideal study method we found to be the best from our cumulative experiences and observations.</span>
             </div>
           </div>
           <div class="col-md-4 col-sm-6 col-12 guide-container">
             <div class="guide" data-bs-toggle="modal" data-bs-target="#modal-guides" data-guide="https://drive.google.com/file/d/13skFN-HVYm8aqzfN8zUd_0eudBCHrOhl/preview">
-              <h4 class="guide-title">Anki Guide</h3>
+              <h4 class="guide-title"><span class="material-symbols-outlined">laptop_mac</span> Anki Guide</h3>
               <span class="guide-subtitle">A brief guide on how to use Anki, recommended Anki settings, and how to get started with the pre-made decks on the website.</span>
             </div>
           </div>
           <div class="col-md-4 col-sm-6 col-12 guide-container">
             <div class="guide" data-bs-toggle="modal" data-bs-target="#modal-guides" data-guide="https://drive.google.com/file/d/1EnC3AlyeC96XXIzC6up-cpe4lpdXPSbK/preview">
-              <h4 class="guide-title">Extracurricular Resources</h3>
+              <h4 class="guide-title"><span class="material-symbols-outlined">menu_book</span> Resources</h3>
               <span class="guide-subtitle">There are a lot of extracurricular medical resources, but here are the ones we recommend the most from our experience.</span>
             </div>
           </div>
           <div class="col-md-4 col-sm-6 col-12 guide-container">
             <div class="guide" data-bs-toggle="modal" data-bs-target="#modal-guides" data-guide="https://drive.google.com/file/d/1qu_4LTDf8ZCd3kbhq_3njwtCLCGHGo0a/preview">
-              <h4 class="guide-title">Research Module</h3>
-              <span class="guide-subtitle">Read about the research module and tips from our experience on how to approach it, including essays, research proposals and all other research work.</span>
+              <h4 class="guide-title"><span class="material-symbols-outlined">science</span> Research Module</h3>
+              <span class="guide-subtitle">Read about the research module and tips from our experiences on how to approach it, including essays, research proposals and all other research work.</span>
             </div>
           </div>
           <div class="col-md-4 col-sm-6 col-12 guide-container">
             <div class="guide" data-bs-toggle="modal" data-bs-target="#modal-guides" data-guide="https://drive.google.com/file/d/1F80voyZm11Z1wJ575nq-4G3LZf4hgigO/preview">
-              <h4 class="guide-title">Board Exams</h3>
+              <h4 class="guide-title"><span class="material-symbols-outlined">public</span> Board Exams</h3>
               <span class="guide-subtitle">Read about board exams like the USMLE, and how to prepare for them from the experience of our college students who are taking them.</span>
             </div>
           </div>
           <div class="col-md-4 col-sm-6 col-12 guide-container">
             <div class="guide" data-bs-toggle="modal" data-bs-target="#modal-guides" data-guide="https://drive.google.com/file/d/1DPFQURAfQAHaAOs-4Z_aCztjixCRfq0n/preview">
-              <h4 class="guide-title">General Life Tips</h3>
+              <h4 class="guide-title"><span class="material-symbols-outlined">spa</span> General Tips</h3>
               <span class="guide-subtitle">Read about some general life tips concerning mental wellbeing and physical health in the context of medical school.</span>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 col-12 guide-container">
-            <div class="guide" data-bs-toggle="modal" data-bs-target="#modal-guides" data-guide="https://drive.google.com/file/d/18ooAh87CpMghLkAbf35am0BjW5T36U8s/preview">
-              <h4 class="guide-title">Phase 1</h3>
-              <span class="guide-subtitle">Read an overview and tips for phase 1.</span>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 col-12 guide-container">
-            <div class="guide" data-bs-toggle="modal" data-bs-target="#modal-guides" data-guide="https://drive.google.com/file/d/1la4OGVP1FYjbaq54PUGcrPdAHGWjtDoS/preview">
-              <h4 class="guide-title">Phase 2</h3>
-              <span class="guide-subtitle">Read an overview and tips for phase 2.</span>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 col-12 guide-container">
-            <div class="guide" data-bs-toggle="modal" data-bs-target="#modal-guides" data-guide="https://drive.google.com/file/d/1bVjxofF_CIcoqQPBdYx-HgJNVn7BIB82/preview">
-              <h4 class="guide-title">Phase 3</h3>
-              <span class="guide-subtitle">Read an overview and tips for phase 3.</span>
             </div>
           </div>
         </div>
@@ -1152,15 +1315,15 @@
           </div>
           <div class="modal-body modal-body-styled">
             <h2>Golden Drive</h2>
-            <p>A very inclusive archive of useful resources for medical students of Sultan Qaboos University hosted on Google Drive. The drive was founded by Abdulrahman Al-Hadhrami from the 2018 batch. Resources scattered across multiple drives were collected and combined into one single drive. Resources include lectures, tutorial solutions, practical notes, lecture summaries, Anki flashcards, past papers and extra questions, book and video libraries, and more.</p>
+            <p>A very inclusive archive of useful resources for medical students of Sultan Qaboos University hosted on Google Drive. The drive was founded by a student from the 2018 batch. Resources scattered across multiple drives were collected and combined into one single drive. Resources include lectures, tutorial solutions, practical notes, lecture summaries, Anki flashcards, past papers and extra questions, book and video libraries, and more.</p>
             <h2>The Website</h2>
             <p>This website is a fancy browser for the content of the Golden Drive on Google Drive. It was developed by Jihad Al-Yahamadi from the 2018 batch. Whatever files get uploaded, changed, or deleted from the drive, this website will update its content accordingly, as both are directly connected.</p>
             <h2>Disclaimer</h2>
-            <p>The majority of the content in this drive were made by other students and is just being organised here. The content may be incorrect or outdated. If you would like to report anything incorrect, please contact any of us and submit your report for us to see.</p>
+            <p>The majority of the content in this drive were made by other students and is just being organised here. The content may be incorrect or outdated. If you would like to report anything incorrect, please contact any of us and submit a report to notify us.</p>
             <h2>Attribution</h2>
             <p>Most of the icons used on this website were taken from <a href="https://flaticon.com/" rel="nofollow">Flaticon</a>.</p>
             <h2>DMCA Notice</h2>
-            <p>Please note that we do not own copyrights to any of the books or videos shown on this website. All books (with a few exceptions) and videos shown are not hosted on our website or Google Drive, and they are for educational purposes only. Said content is merely being linked.</p>
+            <p>Please note that we do not own copyrights to any of the books or videos linked on this website. All books (with a few exceptions) and videos linked are not hosted on our website or Google Drive, and they are for educational purposes only. Said content is merely being linked.</p>
             <p>© 2021 Golden Drive All Rights Reserved</p>
           </div>
           <div class="modal-footer">
@@ -1186,16 +1349,10 @@
               <hr>
             </div>
             <div class="contact-card">
-              <h5><span class="contact-name">Abdulrahman Al-Hadhrami:</span> <a href="mailto: g12abood@gmail.com" rel="nofollow">g12abood@gmail.com</a></h5>
+              <h5><span class="contact-name">Jihad Al-Yahmadi:</span> <a href="mailto: s129193@student.squ.edu.om" rel="nofollow">s129193@student.squ.edu.om</a></h5>
+              <div class="contact-copy"><i class="bi bi-clipboard"></i> Copy</div>
               <span class="contact-info">
                 <span class="badge bg-primary">Golden Drive CEO</span>
-                <span class="badge">Drive Editor</span>
-                <span class="badge">2018 Batch</span>
-              </span>
-            </div>
-            <div class="contact-card">
-              <h5><span class="contact-name">Jihad Al-Yahmadi:</span> <a href="mailto: s129193@student.squ.edu.om" rel="nofollow">s129193@student.squ.edu.om</a></h5>
-              <span class="contact-info">
                 <span class="badge bg-primary">Website Developer</span>
                 <span class="badge bg-primary">Summaries Author</span>
                 <span class="badge">Drive Editor</span>
@@ -1207,16 +1364,10 @@
               <hr>
             </div>
             <div class="contact-card">
-              <h5><span class="contact-name">Abdulrahman Al-Hadhrami:</span> <a href="mailto: g12abood@gmail.com" rel="nofollow">g12abood@gmail.com</a></h5>
+              <h5><span class="contact-name">Jihad Al-Yahmadi:</span> <a href="mailto: s129193@student.squ.edu.om" rel="nofollow">s129193@student.squ.edu.om</a></h5>
+              <div class="contact-copy"><i class="bi bi-clipboard"></i> Copy</div>
               <span class="contact-info">
                 <span class="badge bg-primary">Golden Drive CEO</span>
-                <span class="badge">Drive Editor</span>
-                <span class="badge">2018 Batch</span>
-              </span>
-            </div>
-            <div class="contact-card">
-              <h5><span class="contact-name">Jihad Al-Yahmadi:</span> <a href="mailto: s129193@student.squ.edu.om" rel="nofollow">s129193@student.squ.edu.om</a></h5>
-              <span class="contact-info">
                 <span class="badge bg-primary">Website Developer</span>
                 <span class="badge bg-primary">Summaries Author</span>
                 <span class="badge">Drive Editor</span>
@@ -1225,6 +1376,16 @@
             </div>
             <div class="contact-card">
               <h5><span class="contact-name">Bayan Al-Harrasi:</span> <a href="mailto: happyhappyhappy123186@gmail.com" rel="nofollow">happyhappyhappy123186@gmail.com</a></h5>
+              <div class="contact-copy"><i class="bi bi-clipboard"></i> Copy</div>
+              <span class="contact-info">
+                <span class="badge bg-primary">Summaries Author</span>
+                <span class="badge">Drive Editor</span>
+                <span class="badge">2018 Batch</span>
+              </span>
+            </div>
+            <div class="contact-card">
+              <h5><span class="contact-name">Hanaa Al-Julandani:</span> <a href="mailto: s122972@student.squ.edu.om" rel="nofollow">s122972@student.squ.edu.om</a></h5>
+              <div class="contact-copy"><i class="bi bi-clipboard"></i> Copy</div>
               <span class="contact-info">
                 <span class="badge bg-primary">Summaries Author</span>
                 <span class="badge">Drive Editor</span>
@@ -1233,6 +1394,7 @@
             </div>
             <div class="contact-card">
               <h5><span class="contact-name">Husain Al-Aswami:</span> <a href="mailto: i3swami00@gmail.com" rel="nofollow">i3swami00@gmail.com</a></h5>
+              <div class="contact-copy"><i class="bi bi-clipboard"></i> Copy</div>
               <span class="contact-info">
                 <span class="badge bg-primary">Flashcards Author</span>
                 <span class="badge">Drive Editor</span>
@@ -1241,13 +1403,15 @@
             </div>
             <div class="contact-card">
               <h5><span class="contact-name">Abdullah Al-Lawati:</span> <a href="mailto: abdlawati1@gmail.com" rel="nofollow">abdlawati1@gmail.com</a></h5>
+              <div class="contact-copy"><i class="bi bi-clipboard"></i> Copy</div>
               <span class="contact-info">
                 <span class="badge">Drive Editor</span>
                 <span class="badge">2018 Batch</span>
               </span>
             </div>
             <div class="contact-card">
-              <h5><span class="contact-name">Mohammed Al-louyahi:</span> <a href="mailto: s127755@student.squ.edu.om" rel="nofollow">s127755@student.squ.edu.om</a></h5>
+              <h5><span class="contact-name">Mohammed Al-Louyahi:</span> <a href="mailto: s127755@student.squ.edu.om" rel="nofollow">s127755@student.squ.edu.om</a></h5>
+              <div class="contact-copy"><i class="bi bi-clipboard"></i> Copy</div>
               <span class="contact-info">
                 <span class="badge">Drive Editor</span>
                 <span class="badge">2018 Batch</span>
@@ -1255,6 +1419,15 @@
             </div>
             <div class="contact-card">
               <h5><span class="contact-name">Meetham Al-Lawati:</span> <a href="mailto: allawati01@gmail.com" rel="nofollow">allawati01@gmail.com</a></h5>
+              <div class="contact-copy"><i class="bi bi-clipboard"></i> Copy</div>
+              <span class="contact-info">
+                <span class="badge">Drive Editor</span>
+                <span class="badge">2018 Batch</span>
+              </span>
+            </div>
+            <div class="contact-card">
+              <h5><span class="contact-name">Rawan Al-Shuraiqi:</span> <a href="mailto: s126099@student.squ.edu.om" rel="nofollow">s126099@student.squ.edu.om</a></h5>
+              <div class="contact-copy"><i class="bi bi-clipboard"></i> Copy</div>
               <span class="contact-info">
                 <span class="badge">Drive Editor</span>
                 <span class="badge">2018 Batch</span>
@@ -1262,6 +1435,7 @@
             </div>
             <div class="contact-card">
               <h5><span class="contact-name">Salha Al-Saadi:</span> <a href="mailto: s125602@student.squ.edu.om" rel="nofollow">s125602@student.squ.edu.om</a></h5>
+              <div class="contact-copy"><i class="bi bi-clipboard"></i> Copy</div>
               <span class="contact-info">
                 <span class="badge">Drive Editor</span>
                 <span class="badge">2018 Batch</span>
@@ -1269,6 +1443,7 @@
             </div>
             <div class="contact-card">
               <h5><span class="contact-name">Yamamah Jubori:</span> <a href="mailto: yamamahmahmood@hotmail.com" rel="nofollow">yamamahmahmood@hotmail.com</a></h5>
+              <div class="contact-copy"><i class="bi bi-clipboard"></i> Copy</div>
               <span class="contact-info">
                 <span class="badge">Drive Editor</span>
                 <span class="badge">2018 Batch</span>
@@ -1280,6 +1455,7 @@
             </div>
             <div class="contact-card">
               <h5><span class="contact-name">Mohammed Al-Farsi:</span> <a href="mailto: m.alfarsi.02@gmail.com" rel="nofollow">m.alfarsi.02@gmail.com</a></h5>
+              <div class="contact-copy"><i class="bi bi-clipboard"></i> Copy</div>
               <span class="contact-info">
                 <span class="badge bg-primary">Summaries Author</span>
                 <span class="badge">Drive Editor</span>
@@ -1288,6 +1464,7 @@
             </div>
             <div class="contact-card">
               <h5><span class="contact-name">Ibrahim Al-Ruhaili:</span> <a href="mailto: alruhailiibrahim02@gmail.com" rel="nofollow">alruhailiibrahim02@gmail.com</a></h5>
+              <div class="contact-copy"><i class="bi bi-clipboard"></i> Copy</div>
               <span class="contact-info">
                 <span class="badge bg-primary">Flashcards Author</span>
                 <span class="badge">Drive Editor</span>
@@ -1296,6 +1473,7 @@
             </div>
             <div class="contact-card">
               <h5><span class="contact-name">Rashid Al-Shibli:</span> <a href="mailto: s129044@student.squ.edu.om" rel="nofollow">s129044@student.squ.edu.om</a></h5>
+              <div class="contact-copy"><i class="bi bi-clipboard"></i> Copy</div>
               <span class="contact-info">
                 <span class="badge bg-primary">Flashcards Author</span>
                 <span class="badge">Drive Editor</span>
@@ -1304,6 +1482,7 @@
             </div>
             <div class="contact-card">
               <h5><span class="contact-name">Abdullah Al-Sawafi:</span> <a href="mailto: abdullah2001y@gmail.com" rel="nofollow">abdullah2001y@gmail.com</a></h5>
+              <div class="contact-copy"><i class="bi bi-clipboard"></i> Copy</div>
               <span class="contact-info">
                 <span class="badge">Drive Editor</span>
                 <span class="badge">2019 Batch</span>
@@ -1311,6 +1490,7 @@
             </div>
             <div class="contact-card">
               <h5><span class="contact-name">Mahmood Al-Jahdhami:</span> <a href="mailto: ma7moodj12@gmail.com" rel="nofollow">ma7moodj12@gmail.com</a></h5>
+              <div class="contact-copy"><i class="bi bi-clipboard"></i> Copy</div>
               <span class="contact-info">
                 <span class="badge">Drive Editor</span>
                 <span class="badge">2019 Batch</span>
@@ -1318,6 +1498,7 @@
             </div>
             <div class="contact-card">
               <h5><span class="contact-name">Mutaz Al-Hashmi:</span> <a href="mailto: alhashemi2221@gmail.com" rel="nofollow">alhashemi2221@gmail.com</a></h5>
+              <div class="contact-copy"><i class="bi bi-clipboard"></i> Copy</div>
               <span class="contact-info">
                 <span class="badge">Drive Editor</span>
                 <span class="badge">2019 Batch</span>
@@ -1325,6 +1506,7 @@
             </div>
             <div class="contact-card">
               <h5><span class="contact-name">Osama Al-Lawati:</span> <a href="mailto: u_sama2000@gmail.com" rel="nofollow">u_sama2000@hotmail.com</a></h5>
+              <div class="contact-copy"><i class="bi bi-clipboard"></i> Copy</div>
               <span class="contact-info">
                 <span class="badge">Drive Editor</span>
                 <span class="badge">2019 Batch</span>
@@ -1332,6 +1514,7 @@
             </div>
             <div class="contact-card">
               <h5><span class="contact-name">Wedad Al-Essai:</span> <a href="mailto: wedadalessai14@gmail.com" rel="nofollow">wedadalessai14@gmail.com</a></h5>
+              <div class="contact-copy"><i class="bi bi-clipboard"></i> Copy</div>
               <span class="contact-info">
                 <span class="badge">Drive Editor</span>
                 <span class="badge">2019 Batch</span>
@@ -1343,6 +1526,7 @@
             </div>
             <div class="contact-card">
               <h5><span class="contact-name">Ahmed Al-Farsi:</span> <a href="mailto: alfarsi.0281@gmail.com" rel="nofollow">alfarsi.0281@gmail.com</a></h5>
+              <div class="contact-copy"><i class="bi bi-clipboard"></i> Copy</div>
               <span class="contact-info">
                 <span class="badge">Drive Editor</span>
                 <span class="badge">2020 Batch</span>
@@ -1350,6 +1534,15 @@
             </div>
             <div class="contact-card">
               <h5><span class="contact-name">Fatma Al-Shuhomi:</span> <a href="mailto: ffzozincloud@gmail.com" rel="nofollow">ffzozincloud@gmail.com</a></h5>
+              <div class="contact-copy"><i class="bi bi-clipboard"></i> Copy</div>
+              <span class="contact-info">
+                <span class="badge">Drive Editor</span>
+                <span class="badge">2020 Batch</span>
+              </span>
+            </div>
+            <div class="contact-card">
+              <h5><span class="contact-name">Ghazaar Syed:</span> <a href="mailto: s133661@student.squ.edu.om" rel="nofollow">s133661@student.squ.edu.om</a></h5>
+              <div class="contact-copy"><i class="bi bi-clipboard"></i> Copy</div>
               <span class="contact-info">
                 <span class="badge">Drive Editor</span>
                 <span class="badge">2020 Batch</span>
@@ -1357,6 +1550,7 @@
             </div>
             <div class="contact-card">
               <h5><span class="contact-name">Mohammed Al-Hinai:</span> <a href="mailto: hinaioo53@gmail.com" rel="nofollow">hinaioo53@gmail.com</a></h5>
+              <div class="contact-copy"><i class="bi bi-clipboard"></i> Copy</div>
               <span class="contact-info">
                 <span class="badge">Drive Editor</span>
                 <span class="badge">2020 Batch</span>
@@ -1364,6 +1558,15 @@
             </div>
             <div class="contact-card">
               <h5><span class="contact-name">Mohammed Al-Suleimani:</span> <a href="mailto: mkhalidm6789@gmail.com" rel="nofollow">mkhalidm6789@gmail.com</a></h5>
+              <div class="contact-copy"><i class="bi bi-clipboard"></i> Copy</div>
+              <span class="contact-info">
+                <span class="badge">Drive Editor</span>
+                <span class="badge">2020 Batch</span>
+              </span>
+            </div>
+            <div class="contact-card">
+              <h5><span class="contact-name">Reem Al-Ajmi:</span> <a href="mailto: s134305@student.squ.edu.om" rel="nofollow">s134305@student.squ.edu.om</a></h5>
+              <div class="contact-copy"><i class="bi bi-clipboard"></i> Copy</div>
               <span class="contact-info">
                 <span class="badge">Drive Editor</span>
                 <span class="badge">2020 Batch</span>
@@ -1371,6 +1574,7 @@
             </div>
             <div class="contact-card">
               <h5><span class="contact-name">Shaima Al-Shukaili:</span> <a href="mailto: s134620@student.squ.edu.om" rel="nofollow">s134620@student.squ.edu.om</a></h5>
+              <div class="contact-copy"><i class="bi bi-clipboard"></i> Copy</div>
               <span class="contact-info">
                 <span class="badge">Drive Editor</span>
                 <span class="badge">2020 Batch</span>
@@ -1378,6 +1582,7 @@
             </div>
             <div class="contact-card">
               <h5><span class="contact-name">Qabas Al-Ismaili:</span> <a href="mailto: alismailiqabas@gmail.com" rel="nofollow">alismailiqabas@gmail.com</a></h5>
+              <div class="contact-copy"><i class="bi bi-clipboard"></i> Copy</div>
               <span class="contact-info">
                 <span class="badge">Drive Editor</span>
                 <span class="badge">2020 Batch</span>
@@ -1389,7 +1594,71 @@
       </div>
     </div>
 
-    <!-- Modal for the Guides -->
+    <!-- Modal for the phase 3 group randomiser -->
+    <div class="modal fade" id="modal-randomiser" tabindex="-1" aria-labelledby="modal-randomiser-label" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-fullscreen-md-down modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-randomiser-label">Phase 3 Group Randomiser</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="randomiser-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <label for="randomiser-male" class="form-label mt-4"><i class="bi bi-gender-male"></i> List of Male Students</label>
+                  <textarea class="form-control" id="randomiser-male" placeholder="Enter the name of each male student&#10;Place each name in a separate line"></textarea>
+                </div>
+                <div class="col-md-6 form-group">
+                  <label for="randomiser-female" class="form-label mt-4"><i class="bi bi-gender-female"></i> List of Female Students</label>
+                  <textarea class="form-control" id="randomiser-female" placeholder="Enter the name of each female student&#10;Place each name in a separate line"></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="randomiser-number" class="form-label mt-4"><i class="bi bi-hash"></i> Number of Groups</label>
+                <select class="form-select" id="randomiser-number">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="modal-footer-btn" id="randomiser-btn"><i class="bi bi-boxes"></i> &nbsp;Create Groups</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for the output of the phase 3 group randomiser -->
+    <div class="modal fade" id="modal-randomiser-output" tabindex="-1" aria-labelledby="modal-randomiser-output-label" aria-hidden="true">
+      <div class="modal-dialog modal-md modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-randomiser-output-label">Groups</h5>
+          </div>
+          <div class="modal-body" id="randomiser-output"></div>
+          <div class="modal-footer-alt row">
+            <div class="col-6">
+              <button type="button" class="modal-footer-btn" id="randomiser-reshuffle"><i class="bi bi-repeat"></i> &nbsp;Reshuffle</button>
+            </div>
+            <div class="col-6">
+              <button type="button" class="modal-footer-btn" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-check2-circle"></i> &nbsp;Done</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for the guides -->
     <div class="modal fade" id="modal-guides" tabindex="-1" aria-labelledby="modal-guides-label" aria-hidden="true">
       <div class="modal-dialog modal-xl modal-fullscreen">
         <div class="modal-content">
@@ -1415,19 +1684,20 @@
           <div class="modal-body">
             <div id="timetable-selector">
               <div class="row">
-                <div class="col-4 timetable-item timetable-active" data-switch="timetable-exam">Exam Timetable</div>
-                <div class="col-4 timetable-item" data-switch="timetable-courses">Courses Timetable</div>
-                <div class="col-4 timetable-item" data-switch="timetable-student">Student Timetable</div>
+                <div class="col-4 timetable-item timetable-active" data-switch="timetable-exam"><i class="bi bi-alarm"></i> Exam Timetable</div>
+                <div class="col-4 timetable-item" data-switch="timetable-courses"><i class="bi bi-book"></i> &nbsp;Courses Timetable</div>
+                <div class="col-4 timetable-item" data-switch="timetable-student"><i class="bi bi-person"></i> Student Timetable</div>
               </div>
             </div>
             <div id="timetable-exam" class="timetable-page">
               <div class="form-group">
                 <select class="form-select" id="timetable-exam-semester">
                   <option value="1" data-semester="p1">Phase 1</option>
-                  <!-- <option value="2" data-semester="p2s1">Phase 2 Semester 1</option> -->
-                  <option value="3" data-semester="p2s2">Phase 2 Semester 2</option>
-                  <!-- <option value="4" data-semester="p2s3">Phase 2 Semester 3</option> -->
-                  <option value="5" data-semester="p2s4">Phase 2 Semester 4</option>
+                  <option value="2" data-semester="p2s1">Phase 2 Semester 1</option>
+                  <!-- <option value="3" data-semester="p2s2">Phase 2 Semester 2</option> -->
+                  <option value="4" data-semester="p2s3">Phase 2 Semester 3</option>
+                  <!-- <option value="5" data-semester="p2s4">Phase 2 Semester 4</option> -->
+                  <option value="6" data-semester="p3s1">Phase 3 Pre-clerkship</option>
                 </select>
               </div>
             </div>
@@ -1441,6 +1711,7 @@
                       <option value="3" data-semester="p2s2">Phase 2 Semester 2</option>
                       <option value="4" data-semester="p2s3">Phase 2 Semester 3</option>
                       <option value="5" data-semester="p2s4">Phase 2 Semester 4</option>
+                      <option value="6" data-semester="p3s1">Phase 3 Pre-clerkship</option>
                     </select>
                   </div>
                   <div class="col-6">
@@ -1478,6 +1749,12 @@
                       <option value="31" data-semester="p2s4" data-url="https://drive.google.com/file/d/1muaXWaEvuh6LOruVYG4YVCeGZIHVtvaA/preview">Integrated Module 3</option>
                       <option value="32" data-semester="p2s4" data-url="https://drive.google.com/file/d/176-zN6BQ00z2PZ1vFzABwm4FvFAhpg3d/preview">Locomotor System</option>
                       <option value="33" data-semester="p2s4" data-url="https://drive.google.com/file/d/1T1MaHhsOWLPTy05pWv-jOxRI4N24VPDT/preview">Student Project 2</option>
+                      <option value="34" data-semester="p3s1" data-url="https://drive.google.com/file/d/1x2K9eOSz5Cy3fRFNop337-Zt4Kv-XZLO/preview">Overview Schedule</option>
+                      <option value="34" data-semester="p3s1" data-url="https://drive.google.com/file/d/1kO1LhouxEHxWMCwYAf75NCPp55mIn6G9/preview">Detailed Schedule</option>
+                      <option value="34" data-semester="p3s1" data-url="https://drive.google.com/file/d/1m_C1M60dw_PWgSz9pdhcaRZXMJTDErNx/preview">Blue 1 Schedule</option>
+                      <option value="34" data-semester="p3s1" data-url="https://drive.google.com/file/d/1eGNrO8flBQZ2bJjkUxzUFkV10VwvoEAz/preview">Blue 2 Schedule</option>
+                      <option value="34" data-semester="p3s1" data-url="https://drive.google.com/file/d/1LMmfKI1y_QvPbCqdlo8G36lIZH7GHdQU/preview">Purple 1 Schedule</option>
+                      <option value="34" data-semester="p3s1" data-url="https://drive.google.com/file/d/13MnI5-Rq9WtVKFv9jibjEXjU1ZLshHp2/preview">Purple 2 Schedule</option>
                     </select>
                   </div>
                 </div>
@@ -1487,10 +1764,11 @@
             <div id="timetable-student" class="timetable-page hidden">
               <div class="form-group">
                 <select class="form-select" id="timetable-student-semester">
+                  <option value="1" data-semester="p1" data-url="https://drive.google.com/uc?id=10__5XVasumSrvy30mweq3FULpIe75LM7">Phase 1</option>
                   <option value="2" data-semester="p2s1" data-url="https://drive.google.com/uc?id=1-JqF1xbVPaSVWtM6hPZtqkwDSxE_lxZT">Phase 2 Semester 1</option>
-                  <option value="3" data-semester="p2s2" data-url="https://drive.google.com/uc?id=1UnHuHCOiD4OgMS93QFN80yH4E6mBX6vK">Phase 2 Semester 2</option>
+                  <!-- <option value="3" data-semester="p2s2" data-url="https://drive.google.com/uc?id=1UnHuHCOiD4OgMS93QFN80yH4E6mBX6vK">Phase 2 Semester 2</option> -->
                   <option value="4" data-semester="p2s3" data-url="https://drive.google.com/uc?id=1PVoSRjnF-it5FfsCw1Aa49qpiyUjaJx5">Phase 2 Semester 3</option>
-                  <option value="5" data-semester="p2s4" data-url="https://drive.google.com/uc?id=1BaTViEgfuWLMHsp760bYsDvzkSWWJ2oX">Phase 2 Semester 4</option>
+                  <!-- <option value="5" data-semester="p2s4" data-url="https://drive.google.com/uc?id=1BaTViEgfuWLMHsp760bYsDvzkSWWJ2oX">Phase 2 Semester 4</option> -->
                 </select>
               </div>
               <img src="" id="timetable-student-preview" class="modal-content-preview">
@@ -1517,23 +1795,6 @@
       </div>
     </div>
 
-    <!-- Modal for the other batch drives -->
-    <div class="modal fade" id="modal-otherdrives" tabindex="-1" aria-labelledby="modal-otherdrives-label" aria-hidden="true">
-      <div class="modal-dialog modal-xl modal-fullscreen-sm-down modal-filled">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modal-otherdrives-label">Other Batch Drives</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <a href="https://drive.google.com/drive/u/1/folders/1xLHF_OpkFDieAzpLJdPoMret0QnzTR6B" rel="nofollow"><div class="otherdrives-link" rel="nofollow">2017 Batch Drive</div></a>
-            <a href="https://drive.google.com/drive/u/1/folders/1sy2ziMevMByhYy1WQ5dt42AII5r1LMKj" rel="nofollow"><div class="otherdrives-link" rel="nofollow">2016 Batch Drive</div></a>
-            <a href="https://drive.google.com/drive/u/1/folders/1iunSaV1bTeQEtXb2Ac0utuM8lOnk4q09" rel="nofollow"><div class="otherdrives-link" rel="nofollow">2015 Batch Drive</div></a>
-            <a href="https://drive.google.com/drive/u/1/folders/1zqeWHBl0-0a6Lv7nATO9mvF7ldLUO6lL" rel="nofollow"><div class="otherdrives-link" rel="nofollow">2014 Batch Drive</div></a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="copy-message" class="hidden">Email copied to clipboard</div>
+    <div id="copy-message" class="hidden"><i class="bi bi-clipboard-check"></i> Email copied to clipboard</div>
   </body>
 </html>
