@@ -34,7 +34,16 @@
 var changelogText = `
 
 
-
+01/10/2022 01:00
+Added phase 3 book: Browse's Symptoms and Signs of Surgical Disease
+Added phase 3 book: Davidson's Principles and Practice of Medicine..
+Added phase 3 book: Essentials of Obstetrics and Gynecology.
+Added phase 3 book: Nelson Essentials of Pediatrics.
+Added phase 3 book: Oxford Handbook of General Practice.
+Added phase 3 book: Oxford's Psychiatry.
+Added extracurricular book: Focused History Taking for OSCEs.
+Added extracurricular book: OSCEs at a Glance.
+---
 11/09/2022 09:45
 <h4 style='color: var(--primary); margin: 10px 0 -3px 0'>Appearance:</h4>
 Slightly polished the website (colours, icons, etc).
