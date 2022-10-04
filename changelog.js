@@ -34,6 +34,10 @@
 var changelogText = `
 
 
+
+05/10/2022 00:10
+Added an alternative video library link at the top bar to bypass SQU's Internet issues.<ul><li>It was reported that mega.nz on which the video libraries linked on the Golden Drive are hosted (e.g., Pathoma, Sketchy, BnB) is inaccessible with SQU's Internet, so female students residing in SQU's dorms are unable to watch those videos. Until SQU's Internet is fixed on their end, I added an alternative link for the videos hosted on Google Drive to make the videos accessible again for such students. You can find the link at the top bar of this website ("Temporary Video Library Alternative"). This is a temporary emergency fix, so unexpected problems might occur. If you encounter any such problems, please report them to me.</li></ul>
+---
 01/10/2022 01:00
 Added phase 3 book: Browse's Symptoms and Signs of Surgical Disease
 Added phase 3 book: Davidson's Principles and Practice of Medicine..
