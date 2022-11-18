@@ -688,5 +688,46 @@ var folderIDs = {
   project2: {
     lectures: "1Yp7rtHMLovMWwWa70krE94q-OsuJaFdg",
     notes: "1O0FykIBv4PO1OfwLSnGPcdnWEitHbUg8"
-  }
+  },
+
+  juniordermaloral: {
+    presentations2: "1sc8bCK6kZZyX1L9d2co5ApddqtZVX6yJ",
+    notes2: "1DucSfVaFwlPpge84FZFLGcqTGru32oZk"
+  },
+  juniorebm: {
+    presentations2: "11uI4mZ5c8fESOtolU29OaFcCzilsAdZR",
+    notes2: "1XhqoiuVnh9xvVfZZxTWCFWzm7BNGa805"
+  },
+  juniorfamco: {
+    presentations2: "1nPrOUXZc-ejcoiMusWbIVF6wx9uwXw-P",
+    notes2: "149aVKmAHDZouZQDahPzAlu2JsASuJEro"
+  },
+  juniorgenetics: {
+    presentations2: "1NipVJKr-G3fkXX9OHO-NH8q2pyTmXnJB",
+    notes2: "1W-xsra-Rti7v_OFeen_ZFu2N86RgUSAH"
+  },
+  juniormedicine: {
+    presentations2: "1DVa9JAXDa4LkP3QLpaPICsbdZXyZm9R3",
+    notes2: "1TosMarqk0-2J47XKGdia5F3tn8Ve9fR0"
+  },
+  juniorophthalmology: {
+    presentations2: "13mH_isCPg5pswpwshl-CukclR-clYc6E",
+    notes2: "1-NxKihO4i_P3uOYkihcrwXG_dTqK_81l"
+  },
+  juniororthopedics: {
+    presentations2: "1Ahxupf0ZAxnfzrfxDjRYnCkJ6zav9MKR",
+    notes2: "16jmg_0fP7S7VWYPVveV2AmrUCZabaX6Q"
+  },
+  juniorpediatrics: {
+    presentations2: "1Ec_EMcY2nCAoYjPzBuVSYcYQ0E46hZeU",
+    notes2: "1gfvCUQPuFScbDp5I8fna3VsQ9nSlYIAs"
+  },
+  juniorpsychiatry: {
+    presentations2: "1mrz705v70P7wwzLsEoiFkz87tKeM1Q3L",
+    notes2: "1n4oa1DCHJ8oWDin-pvYoouAMeG9Yp8aw"
+  },
+  juniorsurgery: {
+    presentations2: "1ybPfKb6I04oNs8an56Biv7lVqhafbHcP",
+    notes2: "1xS-24jmEZKiMZsi2YsjgpdxojS5Mcfu0"
+  },
 };
