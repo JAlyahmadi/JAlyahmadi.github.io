@@ -438,8 +438,8 @@ var folderIDs = {
     prerecorded: "1Dv9I1SLTM5GwrdTXXWO5i4u5gdIhpejc",
     notes: [
       ["Bayan's Summaries", "19fWsvdVc3U2bcb6Nay_IcmyNoGngEZTa"],
-      ["Handwritten Notes", "1jPeGoYBPlMp1jcu3ZBX2TqxwES1useks"],
       ["Jihad's Summaries", "1dKb92JDMiz_jR7VQQ0kPlhGoTtyQLM05"],
+      ["MH's Notes", "19Mmt-DWY77dyBKZQoHENsJvAiibZwHLW"],
       ["Extra Notes", "1r_H0K7M_xFQdkFPFxFr-J9zgPSLfOBaK"]
     ],
     flashcards: "1Pggb_LSvqjZF7dAKzEtJ1WT9sWVBGLP_",
