@@ -111,7 +111,7 @@ if(typeof(lastChangelog) !== "string"){
 }
 
 // Other variables
-var semesterValues = {"p1": 1, "p2s1": 2, "p2s2": 3, "p2s3": 4, "p2s4": 5, "p3s1": 6};
+var semesterValues = {"p1": 1, "p2s1": 2, "p2s2": 3, "p2s3": 4, "p2s4": 5, "p3s1": 6, "p3s2": 7};
 var currentChangelog = "";
 var examTimes = [];
 var changelogNotes = [];

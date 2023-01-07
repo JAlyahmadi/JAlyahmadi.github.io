@@ -723,8 +723,9 @@ var folderIDs = {
     notes2: "1gfvCUQPuFScbDp5I8fna3VsQ9nSlYIAs"
   },
   juniorpsychiatry: {
-    presentations2: "1mrz705v70P7wwzLsEoiFkz87tKeM1Q3L",
-    notes2: "1n4oa1DCHJ8oWDin-pvYoouAMeG9Yp8aw"
+    presentations3: "1mrz705v70P7wwzLsEoiFkz87tKeM1Q3L",
+    geriatrics: "1_DwJuxZMWzSfr7w8kK5XMdhwIcvCKLHy",
+    notes3: "1n4oa1DCHJ8oWDin-pvYoouAMeG9Yp8aw"
   },
   juniorsurgery: {
     presentations2: "1ybPfKb6I04oNs8an56Biv7lVqhafbHcP",
