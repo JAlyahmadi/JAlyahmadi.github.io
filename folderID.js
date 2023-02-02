@@ -592,7 +592,7 @@ var folderIDs = {
     notes: [
       ["Bayan's Summaries", "1sfpMaoXjBlDBgxa7qFxB63GIUny5i7Wx"],
       ["Jihad's Summaries", "1_g-_UA9E8rxfZFzJSvani-hNGmr57ZAi"],
-      ["Mirna's Summaries", "1LMNz3hX71dXj7vE7cmk5APW3lfmAmpfp"],
+      ["MH's Notes", "1LMNz3hX71dXj7vE7cmk5APW3lfmAmpfp"],
       ["Extra Notes", "14C_D9R44hHbGQJ2YYQmxMkP0G56vBtaY"]
     ],
     flashcards: "1NOxfKbZvFCl9c__QGMn6QXxkayB7WqtJ",
@@ -676,7 +676,7 @@ var folderIDs = {
     notes: [
       ["Bayan's Summaries", "1zzNI3KgRuu5CPiPRucORfVMGLnDWFpNA"],
       ["Jihad's Summaries", "1tS9xh9Sm1BwQ-UW6Iwo1Mu_AzwazwHPT"],
-      ["Mirna's Summaries", "1xxCdQvT96CStb4j3drVVsNgNx1eed87S"],
+      ["MH's Notes", "1xxCdQvT96CStb4j3drVVsNgNx1eed87S"],
       ["Extra Notes", "1SzdTMryVCZw_XIQPcOW1BwFKd4xw8zgr"]
     ],
     flashcards: "1VY4DQcn2eQ3eHkna38ld5GXAho-q2pVp",
