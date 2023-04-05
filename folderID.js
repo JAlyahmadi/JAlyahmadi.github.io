@@ -78,6 +78,7 @@ var folderIDs = {
       ["Tutorial 13", "1UxGdG6B7i_EBCANLgQzr5UYz8_OdSPwX"]
     ],
     notes: "1aLm0_Q5R4abbqzIEjKt_ejCdlNu19Xb-",
+    flashcards: "1PayJ0B2lhhm6tYQSxhUY4nKzBa7nR6lL",
     qbank: [
       ["Quizzes", "1beS97fNKmaNM30GgcecluGI_Ixijd0wR"],
       ["ICA", "1e5SUymY_iM3WCUKZE5drUnodMkAfK-mn"],
