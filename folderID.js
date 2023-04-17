@@ -671,7 +671,8 @@ var folderIDs = {
     practicals: [
       ["Practical 1", "1ajJa7jQ266doDA2QEo3M0QwtahAxOz4i"],
       ["Practical 2", "1E4FfWIyme9Tkch80l0U-0wyyNw7JisH9"],
-      ["Practical 3", "1VG4PSvL3Y1eD0uOiyAuQB7AZ3UrtRh3R"]
+      ["Practical 3", "1VG4PSvL3Y1eD0uOiyAuQB7AZ3UrtRh3R"],
+      ["Practical 4", "1GNfoN7vt7NgBq3_O21QwUO7SF1dIIhGr"]
     ],
     prerecorded: "1UAzrbolJXTUfCwFKvRiD8YQ_cFnVx2KF",
     notes: [
