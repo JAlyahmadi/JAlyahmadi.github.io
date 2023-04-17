@@ -25,7 +25,6 @@ var motdPool = [
   "You can change the theme of the website from the \"Theme\" tab at the top.",
   "Try out the light mode theme under the \"Theme\" tab at the top... if you are that sick.",
   "Amogus &#3486;",
-  "&#128142",
   "A wonderer is not always lost, but I sure am.",
   "Did you know that MOTD stands for Message Of The Day?",
   "<a href='https://youtu.be/dQw4w9WgXcQ'>https://youtu.be/dQw4w9WgXcQ</a>",
