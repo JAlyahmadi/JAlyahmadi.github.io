@@ -35,6 +35,10 @@ var changelogText = `
 
 
 
+05/04/2024 03:20
+Added folders for the senior clerkship page.
+Added the senior clerkship timetable to the Timetables > Course Timetables section.
+---
 19/11/2022 03:00
 Added folders for the junior clerkship page.
 Added the junior clerkship timetables to the Timetables > Course Timetables section.

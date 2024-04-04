@@ -38,12 +38,9 @@ var iconsSrc = {
   phase2sem1: "icons/1.svg",
   phase2sem2: "icons/2.svg",
   phase2sem3: "icons/3.svg",
-  phase2sem4: "icons/4.svg",
-  phase2sem1: "icons/1.svg",
   preclerkship: "icons/trophy1.svg",
   juniorclerkship: "icons/trophy2.svg",
   seniorclerkship: "icons/trophy3.svg",
-  preinternship:"icons/trophy4.svg",
   resources: "icons/resources.svg",
   guides: "icons/guides.svg",
   books: "icons/books.svg",
@@ -111,7 +108,7 @@ if(typeof(lastChangelog) !== "string"){
 }
 
 // Other variables
-var semesterValues = {"p1": 1, "p2s1": 2, "p2s2": 3, "p2s3": 4, "p2s4": 5, "p3s1": 6, "p3s2": 7};
+var semesterValues = {"p1": 1, "p2s1": 2, "p2s2": 3, "p2s3": 4, "p2s4": 5, "p3s1": 6, "p3s2": 7, "p3s3": 8};
 var currentChangelog = "";
 var examTimes = [];
 var changelogNotes = [];
